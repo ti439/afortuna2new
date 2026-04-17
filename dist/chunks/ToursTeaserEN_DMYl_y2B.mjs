@@ -1,0 +1,43 @@
+import { c as createComponent, m as maybeRenderHead, e as addAttribute, d as renderTemplate } from './astro/server_0zlbAbnM.mjs';
+import 'kleur/colors';
+import 'html-escaper';
+import 'clsx';
+
+const $$ToursTeaserEN = createComponent(($$result, $$props, $$slots) => {
+  const aventura = "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/rafting_1ccfa83f.png";
+  const naturaleza = "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/cabalgata__1__f01d99a8.jpg";
+  const tours = "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/puente_09973237.png";
+  const cards = [
+    {
+      title: "Adventure & Adrenaline",
+      description: "Rappelling, canyoning, and intense experiences with expert guides.",
+      image: aventura,
+      tag: "Traveler favorite"
+    },
+    {
+      title: "Nature & Wildlife",
+      description: "Hikes and wildlife watching in unique landscapes.",
+      image: naturaleza,
+      tag: "Family friendly"
+    },
+    {
+      title: "Iconic views & scenery",
+      description: "Volcano, waterfalls, and trails to connect with Arenal.",
+      image: tours,
+      tag: "Most booked"
+    }
+  ];
+  return renderTemplate`${maybeRenderHead()}<section class="py-16 bg-white text-gray-800"> <div class="max-w-6xl mx-auto px-4 md:px-8"> <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10"> <div> <span class="text-xs uppercase tracking-[0.3em] text-emerald-600">Recommended experiences</span> <h2 class="text-3xl md:text-4xl font-bold mt-3">
+Before choosing your hotel, check these tours
+</h2> <p class="mt-3 text-gray-600 max-w-2xl">
+Book directly and secure your spot. Tours curated for quality, safety, and local guiding.
+</p> </div> <a href="/tours" class="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-5 py-2 text-white font-semibold hover:bg-emerald-700 transition">
+See all tours
+<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path> </svg> </a> </div> <div class="grid grid-cols-1 md:grid-cols-3 gap-6"> ${cards.map((card) => renderTemplate`<div class="rounded-2xl overflow-hidden shadow-lg bg-white flex flex-col"> <div class="relative h-44"> <img${addAttribute(card.image, "src")}${addAttribute(card.title, "alt")} class="w-full h-full object-cover" loading="lazy"> <span class="absolute top-3 left-3 bg-white/90 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full"> ${card.tag} </span> </div> <div class="p-5 flex-1 flex flex-col"> <h3 class="text-lg font-semibold">${card.title}</h3> <p class="mt-2 text-sm text-gray-600 flex-1">${card.description}</p> <div class="mt-4 flex flex-wrap gap-3"> <a href="/tours" class="flex-1 min-w-[140px] text-center rounded-full border border-emerald-600 text-emerald-700 px-4 py-2 text-sm font-semibold hover:bg-emerald-50 transition">
+Explore tours
+</a> <a href="https://api.whatsapp.com/send/?phone=50684597077" target="_blank" rel="noopener noreferrer" class="flex-1 min-w-[140px] text-center rounded-full bg-emerald-600 text-white px-4 py-2 text-sm font-semibold hover:bg-emerald-700 transition">
+Book now
+</a> </div> </div> </div>`)} </div> </div> </section>`;
+}, "C:/Users/gamer/Documents/GitHub/afortuna2new/src/components/en/ToursTeaserEN.astro", void 0);
+
+export { $$ToursTeaserEN as $ };

@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import piscinas from "../../../assets/termales.JPG";
-import jardines from "../../../assets/jardin.JPG";
+const piscinas = "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/termales_cf448ff7.JPG";
+const jardines = "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/jardin_c7217c3a.JPG";
 const restaurante = "https://i.ibb.co/BV1KZZ0S/IMG-6005-2.jpg";
 ---
 
@@ -14,7 +14,7 @@ const restaurante = "https://i.ibb.co/BV1KZZ0S/IMG-6005-2.jpg";
     <div class="space-y-12">
       <div class="flex flex-col lg:flex-row items-center gap-8">
         <div class="lg:w-1/2">
-          <Image
+          <img
             src={piscinas}
             alt="Thermal pools"
             class="rounded-xl shadow-lg w-full h-auto object-cover"
@@ -30,7 +30,7 @@ const restaurante = "https://i.ibb.co/BV1KZZ0S/IMG-6005-2.jpg";
 
       <div class="flex flex-col lg:flex-row-reverse items-center gap-8">
         <div class="lg:w-1/2">
-          <Image
+          <img
             src={jardines}
             alt="Tropical gardens"
             class="rounded-xl shadow-lg w-full h-auto object-cover"
