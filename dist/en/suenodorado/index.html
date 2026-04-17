@@ -1,0 +1,186 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-eaphqvkf> <head><title>Hotel Sueno Dorado</title><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="alternate" hreflang="es" href="https://afortunadoscr.com/suenodorado/"><link rel="alternate" hreflang="en" href="https://afortunadoscr.com/en/suenodorado/"><link rel="alternate" hreflang="x-default" href="https://afortunadoscr.com/"><script>
+      function gtagSendEvent(url, target) {
+        var isBlank = target === "_blank";
+        var navigate = function () {
+          if (!isBlank && typeof url === "string") {
+            window.location = url;
+          }
+        };
+        if (typeof gtag === "function") {
+          gtag("event", "conversion_event_outbound_click", {
+            event_callback: navigate,
+            event_timeout: 2000,
+          });
+          return !isBlank;
+        }
+        navigate();
+        return !isBlank;
+      }
+    </script><link rel="stylesheet" href="/_astro/global.D0zF-e4d.css">
+<style>@keyframes pulse{0%,to{opacity:1}50%{opacity:.7}}.animate-pulse[data-astro-cid-lu3iktyv]{animation:pulse 2s cubic-bezier(.4,0,.6,1) infinite}
+html,body{margin:0;width:100%;height:100%}
+</style></head> <body class="bg-white text-gray-900" data-astro-cid-eaphqvkf> <header class="w-full bg-yellow-200/10 text-gray-800 shadow"> <nav class="flex items-center justify-between px-6 md:px-12 py-4"> <a href="/en/suenodorado"> <img src="/.netlify/images?url=_astro%2FlogosuenosV.CURp80sP.png&#38;w=1486&#38;h=313" alt="Sueno Dorado logo" loading="lazy" decoding="async" width="1486" height="313" class="w-64 bg-cover sm:h-auto"> </a> <ul class="hidden md:flex gap-8 text-base sm:text-sm font-semibold uppercase tracking-wide"> <li><a href="/en" class="hover:underline">Home</a></li> <li><a href="#hospedajes" class="hover:underline">Rooms</a></li> <li><a href="/tours" class="hover:underline">Tours</a></li> </ul> <div class="hidden md:flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-gray-700"> <a href="/suenodorado" class="hover:text-gray-900">ES</a> <span class="text-gray-400">|</span> <span class="text-gray-900">EN</span> </div> <button id="mobile-menu-toggle" class="md:hidden focus:outline-none" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu" onclick="window.toggleMobileMenu?.()"> <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg> </button> </nav> <div id="mobile-menu" class="fixed inset-0 z-50 hidden md:hidden"> <button id="mobile-menu-backdrop" class="absolute inset-0 bg-black/30 opacity-0 transition-opacity duration-200" aria-label="Close menu" onclick="window.toggleMobileMenu?.()"></button> <div id="mobile-menu-panel" class="absolute top-0 right-0 h-full w-[85%] max-w-xs bg-white text-gray-800 p-6 overflow-y-auto translate-x-full transition-transform duration-200" role="dialog" aria-modal="true"> <div class="flex items-center justify-between pb-4 border-b border-gray-200"> <span class="text-sm font-semibold uppercase tracking-widest">Menu</span> <button id="mobile-menu-close" class="text-gray-700 text-sm uppercase tracking-wide" onclick="window.toggleMobileMenu?.()">
+Close
+</button> </div> <ul class="flex flex-col gap-4 pt-6 text-base font-semibold uppercase tracking-wide"> <li class="border-b border-gray-100 pb-4"> <a href="/en" class="block py-2">Home</a> </li> <li class="border-b border-gray-100 pb-4"> <a href="#hospedajes" class="block py-2">Rooms</a> </li> <li class="border-b border-gray-100 pb-4"> <a href="/tours" class="block py-2">Tours</a> </li> <li class="flex items-center gap-2 pt-2 text-sm font-semibold"> <a href="/suenodorado" class="hover:underline">ES</a> <span class="text-gray-400">|</span> <span class="text-gray-900">EN</span> </li> </ul> </div> </div> </header> <script>
+  const menu = document.getElementById("mobile-menu");
+  const panel = document.getElementById("mobile-menu-panel");
+  const backdrop = document.getElementById("mobile-menu-backdrop");
+  const toggleButton = document.getElementById("mobile-menu-toggle");
+
+  function setMenuOpen(open) {
+    if (!menu || !panel || !backdrop) return;
+    toggleButton?.setAttribute("aria-expanded", open ? "true" : "false");
+
+    if (open) {
+      menu.classList.remove("hidden");
+      document.body.classList.add("overflow-hidden");
+      requestAnimationFrame(() => {
+        panel.classList.remove("translate-x-full");
+        backdrop.classList.remove("opacity-0");
+      });
+      return;
+    }
+
+    panel.classList.add("translate-x-full");
+    backdrop.classList.add("opacity-0");
+    document.body.classList.remove("overflow-hidden");
+    window.setTimeout(() => {
+      menu.classList.add("hidden");
+    }, 200);
+  }
+
+  window.toggleMobileMenu = () => {
+    const isHidden = menu?.classList.contains("hidden");
+    setMenuOpen(Boolean(isHidden));
+  };
+</script> <section class="relative h-[70%] sm:h-screen bg-cover bg-center text-white" style="background-image: url(/_astro/bg-gd.BECPrmy_.jpg)"> <div class="absolute inset-0 bg-black/40 z-0 backdrop-blur-sm"></div> <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 md:px-8 max-w-4xl mx-auto"> <span class="inline-flex items-center gap-2 bg-white/15 px-4 py-2 rounded-full text-sm uppercase tracking-widest">
+Direct booking with the hotel
+</span> <h1 class="mt-6 text-3xl sm:text-5xl font-bold drop-shadow-lg">
+Your escape facing the majestic <br class="hidden md:block">
+Arenal Volcano
+</h1> <p class="mt-6 text-xl md:text-2xl font-light drop-shadow-md max-w-2xl">
+Private hot springs, panoramic views, and warm service for an unforgettable stay.
+</p> <div class="mt-8 flex flex-col sm:flex-row items-center gap-4"> <a href="https://reservations.orbebooking.com/Search/Init/Ero8S/en" class="text-lg sm:text-xl inline-block bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-3 px-7 rounded-full transition duration-300">
+Book now
+</a> <a href="#hospedajes" class="text-lg sm:text-xl inline-block border border-white/70 hover:bg-white/10 text-white font-semibold py-3 px-7 rounded-full transition duration-300">
+View rooms
+</a> </div> <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm text-white/90 w-full"> <div class="bg-white/10 rounded-lg py-3 px-4">Private hot springs</div> <div class="bg-white/10 rounded-lg py-3 px-4">Breakfast included</div> <div class="bg-white/10 rounded-lg py-3 px-4">Volcano views</div> </div> </div> </section> <section id="about-us" class="py-16 bg-white text-gray-800"> <div class="mx-auto px-4 md:px-8 flex flex-col-reverse md:flex-row sm:justify-center items-center gap-12"> <div class="w-full md:w-1/2"> <h2 class="text-4xl md:text-4xl font-bold mb-6 text-amber-600">
+A story born in the heart of La Fortuna
+</h2> <p class="text-1xl sm:text-base leading-relaxed mb-4">
+Founded by the Hidalgo-Sanchez family, Hotel Sueno Dorado keeps the warmth and Costa Rican hospitality that make every guest feel part of our family.
+</p> <p class="text-1xl sm:text-base leading-relaxed mb-4">
+The whisper of hot springs, the majesty of Arenal Volcano, and the rainforest symphony create the perfect setting to disconnect and reconnect with what matters most.
+</p> <blockquote class="mt-6 text-xl text-amber-700 italic font-medium border-l-4 border-amber-500 pl-4">
+"True luxury lives in the small details that make you feel at home."
+</blockquote> </div> <div class="w-full md:w-1/3"> <img src="https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/cuadruple_3c349e4f.jpg" alt="Founding family of Hotel Sueno Dorado" class="rounded-2xl shadow-xl object-cover w-full h-auto"> </div> </div> </section> <section id="hospedajes" class="py-16 bg-gray-50 text-gray-800"> <div class="mx-auto px-4 md:px-8"> <h2 class="text-3xl md:text-4xl font-bold text-center text-amber-600 mb-4">
+Rooms designed for deep rest
+</h2> <p class="text-center text-gray-600 text-base md:text-lg mb-12">
+Choose the ideal option for your trip and book direct with the hotel in minutes.
+</p> <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> <div class="bg-white rounded-xl shadow-md overflow-hidden"> <img src="/.netlify/images?url=_astro%2Fintimidad.CTNHcy8c.jpg&#38;w=4032&#38;h=3024" alt="King room" loading="lazy" decoding="async" width="4032" height="3024" class="w-full h-56 object-cover"> <div class="p-6"> <h3 class="text-xl font-semibold text-amber-700 mb-2">Sanctuary of Intimacy</h3> <p class="text-gray-700 text-base mb-4">
+A space where romance and privacy take center stage. Our King room offers unbeatable Arenal Volcano views.
+</p> <div class="mt-2 flex flex-wrap gap-3"> <a href="/habitaciones/king" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 px-4 rounded-full transition duration-300">
+View details
+</a> <a href="https://reservations.orbebooking.com/Search/Init/Ero8S/en" class="inline-block border border-amber-500 text-amber-700 hover:bg-amber-50 font-medium py-2 px-4 rounded-full transition duration-300">
+Book now
+</a> </div> </div> </div> <div class="bg-white rounded-xl shadow-md overflow-hidden"> <img src="https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/cuadruple_3c349e4f.jpg" alt="Family room" class="w-full h-56 object-cover"> <div class="p-6"> <h3 class="text-xl font-semibold text-amber-700 mb-2">Family Retreat</h3> <p class="text-gray-700 text-base mb-4">
+Spacious rooms for up to 5 guests with air conditioning and full amenities, perfect for family time in La Fortuna.
+</p> <div class="mt-2 flex flex-wrap gap-3"> <a href="/habitaciones/familiar" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 px-4 rounded-full transition duration-300">
+View details
+</a> <a href="https://reservations.orbebooking.com/Search/Init/Ero8S/en" class="inline-block border border-amber-500 text-amber-700 hover:bg-amber-50 font-medium py-2 px-4 rounded-full transition duration-300">
+Book now
+</a> </div> </div> </div> <div class="bg-white rounded-xl shadow-md overflow-hidden"> <img src="/.netlify/images?url=_astro%2Fcuadruple.CYiGImk5.jpg&#38;w=4032&#38;h=3024" alt="Quad room" loading="lazy" decoding="async" width="4032" height="3024" class="w-full h-56 object-cover"> <div class="p-6"> <h3 class="text-xl font-semibold text-amber-700 mb-2">Shared Experience</h3> <p class="text-gray-700 text-base mb-4">
+Ideal for friends or families, these rooms for 4 combine privacy and connection for a memorable stay.
+</p> <div class="mt-2 flex flex-wrap gap-3"> <a href="/habitaciones/cuadruple" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 px-4 rounded-full transition duration-300">
+View details
+</a> <a href="https://reservations.orbebooking.com/Search/Init/Ero8S/en" class="inline-block border border-amber-500 text-amber-700 hover:bg-amber-50 font-medium py-2 px-4 rounded-full transition duration-300">
+Book now
+</a> </div> </div> </div> </div> </div> </section> <section id="facilities" class="py-16 bg-white text-gray-800"> <div class="mx-auto px-4 md:px-8"> <h2 class="text-3xl md:text-4xl font-bold text-center text-amber-600 mb-12">
+Facilities that awaken your senses
+</h2> <div class="space-y-12"> <div class="flex flex-col lg:flex-row items-center gap-8"> <div class="lg:w-1/2"> <img src="https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/termales_cf448ff7.JPG" alt="Thermal pools" class="rounded-xl shadow-lg w-full h-auto object-cover"> </div> <div class="lg:w-1/2"> <h3 class="text-2xl font-semibold text-amber-700 mb-4">Thermal Pools</h3> <p class="text-gray-700 text-lg leading-relaxed">
+Enjoy five pools, four of them fed directly by Arenal Volcano hot springs. Different temperatures create a therapeutic experience with volcano views.
+</p> </div> </div> <div class="flex flex-col lg:flex-row-reverse items-center gap-8"> <div class="lg:w-1/2"> <img src="https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/jardin_c7217c3a.JPG" alt="Tropical gardens" class="rounded-xl shadow-lg w-full h-auto object-cover"> </div> <div class="lg:w-1/2"> <h3 class="text-2xl font-semibold text-amber-700 mb-4">Tropical Gardens</h3> <p class="text-gray-700 text-lg leading-relaxed">
+Wander through native flora, listen to exotic birds, and connect with Costa Rican biodiversity in every corner of our gardens.
+</p> </div> </div> <div class="flex flex-col lg:flex-row items-center gap-8"> <div class="lg:w-1/2"> <img src="https://i.ibb.co/BV1KZZ0S/IMG-6005-2.jpg" alt="Gourmet restaurant" class="rounded-xl shadow-lg w-full h-auto object-cover" loading="lazy" decoding="async"> </div> <div class="lg:w-1/2"> <h3 class="text-2xl font-semibold text-amber-700 mb-4">Gourmet Restaurant</h3> <p class="text-gray-700 text-lg leading-relaxed">
+Enjoy an unforgettable culinary experience with Angus cuts, fresh Pacific seafood, and traditional recipes prepared with local ingredients.
+</p> </div> </div> </div> </div> </section> <section id="experiences" class="py-16 bg-gray-50 text-gray-800"> <div class="mx-auto px-4 md:px-8"> <h2 class="text-3xl md:text-4xl font-bold text-center text-amber-600 mb-4">
+Live unique experiences
+</h2> <p class="text-center text-gray-600 text-base md:text-lg mb-12">
+Complement your stay with wellness, adventure, or culture, and book directly with our team.
+</p> <div class="grid grid-cols-1 md:grid-cols-3 gap-8"> <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col"> <img src="https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/7b0ccd43c52b6e51a81af781727b4dfe.jpg" alt="Wellness spa" class="h-52 w-full object-cover" loading="lazy" decoding="async"> <div class="p-6 flex-1 flex flex-col"> <h3 class="text-xl font-semibold text-amber-700 mb-2">Wellness</h3> <p class="text-gray-700 text-base mb-4 flex-1">
+Turn your room into a sanctuary with therapeutic massages and rejuvenating treatments. Relax with local essential oils in the privacy of your space.
+</p> <a href="#reservar" class="mt-auto inline-block bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 px-4 rounded-full transition">
+Book an experience
+</a> </div> </div> <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col"> <img src="https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/27f1d784567f0c562d3f711e91e89156.jpg" alt="Adventure tours" class="h-52 w-full object-cover"> <div class="p-6 flex-1 flex flex-col"> <h3 class="text-xl font-semibold text-amber-700 mb-2">Adventure</h3> <p class="text-gray-700 text-base mb-4 flex-1">
+Canopy, rafting, hiking, and hidden waterfalls. Our team connects you with authentic experiences in La Fortuna.
+</p> <a href="/tours" class="mt-auto inline-block bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 px-4 rounded-full transition">
+Explore tours
+</a> </div> </div> <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col"> <img src="https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/2c8e427c39ad361879db90a0b50b4df2.jpg" alt="Cultural experiences" class="h-52 w-full object-cover" loading="lazy" decoding="async"> <div class="p-6 flex-1 flex flex-col"> <h3 class="text-xl font-semibold text-amber-700 mb-2">Culture</h3> <p class="text-gray-700 text-base mb-4 flex-1">
+From traditional cooking workshops to visits with local communities. Discover Costa Rica beyond conventional tourism.
+</p> <a href="#reservar" class="mt-auto inline-block bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 px-4 rounded-full transition">
+Learn more
+</a> </div> </div> </div> </div> </section> <section id="other-stays" class="py-16 bg-gradient-to-b from-amber-50 to-white text-gray-800"> <div class="mx-auto px-4 md:px-8"> <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 mb-10"> <div> <p class="text-sm uppercase tracking-widest text-amber-600 font-semibold">More options</p> <h2 class="text-3xl md:text-4xl font-bold text-amber-700 mt-2">
+Other stays for your next getaway
+</h2> <p class="text-gray-600 mt-3 max-w-2xl">
+Explore nearby alternatives with different styles. Share with your client and choose the ideal experience.
+</p> </div> <a href="/en/hospedajes" class="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-6 rounded-full transition">
+View all
+<span aria-hidden="true">→</span> </a> </div> <div class="grid grid-cols-1 md:grid-cols-3 gap-8"> <a href="/en/lafortuna-downtown" class="group bg-white rounded-2xl shadow-md overflow-hidden border border-amber-100 hover:shadow-xl transition"> <div class="relative h-52 overflow-hidden"> <img src="https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/ff6601f025ae5fdb8c63cbcb67f7b91f.png" alt="Downtown La Fortuna Boutique Hotel" class="h-full w-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" decoding="async"> <span class="absolute top-4 left-4 bg-white/90 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full"> At the Heart of Experiences </span> </div> <div class="p-6"> <h3 class="text-xl font-semibold text-amber-700">Downtown La Fortuna Boutique Hotel</h3> <p class="text-gray-600 mt-2">We are the most centrally located hotel in La Fortuna, surrounded by culture, nature, and gastronomy.</p> <div class="mt-5 inline-flex items-center text-amber-600 font-semibold">
+Learn more
+<span class="ml-2" aria-hidden="true">→</span> </div> </div> </a><a href="/en/ecovilla" class="group bg-white rounded-2xl shadow-md overflow-hidden border border-amber-100 hover:shadow-xl transition"> <div class="relative h-52 overflow-hidden"> <img src="https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/7b1f6e4fa0414a15f8165e41f0998950.jpg" alt="Eco Village" class="h-full w-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" decoding="async"> <span class="absolute top-4 left-4 bg-white/90 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full"> Love, privacy, and nature in perfect harmony </span> </div> <div class="p-6"> <h3 class="text-xl font-semibold text-amber-700">Eco Village</h3> <p class="text-gray-600 mt-2">Nestled in the mountains with breathtaking views of the valley and rainforest, Eco Village is an intimate cabin created especially for couples who want to celebrate romantic and special moments.</p> <div class="mt-5 inline-flex items-center text-amber-600 font-semibold">
+Learn more
+<span class="ml-2" aria-hidden="true">→</span> </div> </div> </a><a href="/en/monte-real" class="group bg-white rounded-2xl shadow-md overflow-hidden border border-amber-100 hover:shadow-xl transition"> <div class="relative h-52 overflow-hidden"> <img src="https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/49792c3c669ca4a28872da7daa116cad.jpg" alt="Hotel Monte Real" class="h-full w-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" decoding="async"> <span class="absolute top-4 left-4 bg-white/90 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full"> Boutique </span> </div> <div class="p-6"> <h3 class="text-xl font-semibold text-amber-700">Hotel Monte Real</h3> <p class="text-gray-600 mt-2">Modern suites, rooftop views, and personalized service.</p> <div class="mt-5 inline-flex items-center text-amber-600 font-semibold">
+Learn more
+<span class="ml-2" aria-hidden="true">→</span> </div> </div> </a> </div> </div> </section> <section class="py-16 bg-white text-gray-800"> <div class="max-w-6xl mx-auto px-4 md:px-8"> <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10"> <div> <span class="text-xs uppercase tracking-[0.3em] text-emerald-600">Recommended experiences</span> <h2 class="text-3xl md:text-4xl font-bold mt-3">
+Before choosing your hotel, check these tours
+</h2> <p class="mt-3 text-gray-600 max-w-2xl">
+Book directly and secure your spot. Tours curated for quality, safety, and local guiding.
+</p> </div> <a href="/tours" class="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-5 py-2 text-white font-semibold hover:bg-emerald-700 transition">
+See all tours
+<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path> </svg> </a> </div> <div class="grid grid-cols-1 md:grid-cols-3 gap-6"> <div class="rounded-2xl overflow-hidden shadow-lg bg-white flex flex-col"> <div class="relative h-44"> <img src="https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/rafting_1ccfa83f.png" alt="Adventure &#38; Adrenaline" class="w-full h-full object-cover" loading="lazy"> <span class="absolute top-3 left-3 bg-white/90 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full"> Traveler favorite </span> </div> <div class="p-5 flex-1 flex flex-col"> <h3 class="text-lg font-semibold">Adventure &amp; Adrenaline</h3> <p class="mt-2 text-sm text-gray-600 flex-1">Rappelling, canyoning, and intense experiences with expert guides.</p> <div class="mt-4 flex flex-wrap gap-3"> <a href="/tours" class="flex-1 min-w-[140px] text-center rounded-full border border-emerald-600 text-emerald-700 px-4 py-2 text-sm font-semibold hover:bg-emerald-50 transition">
+Explore tours
+</a> <a href="https://api.whatsapp.com/send/?phone=50684597077" target="_blank" rel="noopener noreferrer" class="flex-1 min-w-[140px] text-center rounded-full bg-emerald-600 text-white px-4 py-2 text-sm font-semibold hover:bg-emerald-700 transition">
+Book now
+</a> </div> </div> </div><div class="rounded-2xl overflow-hidden shadow-lg bg-white flex flex-col"> <div class="relative h-44"> <img src="https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/cabalgata__1__f01d99a8.jpg" alt="Nature &#38; Wildlife" class="w-full h-full object-cover" loading="lazy"> <span class="absolute top-3 left-3 bg-white/90 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full"> Family friendly </span> </div> <div class="p-5 flex-1 flex flex-col"> <h3 class="text-lg font-semibold">Nature &amp; Wildlife</h3> <p class="mt-2 text-sm text-gray-600 flex-1">Hikes and wildlife watching in unique landscapes.</p> <div class="mt-4 flex flex-wrap gap-3"> <a href="/tours" class="flex-1 min-w-[140px] text-center rounded-full border border-emerald-600 text-emerald-700 px-4 py-2 text-sm font-semibold hover:bg-emerald-50 transition">
+Explore tours
+</a> <a href="https://api.whatsapp.com/send/?phone=50684597077" target="_blank" rel="noopener noreferrer" class="flex-1 min-w-[140px] text-center rounded-full bg-emerald-600 text-white px-4 py-2 text-sm font-semibold hover:bg-emerald-700 transition">
+Book now
+</a> </div> </div> </div><div class="rounded-2xl overflow-hidden shadow-lg bg-white flex flex-col"> <div class="relative h-44"> <img src="https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/puente_09973237.png" alt="Iconic views &#38; scenery" class="w-full h-full object-cover" loading="lazy"> <span class="absolute top-3 left-3 bg-white/90 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full"> Most booked </span> </div> <div class="p-5 flex-1 flex flex-col"> <h3 class="text-lg font-semibold">Iconic views &amp; scenery</h3> <p class="mt-2 text-sm text-gray-600 flex-1">Volcano, waterfalls, and trails to connect with Arenal.</p> <div class="mt-4 flex flex-wrap gap-3"> <a href="/tours" class="flex-1 min-w-[140px] text-center rounded-full border border-emerald-600 text-emerald-700 px-4 py-2 text-sm font-semibold hover:bg-emerald-50 transition">
+Explore tours
+</a> <a href="https://api.whatsapp.com/send/?phone=50684597077" target="_blank" rel="noopener noreferrer" class="flex-1 min-w-[140px] text-center rounded-full bg-emerald-600 text-white px-4 py-2 text-sm font-semibold hover:bg-emerald-700 transition">
+Book now
+</a> </div> </div> </div> </div> </div> </section> <section id="benefits" class="py-16 bg-white text-gray-800"> <div class="container mx-auto px-4 md:px-8 max-w-4xl"> <h2 class="text-3xl md:text-4xl font-bold text-center text-amber-600 mb-10">
+Benefits of booking direct at Sueno Dorado
+</h2> <ul class="space-y-6 text-lg list-disc list-inside text-gray-700"> <li><strong>Panoramic volcano views</strong> from every room, bar, and restaurant.</li> <li><strong>Exclusive hot springs</strong> in an intimate, private setting.</li> <li><strong>Happy Hour bar</strong> (5-7 pm) with premium cocktails and a relaxed vibe.</li> <li><strong>Gourmet restaurant</strong> with Angus cuts, fresh seafood, and family-friendly options.</li> <li><strong>Breakfast buffet included</strong>, delicious, varied, and energizing.</li> <li><strong>Fiber Wi-Fi</strong>, air conditioning, private parking, cable TV, and comfort in every room.</li> <li><strong>Direct hotel attention</strong> to help with special requests and local tips.</li> </ul> <p class="mt-10 text-xl font-medium text-center text-gray-800">
+Sueno Dorado is more than a hotel. It is your space to reconnect with what truly matters: family, your partner, and your well-being.
+</p> <p class="mt-4 text-center text-amber-600 italic text-lg font-semibold">
+"Book today and start living the golden dream of your vacation."
+</p> </div> </section> <section id="reservar" class="relative bg-cover bg-center text-white" style="background-image: url(/_astro/v2.DhI91uaz.jpg);"> <div class="absolute inset-0 bg-black/60 backdrop-blur-sm z-0"></div> <div class="relative z-10 max-w-3xl mx-auto text-center py-24 px-6"> <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready for your nature escape?</h2> <p class="text-lg md:text-xl mb-8">
+Book direct with the hotel and receive attentive support to personalize every detail of your stay.
+</p> <div class="flex flex-col md:flex-row justify-center gap-4"> <a href="https://reservations.orbebooking.com/Search/Init/Ero8S/en" class="bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 px-6 rounded-full transition">
+Book now
+</a> <a href="https://wa.me/50663156210" onclick="return gtagSendEvent(this.href, this.target)" target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-full transition">
+Ask on WhatsApp
+</a> </div> <p class="mt-10 italic text-amber-300 font-medium text-lg">
+"At Sueno Dorado, we do not just sell rooms, we create memories that last a lifetime."
+</p> </div> </section> <footer id="Footer" class="bg-[#4c4c4c] text-white py-12 px-6"> <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10"> <!-- Logo y redes --> <div class="col-span-1 space-y-4"> <a href="#index" class="block"> <img src="/.netlify/images?url=_astro%2Flogoafortunadosver.Z1e9VN6j.png&#38;w=1606&#38;h=1140" alt="Logo de Afortunados" loading="lazy" decoding="async" width="1606" height="1140" class="w-[150px] object-contain"> </a> <h3 class="text-lg font-semibold text-white">Síguenos</h3> <div class="flex gap-4"> <a href="https://www.facebook.com/Afortunadoscr/" class="p-2 rounded-full text-[#879996] hover:scale-110 transition"> <img src="/.netlify/images?url=_astro%2Ffacebook.ejnf6rkB.png&#38;w=512&#38;h=512" alt="Facebook" loading="lazy" decoding="async" width="512" height="512"> </a> <a href="https://www.instagram.com/afortunadoscr/" class="p-2 rounded-full text-[#879996] hover:scale-110 transition"> <img src="/.netlify/images?url=_astro%2Finstagram.BT1rpC5A.png&#38;w=512&#38;h=512" alt="instagram" loading="lazy" decoding="async" width="512" height="512"> </a> <a href="https://wa.me/50684597077" onclick="return gtagSendEvent(this.href, this.target)" class="p-2 rounded-full text-[#879996] hover:scale-110 transition"> <img src="/.netlify/images?url=_astro%2Fwhatsapp.BtCgz4Tn.png&#38;w=512&#38;h=512" alt="whatsapp" loading="lazy" decoding="async" width="512" height="512"> </a> </div> </div> <!-- Enlaces --> <div class="col-span-4 grid grid-cols-2 sm:grid-cols-4 gap-6 text-sm"> <div> <h4 class="font-semibold mb-3">Experiencias</h4> <ul class="space-y-2"> <li><a href="/tours" class="hover:underline">Tours & Experiencias</a></li> <li><a href="/suenodorado" class="hover:underline">Termales</a></li> <!-- <li><a href="#" class="hover:underline">Transportes</a></li>
+          <li><a href="#" class="hover:underline">Cultural</a></li>
+          <li><a href="#" class="hover:underline">Aventuras</a></li>
+          <li><a href="#" class="hover:underline">Naturaleza</a></li>
+          <li><a href="#" class="hover:underline">Servicios de Spa</a></li>
+          <li><a href="#" class="hover:underline">Culinarios</a></li>
+          <li><a href="#" class="hover:underline">Yoga</a></li> --> </ul> </div> <div> <h4 class="font-semibold mb-3">Hospedajes</h4> <ul class="space-y-2"> <li><a href="/suenodorado" class="hover:underline">Hotel Sueño Dorado</a></li> <li><a href="/lafortuna-downtown" class="hover:underline">Downtown La Fortuna Boutique Hotel</a></li> <li><a href="/monte-real" class="hover:underline">Monte Real</a></li> <li><a href="/cascadadefuego" class="hover:underline">Hotel Cascada de Fuego</a></li> </ul> </div> <div> <h4 class="font-semibold mb-3">Villas</h4> <ul class="space-y-2"> <li><a href="/ecovilla" class="hover:underline">Eco Village</a></li> <!-- <li><a href="#" class="hover:underline">Aventura</a></li>
+          <li><a href="#" class="hover:underline">Romántico</a></li>
+          <li><a href="#" class="hover:underline">Wildlife</a></li>
+          <li><a href="#" class="hover:underline">Nature</a></li> --> </ul> </div> <!-- <div>
+        <h4 class="font-semibold mb-3">Internacional</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:underline">Todo incluido</a></li>
+          <li><a href="#" class="hover:underline">Aventura</a></li>
+          <li><a href="#" class="hover:underline">Romántico</a></li>
+          <li><a href="#" class="hover:underline">Wildlife</a></li>
+          <li><a href="#" class="hover:underline">Nature</a></li>
+        </ul>
+      </div> --> </div> </div> <!-- Línea inferior --> <div class="mt-12 text-center text-sm text-white/80">
+© 2026 Afortunados. Todos los derechos reservados.
+</div> <div>
+Desarrollado por <a href="https://www.innovalinkcr.com">InnovaLinkCR</a> </div> </footer> <a href="https://api.whatsapp.com/send/?phone=50684597077&#38;text=Hello%20Afortunados%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full shadow-lg transition-all duration-300 hover:scale-110 animate-pulse overflow-hidden" aria-label="Contact on WhatsApp" title="Need help? Contact us on WhatsApp" data-astro-cid-lu3iktyv> <img src="/_astro/whatsapp.BtCgz4Tn.png" alt="WhatsApp" class="w-full h-full object-cover" data-astro-cid-lu3iktyv> </a></body></html>
