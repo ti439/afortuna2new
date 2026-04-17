@@ -1,0 +1,84 @@
+[
+
+  {
+    "nombre": "Arenal One Day Package Tour",
+    "descripcion": "El día perfecto para vivir lo mejor de La Fortuna con aventura, naturaleza y vistas inolvidables.",
+    "imagen": "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/puente_09973237.png",
+    "dificultad": "Moderado",
+    "duracion": "9 horas",
+    "ubicacion": "La Palma",
+    "tags": ["Aventura", "Belleza"],
+    "precio": 160
+  },
+  {
+    "nombre": "White Water Rafting II–III",
+    "descripcion": "Aventura de rafting en el río Sarapiquí con rápidos clase II–III, ideal para familias y personas que buscan emoción moderada en un entorno natural, con guías expertos, frutas tropicales y almuerzo típico costarricense.",
+    "imagen": "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/rafting_1ccfa83f.png",
+    "dificultad": "Media",
+    "duracion": "3 horas",
+    "ubicacion": "Río Sarapiquí, Costa Rica",
+    "tags": ["Rafting", "Aventura", "Naturaleza", "Familia", "Río Sarapiquí", "Deportes acuáticos", "Ecoturismo", "Adrenalina", "Actividades al aire libre", "Tour guiado"],
+    "precio": 95
+  },
+  {
+    "nombre": "ATV Tour Ecológico – Aventura en La Fortuna",
+    "descripcion": "Aventura en cuatriciclo entre selva, barro y cultura local a los pies del Volcán Arenal, ideal para principiantes y amantes de la adrenalina.",
+    "imagen": "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/EcologicalATV_1005f75d.jpg",
+    "dificultad": "Media",
+    "duracion": "2.5 - 3 horas",
+    "ubicacion": "La Fortuna, Costa Rica",
+    "tags": ["ATV", "Aventura", "Naturaleza", "Volcán Arenal", "Cultura local", "Selva", "Adrenalina", "Tour guiado", "Actividades al aire libre"],
+    "precio": 105
+  },
+  {
+    "nombre": "Cabalgata al Volcán Arenal",
+    "descripcion": "Explora la selva y lava del Arenal a lomos de los mejores caballos de Costa Rica. Este recorrido en una finca privada rodeada de bosque primario y secundario ofrece vistas panorámicas del cañón volcánico, antiguos flujos de lava y la selva tropical. Con caballos sanos, dóciles y entrenados, cruzarás ríos y senderos naturales mientras observas la fauna local: tucanes, halcones y monos. Al finalizar, disfruta del acceso a las piscinas termales del Hotel Montaña de Fuego. Experiencia segura, auténtica y memorable para familias, parejas y viajeros.",
+    "imagen": "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/cabalgata__1__f01d99a8.jpg",
+    "dificultad": "Moderado",
+    "duracion": "3 horas",
+    "ubicacion": "La Fortuna, Costa Rica",
+    "tags": ["Cabalgata", "Naturaleza", "Volcán Arenal", "Termales", "Familia", "Aventura", "Caballos", "Tour guiado", "Observación de fauna", "Ríos", "Piscinas termales"],
+    "precio": 65
+  },
+  {
+    "nombre": "Tour de Café y Chocolate",
+    "descripcion": "Tour guiado en una granja familiar cerca del Volcán Arenal donde se conoce el proceso del café, el chocolate y la caña de azúcar, con degustaciones incluidas.",
+    "imagen": "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/cafe_60848456.jpg",
+    "dificultad": "Baja",
+    "duracion": "2.5 horas",
+    "ubicacion": "La Fortuna, Costa Rica",
+    "tags": ["Café", "Chocolate", "Tour cultural", "Experiencia gastronómica", "Sostenibilidad", "Agricultura ecológica", "Volcán Arenal", "La Fortuna", "Turismo rural", "Familiar"],
+    "precio": 60
+  },
+  {
+    "nombre": "Canopy Los Cañones",
+    "descripcion": "Vuela sobre la selva tropical del Arenal en una aventura llena de adrenalina. El Canopy Los Cañones es una de las experiencias más completas y seguras de La Fortuna. Con 12 cables y 13 plataformas cubriendo 2.8 km, vivirás la emoción de volar entre árboles gigantes, barrancos naturales y un ecosistema lleno de vida. Observa monos aulladores, tucanes, perezosos, coatíes y aves exóticas. Al finalizar, acceso gratuito a piscinas frías y calientes, granjas de cocodrilos y jardín de mariposas.",
+    "imagen": "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/canopy-pic_e68a4499.jpg",
+    "dificultad": "Moderado",
+    "duracion": "2 horas",
+    "ubicacion": "La Fortuna, Costa Rica",
+    "tags": ["Canopy", "Tirolesa", "Aventura", "Adrenalina", "Selva tropical", "Observación de fauna", "Seguridad", "Guías profesionales", "Naturaleza", "Actividades al aire libre"],
+    "precio": 125
+  },
+  {
+    "nombre": "Puentes Colgantes Místico Park",
+    "descripcion": "Camina entre las copas del bosque y descubre la magia del Arenal. En lo profundo de la selva tropical a los pies del Volcán Arenal, existe un lugar donde la naturaleza y la emoción se entrelazan. A lo largo de 3.2 km de senderos y 14 puentes (6 colgantes), sentirás cómo el bosque te abraza con su energía viva. Cada paso te lleva más cerca del cielo, rodeado por el canto de las aves, el murmullo del agua y el suspiro del viento entre los árboles. Una experiencia sensorial total que combina vista, sonido y emoción. Ideal para quienes buscan aventura, paz y asombro en un solo lugar.",
+    "imagen": "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/puente_09973237.png",
+    "dificultad": "Fácil",
+    "duracion": "2.5 horas",
+    "ubicacion": "La Fortuna, Costa Rica",
+    "tags": ["Puentes", "Caminata", "Naturaleza", "Bosque tropical", "Volcan Arenal", "Observación de fauna", "Aves", "Monos", "Conexión con naturaleza", "Familia", "Parejas", "Experiencia sensorial"],
+    "precio": 85
+  },
+  {
+    "nombre": "Tour a Caballo a la Catarata Río Fortuna",
+    "descripcion": "La manera más escénica y emocionante de descubrir uno de los tesoros más icónicos de La Fortuna. Cabalgata guiada por senderos rodeados de bosque tropical, seguida de acceso a la espectacular Catarata Río Fortuna. Vive la experiencia completa: caminata por bosque, descenso por escalones, vistas impactantes de cañón y vegetación exuberante, momento para fotos memorables y baño refrescante en aguas cristalinas. Aventura accesible, ideal para parejas, familias y viajeros que buscan autenticidad y paisajes inolvidables.",
+    "imagen": "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/caballos_al_volcan_c0c3dd51.jpeg",
+    "dificultad": "Moderado",
+    "duracion": "4 horas",
+    "ubicacion": "La Fortuna, Costa Rica",
+    "tags": ["Cabalgata", "Catarata", "Aventura", "Naturaleza", "Bosque tropical", "Río", "Vistas escenénicas", "Parejas", "Familia", "Fotografía", "Experiencia guiada", "Actividades al aire libre"],
+    "precio": 115
+  }
+
+]

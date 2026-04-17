@@ -1,0 +1,77 @@
+---
+import hoteles from "../../Data/hotels.json"; // tu JSON con la info de hoteles
+---
+
+<section class="py-16 bg-[#f7fbee] text-gray-800 min-h-full">
+  <div class="container mx-auto px-4 md:px-8">
+    <!-- Título -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-green-800">
+        Nuestros Hoteles de Lujo
+      </h2>
+      <p class="max-w-3xl mx-auto mt-4 text-gray-600">
+        Descubre una colección exclusiva de hoteles que ofrecen experiencias únicas en los destinos más deseados del mundo.
+      </p>
+    </div>
+
+    <!-- Grid de Hoteles -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {hoteles.map((hotel) => (
+        <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
+          <!-- Imagen -->
+          <div class="relative">
+            <img
+              src={hotel.imagen}
+              alt={hotel.nombre}
+              class="w-full h-52 object-cover"
+            />
+            {/* {hotel.rating && (
+              <span class="absolute top-3 right-3 bg-white px-2 py-1 rounded text-sm font-medium flex items-center gap-1">
+                ⭐ {hotel.rating}
+              </span>
+            )} */}
+          </div>
+
+          <!-- Contenido -->
+          <div class="p-5 flex-1 flex flex-col">
+            <h3 class="font-semibold text-lg text-green-800">{hotel.nombre}</h3>
+            {/* <p class="text-sm text-gray-500 mb-2">{hotel.ubicacion}</p> */}
+            <p class="text-gray-600 mb-4">{hotel.descripcion}</p>
+
+            <!-- Tags -->
+            {/* <div class="flex flex-wrap gap-2 mb-4">
+              {hotel.servicios?.map((servicio) => (
+                <span class="text-xs px-2 py-1 rounded border text-gray-600">
+                  {servicio}
+                </span>
+              ))}
+            </div> */}
+
+            <!-- Precio -->
+            <p class="text-green-700 font-bold text-xl mb-4">
+              ${hotel.precio} <span class="text-gray-500 text-sm">/noche</span>
+            </p>
+
+            <!-- Botones -->
+            <div class="mt-auto flex gap-3">
+              <a
+                href={hotel.url || "#"}
+                target="_blank"
+                class="flex-1 border border-gray-300 text-gray-700 py-2 rounded-md text-center hover:bg-gray-100 transition"
+              >
+                Ver Más
+              </a>
+              <a
+                href={hotel.reservaUrl || "#"}
+                target="_blank"
+                class="flex-1 bg-green-700 text-white py-2 rounded-md text-center hover:bg-green-800 transition"
+              >
+                Reservar Ahora
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

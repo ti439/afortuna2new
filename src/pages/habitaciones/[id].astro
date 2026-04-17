@@ -1,0 +1,31 @@
+---
+import data from "../../Data/habitaciones.json";
+import HabitacionDetalle from "../../components/suenodorado/HabitacionesDetalle.astro";
+import Layout from "../../layouts/BaseLayout.astro";
+
+const { id } = Astro.params;
+const habitacion = data.find((h) => h.id === id);
+
+if (!habitacion) {
+  throw new Error(`Habitación no encontrada: ${id}`);
+}
+
+export async function getStaticPaths() {
+  return data.map((h) => ({
+    params: { id: h.id }
+  }));
+}
+---
+
+<Layout title={habitacion.titulo}>
+  <HabitacionDetalle
+    titulo={habitacion.titulo}
+    subtitulo={habitacion.subtitulo}
+    descripcion={habitacion.descripcion}
+    precio={habitacion.precio}
+    imagenes={habitacion.imagenes}
+    beneficios={habitacion.beneficios}
+    detalles={habitacion.detalles}
+    experiencias={habitacion.experiencias}
+  />
+</Layout>

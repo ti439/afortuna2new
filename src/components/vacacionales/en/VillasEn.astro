@@ -1,0 +1,106 @@
+---
+import villasEn from "../../../Data/villasnew_en.json";
+
+const villasWithEnUrls = villasEn.map((villa) => ({
+  ...villa,
+  enUrl: `/en${villa.id}`,
+}));
+
+const topToursEn = [
+  {
+    title: "Arenal Rafting Adventure",
+    description: "Top-rated tour with guides and complete safety equipment.",
+    info: "Pair with Catarata Resort for an unforgettable stay.",
+    image: "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/rafting_1ccfa83f.png",
+    link: "/en/tours",
+  },
+  {
+    title: "Arenal Volcano & Waterfall Tour",
+    description: "Most reserved tour for nature explorers.",
+    info: "Includes hotel pickup from Catarata Resort option.",
+    image: "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/puente_09973237.png",
+    link: "/en/tours",
+  },
+  {
+    title: "Wildlife & Hanging Bridges",
+    description: "Best choice for families and wildlife spotting.",
+    info: "Recommended for guests staying at Catarata Resort.",
+    image: "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/cabalgata__1__f01d99a8.jpg",
+    link: "/en/tours",
+  },
+];
+---
+
+<section class="py-16 bg-white text-gray-800 pt-32">
+  <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4 leading-tight">
+      ACCOMMODATION OPTIONS IN LA FORTUNA
+    </h2>
+    <p class="max-w-2xl mx-auto mb-8 text-gray-600 text-base md:text-lg">
+      By staying with us, your visit includes a day pass to the thermal waters of Hotel Sueno Dorado.
+    </p>
+
+
+    <!-- Filters -->
+    <div class="flex flex-wrap justify-center gap-2 mb-10" id="filtros">
+      <button class="filter-btn bg-emerald-100 text-emerald-800 px-4 py-1 rounded-full font-semibold text-sm md:text-base" data-tipo="todas">All</button>
+      <button class="filter-btn px-4 py-1 rounded-full border text-sm md:text-base" data-tipo="villa">Villa</button>
+      <button class="filter-btn px-4 py-1 rounded-full border text-sm md:text-base" data-tipo="hotel">Hotels</button>
+    </div>
+
+    <!-- Responsive grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="card-grid">
+      {villasWithEnUrls.map((villa) => (
+        <div
+          class="card bg-white border rounded-xl shadow-sm p-4 text-left relative w-full"
+          data-tipo={villa.tipo}
+        >
+          {villa.destacado && (
+            <span class="absolute top-4 left-4 bg-red-500 text-white text-xs px-2 py-1 rounded">
+              {villa.destacado}
+            </span>
+          )}
+          <img src={villa.imagen} alt={villa.nombre} class="rounded-lg w-full h-52 object-cover mb-4" />
+          <h3 class="font-semibold text-lg mb-1">{villa.nombre}</h3>
+          <p class="text-sm text-gray-600 mb-2 line-clamp-3">{villa.descripcionCorta}</p>
+          <p class="text-sm text-gray-700 font-medium mb-3">Capacity: {villa.capacidad}</p>
+          <a
+            href={villa.enUrl}
+            class="inline-block border border-emerald-600 text-emerald-600 hover:bg-emerald-600 hover:text-white transition px-4 py-2 rounded-full text-sm font-semibold w-full text-center"
+          >
+            MORE INFO
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- JS for filtering -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll(".filter-btn");
+    const cards = document.querySelectorAll(".card");
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const tipo = btn.getAttribute("data-tipo");
+
+        // Mark active button
+        buttons.forEach((b) =>
+          b.classList.remove("bg-emerald-100", "text-emerald-800", "font-semibold")
+        );
+        btn.classList.add("bg-emerald-100", "text-emerald-800", "font-semibold");
+
+        // Show/hide cards
+        cards.forEach((card) => {
+          if (tipo === "todas" || card.dataset.tipo === tipo) {
+            card.classList.remove("hidden");
+          } else {
+            card.classList.add("hidden");
+          }
+        });
+      });
+    });
+  });
+</script>

@@ -1,0 +1,89 @@
+---
+export interface Props {
+  titulo: string;
+  subtitulo: string;
+  descripcion: string;
+  precio: string;
+  imagenes: string[];
+  beneficios: string[];
+  detalles: string[];
+  experiencias: string[];
+}
+
+const {
+  titulo,
+  subtitulo,
+  descripcion,
+  precio,
+  imagenes,
+  beneficios,
+  detalles,
+  experiencias,
+} = Astro.props;
+import Header from '../../components/HeaderPages.astro';
+import Footer from '../../components/Footer.astro';
+---
+<Header/>
+<section class="py-16 bg-white text-gray-800">
+  <div class="container mx-auto px-4 md:px-8">
+
+    <!-- Título y descripción -->
+    <div class="grid lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <span class="inline-block bg-amber-100 text-amber-700 text-sm px-3 py-1 rounded-full mb-4 font-medium">
+          {subtitulo}
+        </span>
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">{titulo}</h1>
+        <p class="text-lg leading-relaxed mb-6">{descripcion}</p>
+
+        <!-- Beneficios -->
+        <div class="grid grid-cols-2 gap-4 mb-6 text-sm text-gray-700">
+          {beneficios.map((item) => (
+            <div class="flex items-center gap-2">
+              <span class="text-amber-600 text-xl">•</span>
+              {item}
+            </div>
+          ))}
+        </div>
+
+        <!-- Precio + botón -->
+        <div class="flex items-center gap-4 mt-4">
+          <!-- <p class="text-2xl font-bold text-gray-900">${precio} <span class="text-sm font-normal text-gray-500">/noche</span></p> -->
+          <a href="https://reservations.orbebooking.com/Search/Init/Ero8S/es" class="bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2 px-6 rounded-full transition">
+            Reservar Ahora
+          </a>
+        </div>
+      </div>
+
+      <!-- Galería (solo imagen principal en esta base) -->
+      <div class="w-full">
+        <img src={imagenes[0]} alt={titulo} class="rounded-xl shadow-lg w-full object-cover" />
+        <!-- Si quieres miniaturas: 
+        <div class="flex gap-2 mt-4">
+          <img src={imagenes[1]} class="w-20 h-20 rounded-lg object-cover border" />
+          <img src={imagenes[2]} class="w-20 h-20 rounded-lg object-cover border" />
+        </div> 
+        -->
+      </div>
+    </div>
+
+    <!-- Sección inferior con dos columnas -->
+    <div class="grid md:grid-cols-2 gap-10 mt-16">
+      <div>
+        <h2 class="text-xl font-bold mb-4">Detalles de la habitación</h2>
+        <ul class="list-disc list-inside space-y-2 text-gray-700">
+          {detalles.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-bold mb-4">Experiencias incluidas</h2>
+        <ul class="list-disc list-inside space-y-2 text-gray-700">
+          {experiencias.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+<Footer/>

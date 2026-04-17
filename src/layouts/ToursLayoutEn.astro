@@ -1,0 +1,60 @@
+---
+import Tours from "../components/en/tours/ToursEn.astro";
+import Header from "../components/en/HeaderPagesEn.astro";
+import Footer from "../components/Footer.astro";
+import Hreflang from "../components/seo/Hreflang.astro";
+import WhatsAppButton from "../components/en/WhatsAppButtonEn.astro";
+
+import "../styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/faviconA.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Afortunados - Pura Vida</title>
+    <meta charset="UTF-8" />
+    <Hreflang />
+  
+    <script is:inline>
+      function gtagSendEvent(url, target) {
+        var isBlank = target === "_blank";
+        var navigate = function () {
+          if (!isBlank && typeof url === "string") {
+            window.location = url;
+          }
+        };
+        if (typeof gtag === "function") {
+          gtag("event", "conversion_event_outbound_click", {
+            event_callback: navigate,
+            event_timeout: 2000,
+          });
+          return !isBlank;
+        }
+        navigate();
+        return !isBlank;
+      }
+    </script>
+  </head>
+
+  <body class="flex flex-col min-h-screen bg-white text-gray-900">
+    <Header esHref="/tours" />
+    <div class="flex-1">
+      <Tours />
+    </div>
+    <div>
+      <Footer />
+    </div>
+    <WhatsAppButton />
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>

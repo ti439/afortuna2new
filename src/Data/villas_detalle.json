@@ -1,0 +1,206 @@
+[
+  {
+    "id": "ecovilla",
+    "titulo": "Eco Village",
+    "subtitulo": "Eco Village: amor, privacidad y naturaleza en perfecta armonía",
+    "parrafoPrincipal": "Ubicada en las montañas con vistas que roban el aliento al valle y al bosque tropical, Eco Village es una cabaña íntima creada especialmente para parejas que desean celebrar momentos románticos y especiales, rodeados por la belleza exuberante y la calma absoluta de Costa Rica.",
+    "price": "$190.00",
+    "secciones": [
+      {
+        "titulo": "Cabaña privada con cama King",
+        "contenido": "decorada con un diseño moderno y sofisticado."
+      },
+      {
+        "titulo": "Piscina privada exclusiva",
+        "contenido": "ideal para relajarte en pareja, con total intimidad."
+      },
+      {
+        "titulo": "Vistas privilegiadas al bosque y valle",
+        "contenido": "generando un ambiente mágico y romántico."
+      }
+    ],
+    "beneficios": [
+      "Acceso a Aguas Termales del Hotel Sueño Dorado",
+      "Parqueo privado, aire acondicionado, TV, y confort absoluto para disfrutar cada minuto juntos."
+    ],
+    "habitaciones": [
+      "1 habitaciones privadas con baño propio",
+      "Capacidad para 2 personas (1 cama queen)",
+      "Materiales naturales y vistas al bosque"
+    ],
+    "sustentabilidad": "Operamos bajo principios de sustentabilidad: piscinas alimentadas por el río, prácticas de bajo impacto ambiental y conservación activa del ecosistema que nos rodea.",
+    "cierre": "Sorprende a tu pareja con la escapada romántica ideal: reserva tu estadía en Eco Village ahora.",
+    "imagenPrincipal": "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/ecovilla_dcfd0dc3.jpg",
+    "imagenes": [ 
+      {
+        "src": "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/piscina_a5e6b762.jpg"
+      },
+      {
+        "src": "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/afuera_843b1191.jpg"
+      }
+
+    ],
+    "url": "https://reservations.orbebooking.com/Search/Init/AhA2g/es"
+  },
+  {
+    "id": "sueno-dorado",
+    "titulo": "Despertá frente al majestuoso Volcán Arenal",
+    "subtitulo": "Exclusividad, aguas termales privadas y naturaleza pura en el corazón de La Fortuna.",
+    "parrafoPrincipal": "Una historia que nace del corazón de La Fortuna Fundado por la familia Hidalgo-Sánchez, el Hotel Sueño Dorado conserva la calidez y hospitalidad costarricense que transforma a cada huésped en parte de nuestra familia. El susurro de las aguas termales, la majestuosidad del volcán Arenal y la sinfonía del bosque tropical crean el escenario perfecto para desconectarte del mundo exterior y reconectar con lo esencial. El verdadero lujo está en los pequeños detalles que te hacen sentir en casa.",
+    "price": "$180",
+    "secciones": [
+      {
+        "titulo": "3 Tipos de Habitaciones",
+        "contenido": [
+          "Santuario de Intimidad ",
+          "El Refugio Familiar ",
+          "Experiencia Compartida"
+        ]
+      },
+      {
+        "titulo": "Piscina privada exclusiva",
+        "contenido": "ideal para relajarte en pareja, con total intimidad."
+      },
+      {
+        "titulo": "Vistas privilegiadas al bosque y valle",
+        "contenido": "generando un ambiente mágico y romántico."
+      }
+    ],
+    "beneficios": [
+      "Piscinas Termales",
+      "Jardines Tropicales, Restaurante Gourmet."
+    ],
+    "habitaciones": [
+      "Cama King size con ropa de cama premium",
+      "Materiales naturales y vistas al bosque"
+    ],
+    "sustentabilidad": "Vive experiencias unicas",
+    "cierre": "Bienestar, Aventura, Cultura",
+    "imagenPrincipal": "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/sueno_dorado_1.jpg",
+    "imagenes": [
+      {
+        "src": "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/sueno_dorado_1.jpg"
+      },
+      {
+        "src": "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/sueno_dorado_2.jpg"
+      },
+      {
+        "src": "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/sueno_dorado_3.jpg"
+      }
+    ],
+    "url": "/suenodorado"
+  },
+  {
+    "id": "monte-real",
+    "titulo": "Hotel Monte Real",
+    "subtitulo": "Nuestro hermoso hotel está en una magnifica ubicación en La Fortuna",
+    "parrafoPrincipal": "Tenemos vistas increíbles al volcán Arenal y la combinación perfecta entre cultura y naturaleza. Estamos en el centro del pueblo, y a su vez, rodeados de un pequeño y maravilloso bosque. Tendrás la oportunidad de ver el famoso perezoso, una gran variedad de coloridas ranas, iguanas, ardillas, pájaros y hasta monos. ¡No dudes en visitarnos, nuestro profesional y cálido equipo te esperan!",
+    "price": "$150",
+    "secciones": [
+      {
+        "titulo": "3 Tipos de Habitaciones",
+        "contenido": [
+          "Habitaciones Standar",
+          "Habitaciones Premium",
+          "Habitaciones JR Suite"
+        ]
+      },
+      {
+        "titulo": "Restaurante The Garden",
+        "contenido": "Comida Mediterranea y LatinoAmericana"
+      },
+      {
+        "titulo": "Vistas privilegiadas al bosque y valle",
+        "contenido": "generando un ambiente mágico y romántico."
+      }
+    ],
+    "beneficios": [
+      "Piscinas Termales",
+      "Jardines Tropicales, Restaurante Gourmet."
+    ],
+    "habitaciones": [
+      "Cama King size con ropa de cama premium",
+      "Materiales naturales y vistas al bosque"
+    ],
+    "sustentabilidad": "Vive experiencias unicas",
+    "cierre": "Bienestar, Aventura, Cultura",
+    "imagenPrincipal": "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/monte_real_1.jpg",
+    "imagenes": [
+      {
+        "src": "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/monte_real_1.jpg"
+      },
+      {
+        "src": "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/monte_real_2.jpg"
+      },
+      {
+        "src": "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/monte_real_3.jpg"
+      }
+    ],
+    "url": "https://wa.me/50684597077"
+  },
+  {
+    "id": "lafortuna-downtown",
+    "titulo": "La Fortuna Downtown Boutique Hotel",
+    "subtitulo": "Una experiencia única de hospedaje en el corazón de La Fortuna",
+    "parrafoPrincipal": "Somos el hotel más céntrico de La Fortuna, rodeado de cultura, naturaleza y gastronomía. Contamos con acceso inmediato a las principales atracciones como el Volcán Arenal, la Catarata Río Fortuna y las aguas termales. Nuestro equipo te acompaña para vivir aventuras, relajación y bienestar en un ambiente boutique y auténtico.",
+    "price": "$140",
+    "secciones": [
+      {
+        "titulo": "Tipos de Habitaciones",
+        "contenido": [
+          "Habitaciones Estándar",
+          "Habitaciones Premium",
+          "Suites con balcón y vistas"
+        ]
+      },
+      {
+        "titulo": "Gastronomía y Entretenimiento",
+        "contenido": [
+          "María Bonita Steak House: cortes premium y experiencias sensoriales",
+          "Selva Negra: mixología creativa y cenas temáticas",
+          "Pinto e' Gallo: desayunos buffet costarricenses",
+          "La Ventanita de María Bonita: parrilla rápida con calidad gourmet"
+        ]
+      },
+      {
+        "titulo": "Arte y Cultura",
+        "contenido": "Nuwa Art Gallery, espacio vibrante que celebra el arte costarricense."
+      },
+      {
+        "titulo": "Facilidades",
+        "contenido": [
+          "Piscina al aire libre",
+          "WiFi de alta velocidad",
+          "Parqueo privado y estación de carga eléctrica",
+          "Concierge y tours personalizados"
+        ]
+      }
+    ],
+    "beneficios": [
+      "Ubicación céntrica",
+      "Ambiente boutique",
+      "Gastronomía variada",
+      "Galería de arte en sitio"
+    ],
+    "habitaciones": [
+      "Camas king y queen con ropa de cama premium",
+      "Decoración moderna con detalles naturales",
+      "Opciones con balcón y vistas"
+    ],
+    "sustentabilidad": "Promovemos el turismo responsable y experiencias auténticas en conexión con la naturaleza y la comunidad local.",
+    "cierre": "Bienestar, Gastronomía, Cultura y Aventura en un solo lugar",
+    "imagenPrincipal": "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/lafortuna_downtown_1.jpg",
+    "imagenes": [
+      {
+        "src": "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/lafortuna_downtown_1.jpg"
+      },
+      {
+        "src": "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/lafortuna_downtown_2.jpg"
+      },
+      {
+        "src": "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/lafortuna_downtown_3.jpg"
+      }
+    ],
+    "url": "https://wa.me/50684597077"
+  }
+]

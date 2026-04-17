@@ -1,0 +1,67 @@
+---
+import Image from "astro/components/Image.astro";
+import tripadvisor from "../../assets/tripadvisor.png";
+import google from "../../assets/google.png";
+import booking from "../../assets/booking.png";
+import expedia from "../../assets/expedia.png";
+---
+
+<section id="reviews" class="bg-white text-center py-10">
+  <h2 class="text-4xl font-bold text-gray-500 mb-8 uppercase">Ratings on platforms</h2>
+  <div class="flex flex-wrap justify-center gap-8 text-gray-700 font-medium">
+    <div>
+      <p class="text-2xl font-bold">8.3/10</p>
+      <p><span class="number" data-value="500">0</span> reviews</p>
+      <Image src={tripadvisor} alt="Tripadvisor" class="w-32 mx-auto mt-2" />
+    </div>
+    <div>
+      <p class="text-2xl font-bold">8.3/10</p>
+      <p><span class="number" data-value="2123">0</span> reviews</p>
+      <Image src={google} alt="Google" class="w-28 mx-auto mt-2" />
+    </div>
+    <div>
+      <p class="text-2xl font-bold">8.3/10</p>
+      <p><span class="number" data-value="1500">0</span> reviews</p>
+      <Image src={booking} alt="Booking" class="w-32 mx-auto mt-2" />
+    </div>
+    <div>
+      <p class="text-2xl font-bold">8.3/10</p>
+      <p><span class="number" data-value="1234">0</span> reviews</p>
+      <Image src={expedia} alt="Expedia" class="w-32 mx-auto mt-2" />
+    </div>
+  </div>
+</section>
+
+<script>
+  function animateNumbers() {
+    const numbers = document.querySelectorAll(".number");
+    numbers.forEach((number) => {
+      number.innerText = "0";
+      const updateCount = () => {
+        const target = +number.getAttribute("data-value");
+        const count = +number.innerText;
+        const increment = Math.max(1, target / 100);
+        if (count < target) {
+          number.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount, 20);
+        } else {
+          number.innerText = target;
+        }
+      };
+      updateCount();
+    });
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateNumbers();
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  observer.observe(document.querySelector("#reviews"));
+</script>

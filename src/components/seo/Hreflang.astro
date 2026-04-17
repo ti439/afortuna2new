@@ -1,0 +1,14 @@
+---
+const pathname = Astro.url?.pathname ?? "/";
+const basePath = pathname.replace(/^\/en(\/|$)/, "/");
+const esPath = basePath;
+const enPath = basePath === "/" ? "/en" : `/en${basePath}`;
+
+const esHref = `https://afortunadoscr.com${esPath}`;
+const enHref = `https://afortunadoscr.com${enPath}`;
+const xDefaultHref = "https://afortunadoscr.com/";
+---
+
+<link rel="alternate" hreflang="es" href={esHref} />
+<link rel="alternate" hreflang="en" href={enHref} />
+<link rel="alternate" hreflang="x-default" href={xDefaultHref} />

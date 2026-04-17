@@ -1,0 +1,33 @@
+---
+import { Image } from "astro:assets";
+import familia from "../../assets/volcan.JPG"; // Cambia por tu imagen real
+---
+
+<section id="sobre-nosotros" class="py-16 bg-white text-gray-800">
+  <div class=" mx-auto px-4 md:px-8 flex flex-col-reverse md:flex-row sm:justify-center items-center gap-12">
+    
+    <!-- Texto -->
+    <div class="w-full md:w-1/2">
+      <h2 class="text-4xl md:text-4xl font-bold mb-6 text-amber-600">
+        Una historia que nace del corazón de La Fortuna
+      </h2>
+
+      <p class="text-1xl sm:text-base leading-relaxed mb-4">
+        Fundado por la familia Hidalgo-Sánchez, el Hotel Sueño Dorado conserva la calidez y hospitalidad costarricense que transforma a cada huésped en parte de nuestra familia.
+      </p>
+
+      <p class="text-1xl sm:text-base leading-relaxed mb-4">
+        El susurro de las aguas termales, la majestuosidad del volcán Arenal y la sinfonía del bosque tropical crean el escenario perfecto para desconectarte del mundo exterior y reconectar con lo esencial.
+      </p>
+
+      <blockquote class="mt-6 text-xl  text-amber-700 italic font-medium border-l-4 border-amber-500 pl-4">
+        “El verdadero lujo está en los pequeños detalles que te hacen sentir en casa.”
+      </blockquote>
+    </div>
+
+    <!-- Imagen -->
+    <div class="w-full md:w-1/3">
+      <Image src={familia} alt="Familia fundadora del Hotel Sueño Dorado" class="rounded-2xl shadow-xl object-cover w-full h-auto" />
+    </div>
+  </div>
+</section>

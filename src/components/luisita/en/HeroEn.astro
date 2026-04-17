@@ -1,0 +1,27 @@
+---
+const heroBgUrl = "https://i.ibb.co/zWDQKjrm/fuera.jpg";
+const useBackgroundImage = true;
+---
+
+<section
+  class={`relative flex items-center h-screen text-[#e8e2d9] ${
+    useBackgroundImage ? "bg-cover bg-center" : "bg-[#2f4b2c]"
+  }`}
+  style={useBackgroundImage ? `background-image: url(${heroBgUrl});` : undefined}
+>
+  {useBackgroundImage && <div class="absolute inset-0 bg-black/45"></div>}
+  <div class="relative z-10 w-full flex flex-col items-center text-center px-6 sm:px-8 max-w-5xl mx-auto space-y-8">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
+      Costa Rican flavor, living tradition, and soulful rest
+    </h1>
+    <p class="text-lg sm:text-xl md:text-2xl font-medium text-[#d2c9be]">
+      Some places are not just visited... they feel like home
+    </p>
+    <a
+      href="https://us2.cloudbeds.com/reservation/brsfX9"
+      class="inline-block bg-[#e6ddd2] text-[#2f4b2c] font-semibold text-lg sm:text-xl py-3 px-8 rounded-md shadow transition duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+    >
+      Book your experience
+    </a>
+  </div>
+</section>

@@ -1,0 +1,141 @@
+---
+import { Image } from "astro:assets";
+
+import senderoFoto from "../../assets/monteverde.jpg";
+const jardinFoto = "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/_A745099_e8335452.jpg";
+---
+
+<section id="instalaciones" class="relative overflow-hidden bg-emerald-50/60 py-16 px-6">
+  <div class="pointer-events-none absolute -left-20 top-8 h-72 w-72 rounded-full bg-emerald-200/40 blur-3xl"></div>
+  <div class="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-amber-200/40 blur-3xl"></div>
+
+  <div class="relative mx-auto max-w-6xl space-y-12">
+    <div class="text-center">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-800/80">Instalaciones</p>
+      <h2 class="mt-3 text-3xl font-bold text-gray-900 md:text-4xl">
+        Espacios para disfrutar La Fortuna sin prisa
+      </h2>
+      <p class="mt-3 text-base text-gray-700">
+        Piscinas, sendero y jardin mirador pensados para vivir la naturaleza con comodidad.
+      </p>
+    </div>
+
+    <article class="grid grid-cols-1 gap-6 rounded-2xl bg-white p-6 shadow-lg lg:grid-cols-[1.1fr_1fr]">
+      <div class="overflow-hidden rounded-xl">
+        <img
+          src="https://i.ibb.co/4wsbnHD5/piscina-A-1.jpg"
+          alt="Piscinas y pool bar en Abuela Luisita"
+          class="h-72 w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+      <div class="flex h-full flex-col">
+        <h3 class="text-xl font-semibold text-gray-900">Piscinas & Pool Bar</h3>
+        <p class="mt-3 text-sm text-gray-600">
+          Frescura, diversion y descanso sin prisa. Rodeada de jardines tropicales y el sonido
+          natural de La Fortuna, nuestra area de piscina baja el ritmo y te invita a quedarte.
+        </p>
+        <p class="mt-3 text-sm text-gray-600">
+          Disfruta una piscina principal de diseno organico, dos piscinas para ninos y un pool bar
+          elegante para pedir tu bebida sin salir del agua. Un acceso privado conecta con el bosque
+          para sentir la biodiversidad muy cerca.
+        </p>
+        <div class="mt-5 rounded-xl bg-emerald-50 px-4 py-3">
+          <p class="text-sm font-semibold text-emerald-900">Para quien es perfecta</p>
+          <ul class="mt-3 space-y-2 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="mt-2 inline-block h-2 w-2 rounded-full bg-emerald-500"></span>
+              Familias: ninos felices, papas tranquilos
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-2 inline-block h-2 w-2 rounded-full bg-emerald-500"></span>
+              Parejas: relax + cocteles + ambiente verde
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-2 inline-block h-2 w-2 rounded-full bg-emerald-500"></span>
+              Grupos: un punto social con estilo
+            </li>
+          </ul>
+        </div>
+        <a
+          href="https://wa.me/50684597077"
+          onclick="return gtagSendEvent(this.href, this.target)"
+          class="mt-6 inline-flex items-center justify-center rounded-full bg-emerald-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-600"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Reserva tu pase del dia
+        </a>
+      </div>
+    </article>
+
+    <article class="grid grid-cols-1 gap-6 rounded-2xl bg-white p-6 shadow-lg lg:grid-cols-[1fr_1.1fr]">
+      <div class="flex h-full flex-col">
+        <h3 class="text-xl font-semibold text-gray-900">Sendero Natural</h3>
+        <p class="mt-3 text-sm text-gray-600">
+          El bosque te espera sin salir del hotel. Con aproximadamente 3.5 km de recorrido
+          circular, el Sendero Natural Abuela Luisita es una experiencia de ecoturismo autentica y
+          accesible para todas las edades.
+        </p>
+        <p class="mt-3 text-sm text-gray-600">
+          Caminas entre paisaje tropical, cruzas rios de aguas cristalinas y sentis la vida del
+          bosque en cada paso. Amaneceres y atardeceres pueden regalarte el sonido de monos
+          aulladores y aves como tucanes. La diversidad de ranas y pequenas especies convierte el
+          recorrido en un momento educativo y muy tico.
+        </p>
+        <p class="mt-4 text-sm font-semibold text-emerald-700">
+          Un paseo suave, seguro y lleno de vida para recordar por anos.
+        </p>
+        <a
+          href="https://wa.me/50684597077"
+          onclick="return gtagSendEvent(this.href, this.target)"
+          class="mt-6 inline-flex items-center justify-center rounded-full border border-emerald-500/40 px-5 py-3 text-sm font-semibold text-emerald-700 transition hover:bg-emerald-50"
+        >
+          Reservar ahora
+        </a>
+      </div>
+      <div class="overflow-hidden rounded-xl">
+        <Image
+          src={senderoFoto}
+          alt="Sendero natural de Abuela Luisita"
+          class="h-72 w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+    </article>
+
+    <article class="grid grid-cols-1 gap-6 rounded-2xl bg-white p-6 shadow-lg lg:grid-cols-[1.1fr_1fr]">
+      <div class="overflow-hidden rounded-xl">
+        <img
+          src={jardinFoto}
+          alt="Jardin y mirador con vista al Arenal"
+          class="h-72 w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+      <div class="flex h-full flex-col">
+        <h3 class="text-xl font-semibold text-gray-900">Jardin & Mirador</h3>
+        <p class="mt-3 text-sm text-gray-600">
+          Sobre el restaurante se abre un oasis tropical pensado para el descanso y las mejores
+          fotos. Senderos suaves, cesped cuidado y arboles frutales jovenes como mora, cacao,
+          naranja, guayaba, cas y aguacate llenan el espacio de aromas, color y vida.
+        </p>
+        <p class="mt-3 text-sm text-gray-600">
+          El diseno respeta lo mas importante: la vista al Volcan Arenal. Nada obstruye ese
+          encuentro visual, especialmente al amanecer o cuando la luz dorada del atardecer pinta el
+          paisaje. En uno de los puntos mas altos se encuentra la escalinata al Monumento de la
+          Abuela Luisita, un mirador iconico e imperdible.
+        </p>
+        <div class="mt-4 rounded-xl bg-amber-50 px-4 py-3">
+          <p class="text-sm font-semibold text-amber-900">Recomendacion</p>
+          <p class="mt-2 text-sm text-gray-700">
+            Trae calzado comodo y tomate el tiempo. Este espacio es una experiencia sensorial.
+          </p>
+        </div>
+        <p class="mt-4 text-sm font-semibold text-emerald-700">
+          Subi, respira profundo y llevate tu foto mas tica del viaje.
+        </p>
+      </div>
+    </article>
+  </div>
+</section>

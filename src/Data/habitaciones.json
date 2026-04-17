@@ -1,0 +1,92 @@
+[
+  {
+    "id": "king",
+    "titulo": "Habitación King",
+    "subtitulo": "Santuario de Intimidad",
+    "descripcion": "Sumérgete en un espacio donde el romance y la privacidad son protagonistas. Nuestra habitación con cama King ofrece vistas inigualables al volcán Arenal.",
+    "precio": "120",
+    "imagenes": ["/src/assets/v2.jpg", "/src/assets/v2.jpg"],
+    "beneficios": [
+      "Vista al volcán",
+      "Ideal para parejas",
+      "Desayuno incluido",
+      "WiFi gratuito",
+      "Smart TV",
+      "Baño privado"
+    ],
+    "detalles": [
+      "Cama King size con ropa de cama premium",
+      "Balcón privado con vista panorámica al volcán Arenal",
+      "Baño completo con amenidades orgánicas",
+      "Aire acondicionado y ventilador de techo",
+      "Minibar surtido con bebidas locales",
+      "Caja fuerte digital"
+    ],
+    "experiencias": [
+      "Desayuno típico costarricense servido en la terraza",
+      "Acceso a las piscinas termales del hotel",
+      "Cóctel de bienvenida con frutas tropicales",
+      "Servicio de concierge para reserva de tours y actividades"
+    ]
+  },
+  {
+    "id": "familiar",
+    "titulo": "Habitación Familiar",
+    "subtitulo": "El Refugio Familiar",
+    "descripcion": "Diseñadas pensando en el confort de toda la familia, nuestras habitaciones para 5 personas combinan espacio y privacidad. Tres camas cuidadosamente distribuidas, aire acondicionado y amenidades completas para que grandes y pequeños disfruten de la magia de La Fortuna sin renunciar al confort de un hogar.",
+    "precio": "135",
+    "imagenes": ["/src/assets/v2.jpg", "/src/assets/v2.jpg"],
+    "beneficios": [
+      "Ideal para familias",
+      "Tres camas cómodas",
+      "Desayuno incluido",
+      "WiFi gratuito",
+      "Aire acondicionado",
+      "Baño privado"
+    ],
+    "detalles": [
+      "Tres camas distribuidas para máximo confort",
+      "Espacio amplio para convivir en familia",
+      "Baño completo con artículos de higiene natural",
+      "Aire acondicionado y ventilación eficiente",
+      "TV por cable y escritorio de trabajo",
+      "Minibar con refrigerios familiares"
+    ],
+    "experiencias": [
+      "Desayuno buffet variado para toda la familia",
+      "Acceso a piscinas termales del hotel",
+      "Zona de juegos para niños",
+      "Atención personalizada y servicio de concierge"
+    ]
+  },
+  {
+    "id": "cuadruple",
+    "titulo": "Habitación Cuádruple",
+    "subtitulo": "Experiencia Compartida",
+    "descripcion": "Perfectas para grupos de amigos o familias, nuestras ocho habitaciones para 4 personas ofrecen el equilibrio perfecto entre privacidad y convivencia. Cada detalle está pensado para que puedas disfrutar de la compañía de tus seres queridos mientras te sumerges en la experiencia Sueño Dorado.",
+    "precio": "110",
+    "imagenes": ["/src/assets/v2.jpg", "/src/assets/v2.jpg"],
+    "beneficios": [
+      "Capacidad para 4 personas",
+      "WiFi gratuito",
+      "Desayuno incluido",
+      "TV por cable",
+      "Baño privado",
+      "Aire acondicionado"
+    ],
+    "detalles": [
+      "Dos camas dobles con colchones ortopédicos",
+      "Espacio compartido con zona de descanso",
+      "Baño privado con ducha caliente y amenities",
+      "Aire acondicionado y ventilador de techo",
+      "Escritorio y espacio para equipaje",
+      "Cerradura electrónica y seguridad adicional"
+    ],
+    "experiencias": [
+      "Desayuno costarricense completo",
+      "Acceso a piscinas termales del hotel",
+      "Cóctel de bienvenida para el grupo",
+      "Recomendaciones locales y actividades grupales"
+    ]
+  }
+]

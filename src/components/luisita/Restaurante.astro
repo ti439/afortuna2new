@@ -1,0 +1,95 @@
+---
+import { Image } from "astro:assets";
+const restauranteFoto = "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/resta_8bafe231.jpg";
+---
+
+<section id="tours" class="relative overflow-hidden bg-amber-50/60 py-16 px-6">
+  <div class="pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-amber-200/40 blur-3xl"></div>
+  <div class="pointer-events-none absolute -right-20 -top-16 h-80 w-80 rounded-full bg-emerald-200/40 blur-3xl"></div>
+
+  <div class="relative mx-auto max-w-6xl">
+    <div class="mb-10 text-center">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-amber-800/80">Restaurante</p>
+      <h2 class="mt-3 text-3xl font-bold text-gray-900 md:text-4xl">
+        Restaurante Abuela Luisita: cocina tica con historia y corazon
+      </h2>
+      <p class="mt-3 text-base text-gray-700">
+        En el corazon de La Fortuna, celebramos la comida que une a la familia y cuenta historias.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+      <div class="rounded-2xl bg-white p-6 shadow-lg md:p-8">
+        <h3 class="text-xl font-semibold text-gray-900">Tradicion que sabe a casa</h3>
+        <p class="mt-3 text-sm text-gray-600">
+          Lo que empezo como tradicion panadera en Zarcero hoy se transforma en un menu que honra
+          los sabores de siempre con ingredientes frescos de la zona.
+        </p>
+        <p class="mt-4 text-sm text-gray-600">
+          El ambiente es calido, acogedor y autentico. Desde desayunos tipicos para arrancar el dia
+          con energia, hasta almuerzos y cenas que te hacen sentir en casa, cada plato esta pensado
+          para dejar un recuerdo emocional.
+        </p>
+
+        <div class="mt-6 rounded-xl bg-amber-50 px-5 py-4">
+          <p class="text-sm font-semibold text-amber-900">Ideal para</p>
+          <ul class="mt-3 space-y-2 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="mt-2 inline-block h-2 w-2 rounded-full bg-emerald-500"></span>
+              Familias que buscan sabor casero
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-2 inline-block h-2 w-2 rounded-full bg-emerald-500"></span>
+              Parejas que quieren una cena con alma
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-2 inline-block h-2 w-2 rounded-full bg-emerald-500"></span>
+              Viajeros que desean probar Costa Rica real
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a
+            href="https://wa.me/50684597077"
+            onclick="return gtagSendEvent(this.href, this.target)"
+            class="inline-flex items-center justify-center rounded-full bg-emerald-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-600"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Reservar por WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="flex h-full flex-col justify-between gap-6 rounded-2xl bg-white p-6 shadow-lg md:p-8">
+        <div class="overflow-hidden rounded-xl">
+          <img
+            src={restauranteFoto}
+            alt="Restaurante Abuela Luisita"
+            class="h-56 w-full object-cover md:h-64"
+            loading="lazy"
+          />
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-gray-900">Veni a comer como en casa</h3>
+          <p class="mt-3 text-sm text-gray-600">
+            Pero en La Fortuna. Aqui cada detalle busca que te lleves mas que una buena foto:
+            te lleves un recuerdo emocional.
+          </p>
+        </div>
+        <div class="rounded-xl border border-amber-200 bg-gradient-to-br from-amber-50 via-white to-emerald-50 p-5">
+          <p class="text-sm text-gray-700">
+            Desayunos tipicos, almuerzos con sabor casero y cenas con historia. Cocina tica real,
+            servida con calidez y orgullo local.
+          </p>
+          <div class="mt-4 flex items-center gap-3 text-xs text-emerald-700">
+            <span class="rounded-full bg-emerald-100 px-3 py-1 font-semibold">Ambiente familiar</span>
+            <span class="rounded-full bg-emerald-100 px-3 py-1 font-semibold">Ingredientes locales</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

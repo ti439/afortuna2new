@@ -1,0 +1,98 @@
+---
+import { Image } from "astro:assets";
+import king from "../../assets/intimidad.jpg";
+import familiar from "../../assets/familiar.jpg";
+import cuadruples from "../../assets/cuadruple.jpg";
+import quintuple from "../../assets/quintuple.jpg";
+
+---
+
+<section id="hospedajes" class="py-16 bg-gray-50 text-gray-800">
+  <div class=" mx-auto px-4 md:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-amber-600 mb-4">
+      Habitaciones diseñadas para tu descanso
+    </h2>
+    <p class="text-center text-gray-600 text-base md:text-lg mb-12">
+      Elige la opción ideal para tu viaje y reserva directo con el hotel en minutos.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Habitación King -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <Image src={king} alt="Habitación King" class="w-full h-56 object-cover" />
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-amber-700 mb-2">Santuario de Intimidad</h3>
+          <p class="text-gray-700 text-base mb-4">
+            Sumérgete en un espacio donde el romance y la privacidad son protagonistas. Nuestra habitación con cama King ofrece vistas inigualables al volcán Arenal.
+          </p>
+          <div class="mt-2 flex flex-wrap gap-3">
+            <a
+              href={`/habitaciones/${"king"}`}
+              class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 px-4 rounded-full transition duration-300"
+            >
+              Ver detalles
+            </a>
+            <a
+              href="https://reservations.orbebooking.com/Search/Init/Ero8S/es"
+              class="inline-block border border-amber-500 text-amber-700 hover:bg-amber-50 font-medium py-2 px-4 rounded-full transition duration-300"
+            >
+              Reservar ahora
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Habitación Familiar -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <Image src={quintuple} alt="Habitación Familiar" class="w-full h-56 object-cover" />
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-amber-700 mb-2">El Refugio Familiar</h3>
+          <p class="text-gray-700 text-base mb-4">
+            Espaciosas habitaciones para 5 personas con aire acondicionado y todas las amenidades, ideales para disfrutar de La Fortuna en familia.
+          </p>
+          <div class="mt-2 flex flex-wrap gap-3">
+            <a
+              href={`/habitaciones/${"familiar"}`}
+              class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 px-4 rounded-full transition duration-300"
+            >
+              Ver detalles
+            </a>
+            <a
+              href="https://reservations.orbebooking.com/Search/Init/Ero8S/es"
+              class="inline-block border border-amber-500 text-amber-700 hover:bg-amber-50 font-medium py-2 px-4 rounded-full transition duration-300"
+            >
+              Reservar ahora
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Habitación Cuádruple -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <Image src={cuadruples} alt="Habitación Cuádruple" class="w-full h-56 object-cover" />
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-amber-700 mb-2">Experiencia Compartida</h3>
+          <p class="text-gray-700 text-base mb-4">
+            Perfectas para grupos de amigos o familias, estas habitaciones para 4 personas combinan privacidad y convivencia para una estadía inolvidable.
+          </p>
+          <div class="mt-2 flex flex-wrap gap-3">
+            <a
+              href={`/habitaciones/${"cuadruple"}`}
+              class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 px-4 rounded-full transition duration-300"
+            >
+              Ver detalles
+            </a>
+            <a
+              href="https://reservations.orbebooking.com/Search/Init/Ero8S/es"
+              class="inline-block border border-amber-500 text-amber-700 hover:bg-amber-50 font-medium py-2 px-4 rounded-full transition duration-300"
+            >
+              Reservar ahora
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

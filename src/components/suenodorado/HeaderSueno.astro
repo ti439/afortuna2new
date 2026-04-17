@@ -1,0 +1,120 @@
+---
+// Importación de imagen de forma nativa en Astro
+import { Image } from "astro:assets";
+import logoAF from "../../assets/logosuenosV.png";
+---
+
+<header class="w-full bg-yellow-200/10 text-gray-800  shadow">
+  <nav class="flex items-center justify-between px-6 md:px-12 py-4">
+    <!-- Logo -->
+    <a href="/">
+      <Image src={logoAF} alt="Logo de Afortunados" class=" w-64 bg-cover sm:h-auto" />
+    </a>
+
+    <!-- Menú de escritorio -->
+    <ul class="hidden md:flex gap-8 text-base sm:text-sm  font-semibold uppercase tracking-wide">
+      <li><a href="/" class="hover:underline">Inicio</a></li>
+      <li><a href="#hospedajes" class="hover:underline">Habitaciones</a></li>
+      <li><a href="/tours" class="hover:underline">Tours</a></li>
+    </ul>
+
+    <div class="hidden md:flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-gray-700">
+      <span class="text-gray-900">ES</span>
+      <span class="text-gray-400">|</span>
+      <a href="/en/suenodorado" class="hover:text-gray-900">EN</a>
+    </div>
+
+    <!-- Botón hamburguesa -->
+    <button
+      id="mobile-menu-toggle"
+      class="md:hidden focus:outline-none"
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+      aria-label="Abrir menú"
+      onclick="window.toggleMobileMenu?.()"
+    >
+      <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Menú móvil -->
+  <div id="mobile-menu" class="fixed inset-0 z-50 hidden md:hidden">
+    <button
+      id="mobile-menu-backdrop"
+      class="absolute inset-0 bg-black/30 opacity-0 transition-opacity duration-200"
+      aria-label="Cerrar menú"
+      onclick="window.toggleMobileMenu?.()"
+    ></button>
+    <div
+      id="mobile-menu-panel"
+      class="absolute top-0 right-0 h-full w-[85%] max-w-xs bg-white text-gray-800 p-6 overflow-y-auto translate-x-full transition-transform duration-200"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div class="flex items-center justify-between pb-4 border-b border-gray-200">
+        <span class="text-sm font-semibold uppercase tracking-widest">Menú</span>
+        <button
+          id="mobile-menu-close"
+          class="text-gray-700 text-sm uppercase tracking-wide"
+          onclick="window.toggleMobileMenu?.()"
+        >
+          Cerrar
+        </button>
+      </div>
+
+      <ul class="flex flex-col gap-4 pt-6 text-base font-semibold uppercase tracking-wide">
+        <li class="border-b border-gray-100 pb-4">
+          <a href="/" class="block py-2">Inicio</a>
+        </li>
+        <li class="border-b border-gray-100 pb-4">
+          <a href="#hospedajes" class="block py-2">Habitaciones</a>
+        </li>
+        <li class="border-b border-gray-100 pb-4">
+          <a href="/tours" class="block py-2">Tours</a>
+        </li>
+        <li class="flex items-center gap-2 pt-2 text-sm font-semibold">
+          <span class="text-gray-900">ES</span>
+          <span class="text-gray-400">|</span>
+          <a href="/en/suenodorado" class="hover:underline">EN</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<script is:inline>
+  const menu = document.getElementById("mobile-menu");
+  const panel = document.getElementById("mobile-menu-panel");
+  const backdrop = document.getElementById("mobile-menu-backdrop");
+  const toggleButton = document.getElementById("mobile-menu-toggle");
+
+  function setMenuOpen(open) {
+    if (!menu || !panel || !backdrop) return;
+    toggleButton?.setAttribute("aria-expanded", open ? "true" : "false");
+
+    if (open) {
+      menu.classList.remove("hidden");
+      document.body.classList.add("overflow-hidden");
+      requestAnimationFrame(() => {
+        panel.classList.remove("translate-x-full");
+        backdrop.classList.remove("opacity-0");
+      });
+      return;
+    }
+
+    panel.classList.add("translate-x-full");
+    backdrop.classList.add("opacity-0");
+    document.body.classList.remove("overflow-hidden");
+    window.setTimeout(() => {
+      menu.classList.add("hidden");
+    }, 200);
+  }
+
+  window.toggleMobileMenu = () => {
+    const isHidden = menu?.classList.contains("hidden");
+    setMenuOpen(Boolean(isHidden));
+  };
+</script>

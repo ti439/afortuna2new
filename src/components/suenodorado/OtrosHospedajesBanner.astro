@@ -1,0 +1,211 @@
+---
+const hospedajes = [
+  {
+    name: "Downtown La Fortuna Boutique Hotel",
+    tag: "En el Corazón de las experiencias",
+    description: "Somos el hotel más céntrico de La Fortuna, rodeado de cultura, naturaleza y gastronomía.",
+    url: "/lafortuna-downtown",
+    image: "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/ff6601f025ae5fdb8c63cbcb67f7b91f.png"
+  },
+  {
+    name: "Eco Village",
+    tag: "Amor, privacidad y naturaleza en perfecta armonía",
+    description: "Ubicada en las montañas con vistas que roban el aliento al valle y al bosque tropical, Eco Village es una cabaña íntima creada especialmente para parejas que desean celebrar momentos románticos y especiales",
+    url: "/ecovilla",
+    image: "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/7b1f6e4fa0414a15f8165e41f0998950.jpg"
+  },
+  {
+    name: "Hotel Monte Real",
+    tag: "Beautiful hotel location in La Fortuna",
+    description: "We have incredible views of the Arenal volcano and the perfect combination of culture and nature.",
+    url: "/monte-real",
+    image: "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/49792c3c669ca4a28872da7daa116cad.jpg"
+  },
+  {
+    name: "Hotel Catarata Resort",
+    tag: "Relajación y tradición costarricense",
+    description: "Un espacio ideal para descansar en La Fortuna con áreas verdes, excelente ubicación y atención cercana.",
+    url: "/catarataresort",
+    image: "https://i.ibb.co/zWDQKjrm/fuera.jpg"
+  }
+];
+---
+
+<section id="otros-hospedajes" data-otros-hospedajes-carousel class="py-16 bg-gradient-to-b from-amber-50 to-white text-gray-800">
+  <div class="mx-auto px-4 md:px-8">
+    <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 mb-10">
+      <div>
+        <p class="text-sm uppercase tracking-widest text-amber-600 font-semibold">Más opciones</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-amber-700 mt-2">
+          Otros hospedajes para tu próxima escapada
+        </h2>
+        <p class="text-gray-600 mt-3 max-w-2xl">
+          Descubre alternativas cercanas con estilos diferentes. Comparte con tu cliente y elige la experiencia ideal.
+        </p>
+      </div>
+      <a href="/hospedajes" class="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-6 rounded-full transition">
+        Ver todos
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <div class="relative">
+      <div data-carousel-track class="otros-hospedajes-track flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth">
+        {hospedajes.map((hospedaje) => (
+          <a
+            href={hospedaje.url}
+            data-carousel-card
+            class="group bg-white rounded-2xl shadow-md overflow-hidden border border-amber-100 hover:shadow-xl transition shrink-0 snap-start basis-full md:basis-[calc((100%-1.5rem)/2)] lg:basis-[calc((100%-3rem)/3)]"
+          >
+            <div class="relative h-60 md:h-72 overflow-hidden">
+              <img src={hospedaje.image} alt={hospedaje.name} class="h-full w-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" decoding="async" />
+              <span class="absolute top-4 left-4 bg-white/90 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full">
+                {hospedaje.tag}
+              </span>
+            </div>
+            <div class="p-6 md:p-8">
+              <h3 class="text-2xl font-semibold text-amber-700">{hospedaje.name}</h3>
+              <p class="text-gray-600 mt-3 max-w-3xl">{hospedaje.description}</p>
+              <div class="mt-6 inline-flex items-center text-amber-600 font-semibold">
+                Conocer más
+                <span class="ml-2" aria-hidden="true">→</span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <button
+        type="button"
+        data-carousel-prev
+        class="absolute left-3 top-1/2 -translate-y-1/2 z-10 h-10 w-10 rounded-full bg-white/95 text-amber-700 shadow-md border border-amber-100 hover:bg-white transition disabled:opacity-40 disabled:cursor-not-allowed"
+        aria-label="Hospedaje anterior"
+      >
+        <span aria-hidden="true">‹</span>
+      </button>
+
+      <button
+        type="button"
+        data-carousel-next
+        class="absolute right-3 top-1/2 -translate-y-1/2 z-10 h-10 w-10 rounded-full bg-white/95 text-amber-700 shadow-md border border-amber-100 hover:bg-white transition disabled:opacity-40 disabled:cursor-not-allowed"
+        aria-label="Siguiente hospedaje"
+      >
+        <span aria-hidden="true">›</span>
+      </button>
+    </div>
+
+    <div class="mt-6 flex items-center justify-center gap-2">
+      {hospedajes.map((_, index) => (
+        <button
+          type="button"
+          data-carousel-dot
+          data-index={index}
+          class={`h-2.5 rounded-full transition-all ${
+            index === 0 ? "w-6 bg-amber-600" : "w-2.5 bg-amber-200"
+          }`}
+          aria-label={`Ir al hospedaje ${index + 1}`}
+        />
+      ))}
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  (() => {
+    const carousels = document.querySelectorAll("[data-otros-hospedajes-carousel]");
+
+    carousels.forEach((carousel) => {
+      const track = carousel.querySelector("[data-carousel-track]");
+      const cards = Array.from(carousel.querySelectorAll("[data-carousel-card]"));
+      const dots = Array.from(carousel.querySelectorAll("[data-carousel-dot]"));
+      const prevButton = carousel.querySelector("[data-carousel-prev]");
+      const nextButton = carousel.querySelector("[data-carousel-next]");
+
+      if (!track || !cards.length || !prevButton || !nextButton) return;
+
+      const getStep = () => {
+        if (cards.length < 2) return track.clientWidth;
+        return cards[1].offsetLeft - cards[0].offsetLeft;
+      };
+
+      const getCurrentIndex = () => {
+        const step = getStep();
+        if (!step) return 0;
+        const rawIndex = Math.round(track.scrollLeft / step);
+        return Math.min(Math.max(rawIndex, 0), getMaxStartIndex());
+      };
+
+      const getMaxStartIndex = () => {
+        const maxScrollLeft = track.scrollWidth - track.clientWidth;
+        let maxIndex = 0;
+
+        cards.forEach((card, index) => {
+          if (card.offsetLeft <= maxScrollLeft + 1) {
+            maxIndex = index;
+          }
+        });
+
+        return maxIndex;
+      };
+
+      const setActiveDot = (activeIndex, maxIndex) => {
+        dots.forEach((dot, dotIndex) => {
+          const isVisible = dotIndex <= maxIndex;
+          const isActive = dotIndex === activeIndex;
+          dot.classList.toggle("hidden", !isVisible);
+          dot.classList.toggle("bg-amber-600", isActive);
+          dot.classList.toggle("w-6", isActive);
+          dot.classList.toggle("bg-amber-200", !isActive);
+          dot.classList.toggle("w-2.5", !isActive);
+          dot.disabled = !isVisible;
+          dot.setAttribute("aria-current", isActive ? "true" : "false");
+        });
+      };
+
+      const updateControls = () => {
+        const maxStartIndex = getMaxStartIndex();
+        const currentIndex = getCurrentIndex();
+        prevButton.disabled = currentIndex === 0;
+        nextButton.disabled = currentIndex >= maxStartIndex;
+        setActiveDot(currentIndex, maxStartIndex);
+      };
+
+      const goToIndex = (targetIndex) => {
+        const safeIndex = Math.min(Math.max(targetIndex, 0), getMaxStartIndex());
+        track.scrollTo({
+          left: cards[safeIndex].offsetLeft,
+          behavior: "smooth",
+        });
+      };
+
+      prevButton.addEventListener("click", () => {
+        goToIndex(getCurrentIndex() - 1);
+      });
+
+      nextButton.addEventListener("click", () => {
+        goToIndex(getCurrentIndex() + 1);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+          goToIndex(index);
+        });
+      });
+
+      track.addEventListener("scroll", updateControls, { passive: true });
+      window.addEventListener("resize", updateControls);
+      updateControls();
+    });
+  })();
+</script>
+
+<style is:inline>
+  .otros-hospedajes-track {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .otros-hospedajes-track::-webkit-scrollbar {
+    display: none;
+  }
+</style>

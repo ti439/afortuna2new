@@ -1,0 +1,140 @@
+---
+import { Image } from "astro:assets";
+
+import senderoFoto from "../../../assets/monteverde.jpg";
+const jardinFoto = "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/_A745099_e8335452.jpg";
+---
+
+<section id="instalaciones" class="relative overflow-hidden bg-emerald-50/60 py-16 px-6">
+  <div class="pointer-events-none absolute -left-20 top-8 h-72 w-72 rounded-full bg-emerald-200/40 blur-3xl"></div>
+  <div class="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-amber-200/40 blur-3xl"></div>
+
+  <div class="relative mx-auto max-w-6xl space-y-12">
+    <div class="text-center">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-800/80">Facilities</p>
+      <h2 class="mt-3 text-3xl font-bold text-gray-900 md:text-4xl">
+        Spaces to enjoy La Fortuna at your own pace
+      </h2>
+      <p class="mt-3 text-base text-gray-700">
+        Pools, nature trail, and garden lookout designed to enjoy nature in comfort.
+      </p>
+    </div>
+
+    <article class="grid grid-cols-1 gap-6 rounded-2xl bg-white p-6 shadow-lg lg:grid-cols-[1.1fr_1fr]">
+      <div class="overflow-hidden rounded-xl">
+        <img
+          src="https://i.ibb.co/4wsbnHD5/piscina-A-1.jpg"
+          alt="Pools and pool bar at Abuela Luisita"
+          class="h-72 w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+      <div class="flex h-full flex-col">
+        <h3 class="text-xl font-semibold text-gray-900">Pools & Pool Bar</h3>
+        <p class="mt-3 text-sm text-gray-600">
+          Freshness, fun, and slow-living comfort. Surrounded by tropical gardens and the natural
+          sounds of La Fortuna, our pool area slows the day down and invites you to stay longer.
+        </p>
+        <p class="mt-3 text-sm text-gray-600">
+          Enjoy a main organic-shaped pool, two pools for children, and an elegant pool bar where
+          you can order your drink without leaving the water. A private access path also connects
+          you with the forest to feel biodiversity up close.
+        </p>
+        <div class="mt-5 rounded-xl bg-emerald-50 px-4 py-3">
+          <p class="text-sm font-semibold text-emerald-900">Perfect for</p>
+          <ul class="mt-3 space-y-2 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="mt-2 inline-block h-2 w-2 rounded-full bg-emerald-500"></span>
+              Families: happy kids, relaxed parents
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-2 inline-block h-2 w-2 rounded-full bg-emerald-500"></span>
+              Couples: relax + cocktails + green atmosphere
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-2 inline-block h-2 w-2 rounded-full bg-emerald-500"></span>
+              Groups: a social spot with style
+            </li>
+          </ul>
+        </div>
+        <a
+          href="https://wa.me/50684597077"
+          onclick="return gtagSendEvent(this.href, this.target)"
+          class="mt-6 inline-flex items-center justify-center rounded-full bg-emerald-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-600"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Book your day pass
+        </a>
+      </div>
+    </article>
+
+    <article class="grid grid-cols-1 gap-6 rounded-2xl bg-white p-6 shadow-lg lg:grid-cols-[1fr_1.1fr]">
+      <div class="flex h-full flex-col">
+        <h3 class="text-xl font-semibold text-gray-900">Nature Trail</h3>
+        <p class="mt-3 text-sm text-gray-600">
+          The forest is waiting for you right inside the property. With around 3.5 km of circular
+          trail, the Abuela Luisita Nature Trail is an authentic ecotourism experience accessible to
+          all ages.
+        </p>
+        <p class="mt-3 text-sm text-gray-600">
+          Walk through tropical landscapes, cross crystal-clear streams, and feel the forest in
+          every step. At sunrise and sunset you may hear howler monkeys and spot birds like
+          toucans. Frogs and small wildlife make the walk educational, local, and memorable.
+        </p>
+        <p class="mt-4 text-sm font-semibold text-emerald-700">
+          A gentle, safe, and lively walk you will remember for years.
+        </p>
+        <a
+          href="https://wa.me/50684597077"
+          onclick="return gtagSendEvent(this.href, this.target)"
+          class="mt-6 inline-flex items-center justify-center rounded-full border border-emerald-500/40 px-5 py-3 text-sm font-semibold text-emerald-700 transition hover:bg-emerald-50"
+        >
+          Book now
+        </a>
+      </div>
+      <div class="overflow-hidden rounded-xl">
+        <Image
+          src={senderoFoto}
+          alt="Abuela Luisita nature trail"
+          class="h-72 w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+    </article>
+
+    <article class="grid grid-cols-1 gap-6 rounded-2xl bg-white p-6 shadow-lg lg:grid-cols-[1.1fr_1fr]">
+      <div class="overflow-hidden rounded-xl">
+        <img
+          src={jardinFoto}
+          alt="Garden and lookout with Arenal views"
+          class="h-72 w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+      <div class="flex h-full flex-col">
+        <h3 class="text-xl font-semibold text-gray-900">Garden & Lookout</h3>
+        <p class="mt-3 text-sm text-gray-600">
+          Above the restaurant, a tropical oasis opens up for rest and unforgettable photos. Soft
+          paths, well-kept lawns, and young fruit trees like blackberry, cacao, orange, guava, cas,
+          and avocado fill the space with aroma, color, and life.
+        </p>
+        <p class="mt-3 text-sm text-gray-600">
+          The design respects what matters most: the view of Arenal Volcano. Nothing blocks that
+          scene, especially at sunrise or when golden sunset light paints the landscape. At one of
+          the highest points, stairs lead to the Abuela Luisita Monument, an iconic viewpoint you
+          should not miss.
+        </p>
+        <div class="mt-4 rounded-xl bg-amber-50 px-4 py-3">
+          <p class="text-sm font-semibold text-amber-900">Recommendation</p>
+          <p class="mt-2 text-sm text-gray-700">
+            Wear comfortable shoes and take your time. This space is a sensory experience.
+          </p>
+        </div>
+        <p class="mt-4 text-sm font-semibold text-emerald-700">
+          Climb up, breathe deeply, and take your most local photo of the trip.
+        </p>
+      </div>
+    </article>
+  </div>
+</section>

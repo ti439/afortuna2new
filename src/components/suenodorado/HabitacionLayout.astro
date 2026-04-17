@@ -1,0 +1,30 @@
+---
+export interface Props {
+  titulo: string;
+  subtitulo: string;
+  descripcion: string;
+  imagen: string;
+}
+const { titulo, subtitulo, descripcion, imagen } = Astro.props;
+import { Image } from "astro:assets";
+
+// Si vas a usar imagen desde ruta dinámica, puedes usar <img> en lugar de <Image>
+---
+
+<section class="py-16 bg-white text-gray-800">
+  <div class="container mx-auto px-4 md:px-8 flex flex-col lg:flex-row items-center gap-10">
+    <div class="w-full lg:w-1/2">
+      <img src={imagen} alt={titulo} class="rounded-xl shadow-lg w-full h-auto object-cover" />
+    </div>
+
+    <div class="w-full lg:w-1/2">
+      <h2 class="text-3xl font-bold text-amber-700 mb-2">{titulo}</h2>
+      <h3 class="text-xl italic text-amber-500 font-medium mb-4">{subtitulo}</h3>
+      <p class="text-lg leading-relaxed text-gray-700">{descripcion}</p>
+
+      <a href="/#reservar" class="mt-6 inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 px-6 rounded-full transition">
+        Reservar Ahora
+      </a>
+    </div>
+  </div>
+</section>

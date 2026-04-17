@@ -1,0 +1,124 @@
+---
+// Importación de imágenes
+import tours from "../assets/tours.jpg";
+import casa from "../assets/villas/IMG_1702.jpg";
+
+const servicios = [
+  {
+    titulo: "Hospedajes",
+    descripcion: "Hospedaje en La Fortuna con atencion local y ubicaciones privilegiadas.",
+    imagen: casa.src,
+    color: "bg-sky-50",
+    url: "/vacacionales",
+    cta: "Ver hospedajes",
+    badge: "+120 huespedes felices",
+    bullets: [
+      "Casas vacacionales cuidadosamente diseñadas",
+      "Check-in flexible y soporte rapido",
+      "Ideal para familias, parejas y grupos",
+    ],
+  },
+  {
+    titulo: "Actividades de Aventura y Naturaleza",
+    descripcion: "Tours y transporte confiable para vivir la naturaleza sin estres.",
+    imagen: tours.src,
+    color: "bg-amber-50",
+    url: "/tours",
+    cta: "Ver tours",
+    badge: "Operadores verificados",
+    bullets: [
+      "Aventura, termales y naturaleza",
+      "Guias locales y experiencias seguras",
+      "Coordinacion de horarios y traslados",
+    ],
+  },
+];
+---
+
+<main>
+  <section class="relative flex justify-center">
+    <!-- Fondo con imagen y degradado -->
+    <div class="absolute inset-0 w-full h-[600px] overflow-hidden">
+      <!-- Degradado más envolvente -->
+      <div class="absolute inset-0 bg-gradient-to-br from-green-600 via-blue-400 to-black/80"></div>
+    </div>
+
+    <!-- Contenido -->
+    <div class="relative pt-40 pb-20 px-4 md:px-6 max-w-7xl mx-auto">
+      <div class="text-center mb-12 text-white">
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
+          Hospedajes y tours en Costa Rica con atencion local 24/7
+        </h2>
+        <p class="text-white/90 max-w-2xl mx-auto text-lg">
+          Reserva facil, soporte rapido y experiencias reales cerca de La Fortuna. <br />
+          Con <strong>Afortunados</strong>, viajas seguro, comodo y sin complicaciones.
+        </p>
+        <p class="text-white/80 text-sm mt-4">
+          Respuesta rapida · Atencion personalizada
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 place-items-center justify-items-center">
+        {
+          servicios.map((servicio) => (
+            <div
+              class="flex flex-col items-center text-center overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group w-full max-w-xs bg-white rounded-xl"
+            >
+              <!-- Imagen -->
+              <div class="relative h-48 w-full overflow-hidden">
+                <img
+                  src={servicio.imagen}
+                  alt={servicio.titulo}
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                />
+              </div>
+
+              <!-- Info -->
+              <div class={`${servicio.color} p-5 w-full`}>
+                <h3 class="font-bold text-lg mb-2 upper">{servicio.titulo}</h3>
+                <p class="text-sm text-gray-700 min-h-[3rem]">{servicio.descripcion}</p>
+                <ul class="text-sm text-gray-700 mt-4 space-y-2">
+                  {servicio.bullets.map((bullet) => (
+                    <li class="flex items-center gap-2">
+                      <span class="inline-block h-2 w-2 rounded-full bg-emerald-500"></span>
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+                <div class="mt-4 inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-700">
+                  {servicio.badge}
+                </div>
+              </div>
+
+              <!-- Botón -->
+              <div class={`${servicio.color} pt-0 pb-5 px-5 w-full`}>
+                <a
+                  href={servicio.url}
+                  aria-label={servicio.cta}
+                  class="block w-full text-center sm:flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-green-400 hover:from-green-600 hover:to-emerald-500 text-white font-semibold py-2 px-4 rounded-full transition duration-200"
+                >
+                  {servicio.cta}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13 7l5 5m0 0l-5 5m5-5H6"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</main>

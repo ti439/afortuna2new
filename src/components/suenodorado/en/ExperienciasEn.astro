@@ -1,0 +1,67 @@
+---
+import { Image } from "astro:assets";
+const bienestar = "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/7b0ccd43c52b6e51a81af781727b4dfe.jpg";
+const aventura = "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/27f1d784567f0c562d3f711e91e89156.jpg";
+const cultura = "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/2c8e427c39ad361879db90a0b50b4df2.jpg";
+---
+
+<section id="experiences" class="py-16 bg-gray-50 text-gray-800">
+  <div class="mx-auto px-4 md:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-amber-600 mb-4">
+      Live unique experiences
+    </h2>
+    <p class="text-center text-gray-600 text-base md:text-lg mb-12">
+      Complement your stay with wellness, adventure, or culture, and book directly with our team.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
+        <img src={bienestar} alt="Wellness spa" class="h-52 w-full object-cover" loading="lazy" decoding="async" />
+        <div class="p-6 flex-1 flex flex-col">
+          <h3 class="text-xl font-semibold text-amber-700 mb-2">Wellness</h3>
+          <p class="text-gray-700 text-base mb-4 flex-1">
+            Turn your room into a sanctuary with therapeutic massages and rejuvenating treatments. Relax with local essential oils in the privacy of your space.
+          </p>
+          <a
+            href="#reservar"
+            class="mt-auto inline-block bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 px-4 rounded-full transition"
+          >
+            Book an experience
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
+        <Image src={aventura} alt="Adventure tours" class="h-52 w-full object-cover" />
+        <div class="p-6 flex-1 flex flex-col">
+          <h3 class="text-xl font-semibold text-amber-700 mb-2">Adventure</h3>
+          <p class="text-gray-700 text-base mb-4 flex-1">
+            Canopy, rafting, hiking, and hidden waterfalls. Our team connects you with authentic experiences in La Fortuna.
+          </p>
+          <a
+            href="/tours"
+            class="mt-auto inline-block bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 px-4 rounded-full transition"
+          >
+            Explore tours
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
+        <img src={cultura} alt="Cultural experiences" class="h-52 w-full object-cover" loading="lazy" decoding="async" />
+        <div class="p-6 flex-1 flex flex-col">
+          <h3 class="text-xl font-semibold text-amber-700 mb-2">Culture</h3>
+          <p class="text-gray-700 text-base mb-4 flex-1">
+            From traditional cooking workshops to visits with local communities. Discover Costa Rica beyond conventional tourism.
+          </p>
+          <a
+            href="#reservar"
+            class="mt-auto inline-block bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 px-4 rounded-full transition"
+          >
+            Learn more
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,115 @@
+---
+interface Imagen {
+  src: string;
+  alt?: string;
+}
+
+interface Seccion {
+  titulo: string;
+  contenido: string | string[];
+}
+
+export interface Props {
+  id: string;
+  titulo: string;
+  subtitulo: string;
+  parrafoPrincipal: string;
+  imagenPrincipal: string;
+  imagenes: Imagen[];
+  secciones: Seccion[];
+  beneficios: string[];
+  habitaciones: string[];
+  sustentabilidad: string;
+  cierre: string;
+  url?: string;
+  precio?: string;
+}
+
+const {
+  id,
+  titulo,
+  subtitulo,
+  parrafoPrincipal,
+  imagenPrincipal,
+  imagenes,
+  secciones,
+  beneficios,
+  habitaciones,
+  sustentabilidad,
+  cierre,
+  url,
+  precio,
+} = Astro.props;
+
+import Header from "../../en/HeaderPagesEn.astro";
+import ImageCarousel from "../../PhotoCarrusel";
+import ToursTeaser from "../../en/ToursTeaserEN.astro";
+---
+
+<Header esHref={`/${id}`} />
+
+<section class="py-16 px-6 pt-28 max-w-5xl mx-auto text-gray-800">
+  <div class="mb-8">
+    <ImageCarousel client:load images={imagenes} />
+    <div class="mt-4 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+      {precio && <span class="text-lg font-semibold text-gray-900">From {precio}</span>}
+      <a
+        href={url ? url : "/#reservar"}
+        class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-medium py-3 px-6 rounded-full transition"
+      >
+        Book now
+      </a>
+    </div>
+  </div>
+
+  <span class="text-sm text-emerald-700 font-medium uppercase">{subtitulo}</span>
+  <h1 class="text-4xl font-bold mb-6">{titulo}</h1>
+
+  <p class="text-lg mb-10">{parrafoPrincipal}</p>
+
+  {secciones.map((sec) => (
+    <div class="mb-10">
+      <h2 class="text-2xl font-semibold text-emerald-600 mb-2">{sec.titulo}</h2>
+      {Array.isArray(sec.contenido) ? (
+        <ul class="list-disc list-inside text-gray-700 space-y-1">
+          {sec.contenido.map((item) => <li>{item}</li>)}
+        </ul>
+      ) : (
+        <p class="text-gray-700 text-base">{sec.contenido}</p>
+      )}
+    </div>
+  ))}
+
+  <div class="grid md:grid-cols-2 gap-8 mb-10">
+    <div>
+      <h3 class="text-xl font-bold text-emerald-600 mb-2">Exclusive benefits</h3>
+      <ul class="list-disc list-inside text-gray-700 space-y-1">
+        {beneficios.map((b) => <li>{b}</li>)}
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-bold text-emerald-600 mb-2">Rooms</h3>
+      <ul class="list-disc list-inside text-gray-700 space-y-1">
+        {habitaciones.map((h) => <li>{h}</li>)}
+      </ul>
+    </div>
+  </div>
+
+  <div class="mb-8">
+    <h3 class="text-xl font-bold text-emerald-600 mb-2">Sustainability</h3>
+    <p>{sustentabilidad}</p>
+  </div>
+
+  <div class="mt-12 text-center">
+    <p class="text-lg italic">{cierre}</p>
+    <a
+      href={url ? url : "/#reservar"}
+      class="mt-6 inline-block bg-amber-500 hover:bg-amber-600 text-white font-medium py-3 px-6 rounded-full transition"
+    >
+      Book now
+    </a>
+  </div>
+</section>
+
+<ToursTeaser />

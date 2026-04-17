@@ -1,0 +1,68 @@
+---
+import Hero from "../components/suenodorado/en/HeroEn.astro";
+import AboutUs from "../components/suenodorado/en/AboutUsEn.astro";
+import Habitaciones from "../components/suenodorado/en/HabitacionesEn.astro";
+import Instalaciones from "../components/suenodorado/en/InstalacionesEn.astro";
+import Experiencias from "../components/suenodorado/en/ExperienciasEn.astro";
+import Contacto from "../components/suenodorado/en/ContactoEn.astro";
+import Beneficios from "../components/suenodorado/en/BeneficiosEn.astro";
+import Header from "../components/suenodorado/en/HeaderSuenoEn.astro";
+import OtrosHospedajesBanner from "../components/suenodorado/en/OtrosHospedajesBannerEn.astro";
+import Footer from "../components/Footer.astro";
+import Hreflang from "../components/seo/Hreflang.astro";
+import ToursTeaser from "../components/en/ToursTeaserEN.astro";import WhatsAppButton from "../components/en/WhatsAppButtonEn.astro";
+import "../styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <title>Hotel Sueno Dorado</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <Hreflang />
+  
+    <script is:inline>
+      function gtagSendEvent(url, target) {
+        var isBlank = target === "_blank";
+        var navigate = function () {
+          if (!isBlank && typeof url === "string") {
+            window.location = url;
+          }
+        };
+        if (typeof gtag === "function") {
+          gtag("event", "conversion_event_outbound_click", {
+            event_callback: navigate,
+            event_timeout: 2000,
+          });
+          return !isBlank;
+        }
+        navigate();
+        return !isBlank;
+      }
+    </script>
+  </head>
+
+  <body class="bg-white text-gray-900">
+    <Header />
+    <Hero />
+    <AboutUs />
+    <Habitaciones />
+    <Instalaciones />
+    <Experiencias />
+    <OtrosHospedajesBanner />
+    <ToursTeaser />
+    <Beneficios />
+    <Contacto />
+    <Footer />
+    <WhatsAppButton />
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>

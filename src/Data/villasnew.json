@@ -1,0 +1,44 @@
+[
+  {
+    "id": "/ecovilla",
+    "nombre": "ECO VILLAGE (Wild Town)",
+    "tipo": "villa",
+    "imagen": "https://i.ibb.co/0RFwnfqy/ecovilla.jpg",
+    "descripcionCorta": "Cabaña íntima con piscina privada, ideal para parejas, ubicada en las montañas con vista al valle.",
+    "capacidad": "2 personas"
+  },
+  
+  {
+    "id": "/suenodorado",
+    "nombre": "Hotel Sueño Dorado",
+    "tipo": "hotel",
+    "imagen": "https://i.ibb.co/9kFXhhpd/fotohotel.jpg",
+    "descripcionCorta": "Hotel y Aguas Termales.",
+    "capacidad": "1 Habitaciones"
+  },
+
+  {
+        "id": "/monte-real",
+    "nombre": "Hotel Monte Real",
+    "tipo": "hotel",
+    "imagen": "https://i.ibb.co/7xbm6znD/monterealafuera.jpg",
+    "descripcionCorta": "Sumérgete en la tranquilidad de nuestras instalaciones",
+    "capacidad": "30 Habitaciones"
+  },
+    {
+        "id": "/lafortuna-downtown",
+    "nombre": "Hotel La Fortuna Downtown",
+    "tipo": "hotel",
+    "imagen": "https://i.ibb.co/Kj8qP2nn/fondoprincipal.png",
+    "descripcionCorta": "¡En el corazón de las experiencias!",
+    "capacidad": "19 Habitaciones"
+  },
+  {
+    "id": "/catarataresort",
+    "nombre": "Hotel Catarata Resort",
+    "tipo": "hotel",
+    "imagen": "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/POOL_YARD_eace1389.jpg",
+    "descripcionCorta": "Resort cerca de las cataratas con todas las comodidades y tours incluidos.",
+    "capacidad": "40 Habitaciones"
+  }
+]

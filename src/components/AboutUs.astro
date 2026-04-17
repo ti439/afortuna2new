@@ -1,0 +1,120 @@
+---
+import Reviews from "./Reviews.astro";
+const mostrarMas = false;
+---
+
+<!-- Pagina Nosotros -->
+<section id="nosotros" class="bg-[#7A8E89] text-white py-20 px-6">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-4xl font-extrabold mb-3">SOMOS AFORTUNADOS</h2>
+    <p class="text-lg sm:text-xl font-semibold mb-8">
+      15+ años creando experiencias locales en La Fortuna y Costa Rica
+    </p>
+
+    <div class="relative">
+      <!-- Texto completo oculto inicialmente -->
+      <div id="texto-nosotros" class="transition-all duration-500 ease-in-out max-h-[320px] overflow-hidden text-left text-lg space-y-4">
+        <p class="font-semibold">
+          Plataforma local con casas propias, tours seleccionados y acompanamiento personalizado para que viajes sin estres.
+        </p>
+
+        <ul class="space-y-2">
+          <li class="flex items-center gap-2">
+            <span class="inline-block h-2 w-2 rounded-full bg-white"></span>
+            Casas vacacionales cuidadosamente disenadas
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="inline-block h-2 w-2 rounded-full bg-white"></span>
+            Acuerdos exclusivos con parques y operadores
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="inline-block h-2 w-2 rounded-full bg-white"></span>
+            Soporte local rapido antes y durante tu viaje
+          </li>
+        </ul>
+
+        <div class="flex flex-wrap gap-4 text-sm sm:text-base">
+          <div class="rounded-full border border-white/50 bg-white/10 px-4 py-1">+15 años de experiencia</div>
+          <div class="rounded-full border border-white/50 bg-white/10 px-4 py-1">Atencion personalizada</div>
+        </div>
+
+        <p>
+          En <strong>Afortunados</strong>, llevamos más de 15 años transformando sueños en experiencias inolvidables. Comenzamos como una sencilla página de Facebook ofreciendo alojamientos y tours locales en La Fortuna, y gracias al compromiso y pasión de nuestro equipo, hoy somos una plataforma integral y exclusiva de servicios turísticos en Costa Rica.
+        </p>
+
+        <p>
+          Contamos con nuestras propias casas vacacionales, cuidadosamente diseñadas para brindar comodidad, calidez y una conexión genuina con la naturaleza. Además, poseemos acuerdos exclusivos con parques y los mejores operadores turísticos del país, lo que nos permite ofrecer no solo los mejores precios, sino también un acompañamiento cercano para disfrutar plenamente de cada destino.
+        </p>
+
+        <p>
+          Nuestra pasión por las experiencias únicas trasciende fronteras, organizando viajes exclusivos para nuestros clientes hacia fascinantes destinos internacionales como Turquía, Indonesia, Tailandia, Grecia, México, Suramérica y las hermosas capitales europeas.
+        </p>
+
+        <p>
+          Lo que verdaderamente nos distingue es nuestro equipo multidisciplinario, con amplia experiencia en hotelería, gastronomía, ventas, operaciones turísticas y atención personalizada. Creemos profundamente que la responsabilidad y el cuidado en cada detalle marcan la diferencia.
+        </p>
+
+        <p>
+          En <strong>Afortunados</strong>, no vendemos solo servicios turísticos, compartimos experiencias cargadas de calidez familiar, tranquilidad y confianza. Nuestra misión es clara: convertirnos en la plataforma líder y referente para descubrir Costa Rica de una manera auténtica, segura, personalizada y llena de la hospitalidad costarricense.
+        </p>
+
+        <p class="italic">
+          ¡Bienvenido a Afortunados, donde cada viaje es una historia que querrás contar una y otra vez!
+        </p>
+      </div>
+
+      <!-- Gradiente visual para indicar que hay más -->
+      <div id="fade" class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-[#7A8E89] to-transparent pointer-events-none"></div>
+
+      <!-- Botón de acción -->
+      <div class="mt-6 text-center">
+        <button 
+          id="boton-ver-mas" 
+          class="bg-white text-[#7A8E89] px-6 py-2 font-semibold rounded hover:bg-gray-100 transition"
+          aria-expanded="false"
+          aria-controls="texto-nosotros"
+          onclick="expandirTexto()"
+        >
+          Leer más
+        </button>
+      </div>
+    </div>
+
+    <div class="mt-6">
+      <a
+        href="https://wa.me/50684597077"
+        onclick="return gtagSendEvent(this.href, this.target)"
+        class="inline-block border border-white px-6 py-3 rounded-full text-white font-semibold hover:bg-white hover:text-[#7A8E89] transition"
+      >
+        Hablar con un asesor
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="w-full">
+  <Reviews />
+</div>
+
+
+  <script is:inline>
+    function expandirTexto() {
+      const texto = document.getElementById('texto-nosotros');
+      const boton = document.getElementById('boton-ver-mas');
+      const fade = document.getElementById('fade');
+
+      if (texto.classList.contains('max-h-[320px]')) {
+        texto.classList.remove('max-h-[320px]');
+        texto.classList.add('max-h-[2000px]');
+        fade.classList.add('hidden');
+        boton.innerText = 'Leer menos';
+        boton.setAttribute('aria-expanded', 'true');
+      } else {
+        texto.classList.add('max-h-[320px]');
+        texto.classList.remove('max-h-[2000px]');
+        fade.classList.remove('hidden');
+        boton.innerText = 'Leer más';
+        boton.setAttribute('aria-expanded', 'false');
+      }
+    }
+  </script>

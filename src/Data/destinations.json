@@ -1,0 +1,27 @@
+[
+    {
+        "titulo": "Tamarindo",
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "imagen": "../../Imagenes/tamarindo.jpg"
+    },
+    {
+        "titulo": "Monteverde",
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "imagen": "../../Imagenes/monteverde.jpg"
+    },
+    {
+        "titulo": "Manuel Antonio",
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "imagen": "../../Imagenes/manuelAntonio.jpg"
+    },
+    {
+        "titulo": "Jacó",
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "imagen": "../../Imagenes/jaco.jpg"
+    },
+    {
+        "titulo": "La Fortuna",
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "imagen": "../../Imagenes/lafortuna.jpg"
+    }
+]

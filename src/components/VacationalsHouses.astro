@@ -1,0 +1,55 @@
+---
+import { Image } from "astro:assets";
+import v2 from "../assets/v2.jpg";
+---
+
+<section class="max-w-6xl mx-auto p-6">
+  <h2 class="text-3xl font-bold text-[#879996]">HABITACIONES</h2>
+
+  <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="bg-[#e4e9e8] rounded-xl p-4 flex flex-col items-start">
+      <img src={v2.src} alt="Habitación King" class="h-40 w-full object-cover rounded-md" />
+      <h4 class="mt-4 text-lg font-extrabold text-[#5a5f5c] uppercase">Habitación King</h4>
+      <p class="text-xs italic text-gray-600 mt-2">“Santuario de Intimidad”</p>
+      <p class="text-xs text-gray-600 mt-2">Sumérgete en un espacio donde el romance y la privacidad son protagonistas. Nuestra habitación con cama King ofrece vistas inigualables al volcán Arenal, creando el ambiente perfecto para celebrar el amor o simplemente disfrutar de un momento de soledad contemplativa.</p>
+    </div>
+
+    <div class="bg-[#e4e9e8] rounded-xl p-4 flex flex-col items-start">
+      <img src={v2.src} alt="Habitaciones Familiares" class="h-40 w-full object-cover rounded-md" />
+      <h4 class="mt-4 text-lg font-extrabold text-[#5a5f5c] uppercase">Habitaciones Familiares</h4>
+      <p class="text-xs italic text-gray-600 mt-2">“El Refugio Familiar”</p>
+      <p class="text-xs text-gray-600 mt-2">Diseñadas pensando en el confort de toda la familia, nuestras habitaciones para 5 personas combinan espacio y privacidad. Tres camas cuidadosamente distribuidas, aire acondicionado y amenidades completas para que grandes y pequeños disfruten de la magia de La Fortuna sin renunciar al confort de un hogar.</p>
+    </div>
+
+    <div class="bg-[#e4e9e8] rounded-xl p-4 flex flex-col items-start">
+      <img src={v2.src} alt="Habitaciones Cuádruples" class="h-40 w-full object-cover rounded-md" />
+      <h4 class="mt-4 text-lg font-extrabold text-[#5a5f5c] uppercase">Habitaciones Cuádruples</h4>
+      <p class="text-xs italic text-gray-600 mt-2">“Experiencia Compartida”</p>
+      <p class="text-xs text-gray-600 mt-2">Perfectas para grupos de amigos o familias, nuestras ocho habitaciones para 4 personas ofrecen el equilibrio perfecto entre privacidad y convivencia. Cada detalle está pensado para que puedas disfrutar de la compañía de tus seres queridos mientras te sumerges en la experiencia Sueño Dorado.</p>
+    </div>
+  </div>
+</section>
+
+<section class="max-w-6xl mx-auto p-6">
+  <h2 class="text-3xl font-bold text-[#879996]">INSTALACIONES</h2>
+
+  <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="bg-[#e4e9e8] rounded-xl p-4 flex flex-col items-start">
+      <img src={v2.src} alt="Piscinas" class="h-40 w-full object-cover rounded-md" />
+      <h4 class="mt-4 text-lg font-extrabold text-[#5a5f5c] uppercase">Piscinas</h4>
+      <p class="text-xs text-gray-600 mt-2">Sumérgete en nuestras cinco piscinas, un oasis termal en el corazón de La Fortuna. Cuatro de ellas son alimentadas directamente por las aguas termales naturales del volcán Arenal, cada una con temperaturas diferentes para una experiencia terapéutica completa. Desde la reconfortante calidez que relaja tus músculos hasta el agua más templada ideal para refrescarse, nuestras piscinas termales te invitan a un viaje sensorial único. Completa tu experiencia en nuestra piscina regular, perfecta para nadar y disfrutar bajo el sol tropical, mientras contemplas las majestuosas vistas al volcán.</p>
+    </div>
+
+    <div class="bg-[#e4e9e8] rounded-xl p-4 flex flex-col items-start">
+      <img src={v2.src} alt="Jardines" class="h-40 w-full object-cover rounded-md" />
+      <h4 class="mt-4 text-lg font-extrabold text-[#5a5f5c] uppercase">Jardines</h4>
+      <p class="text-xs text-gray-600 mt-2">Piérdete en nuestros exuberantes jardines donde la flora local crea un microsistema de belleza y equilibrio. Cada paseo es una oportunidad para descubrir la biodiversidad costarricense, escuchar el canto de aves exóticas o simplemente sentarte a meditar bajo la sombra de un árbol centenario.</p>
+    </div>
+
+    <div class="bg-[#e4e9e8] rounded-xl p-4 flex flex-col items-start">
+      <img src={v2.src} alt="Restaurante" class="h-40 w-full object-cover rounded-md" />
+      <h4 class="mt-4 text-lg font-extrabold text-[#5a5f5c] uppercase">Restaurante</h4>
+      <p class="text-xs text-gray-600 mt-2">En nuestro restaurante, cada plato cuenta una historia. Desde nuestra premiada carne Angus hasta los mariscos frescos del Pacífico costarricense, pasando por arroces y pastas que fusionan tradiciones globales. Nuestro chef transforma ingredientes locales en experiencias culinarias que despiertan todos tus sentidos.</p>
+    </div>
+  </div>
+</section>

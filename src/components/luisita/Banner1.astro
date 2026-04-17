@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets";
+import room from "../../assets/habitacion.jpg";
+---
+
+<section class="bg-[#f8f5ef] text-[#2f2a26] py-16 md:py-20">
+  <div class="max-w-6xl mx-auto px-6 sm:px-8 flex flex-col lg:flex-row items-center gap-10 lg:gap-14">
+    <div class="w-full lg:w-1/2 space-y-6">
+      <h2 class="text-3xl md:text-4xl font-extrabold leading-tight">
+        Descanso con hospitalidad tica
+      </h2>
+      <p class="text-lg md:text-xl leading-relaxed">
+        El hotel ofrece un ambiente acogedor y tranquilo, ideal para descansar después de un día de aventura o trabajo.
+      </p>
+      <p class="text-lg md:text-xl leading-relaxed">
+        Aquí el servicio es cercano y genuino, con esa hospitalidad tica que no se finge: <span class="text-[#2f4b2c] font-semibold">se hereda</span>.
+      </p>
+    </div>
+
+    <div class="w-full lg:w-1/2">
+      <Image
+        src={room}
+        alt="Habitación acogedora con sala de estar y balcón"
+        class="w-full h-auto rounded-2xl shadow-lg object-cover"
+      />
+    </div>
+  </div>
+</section>

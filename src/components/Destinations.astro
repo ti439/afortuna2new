@@ -1,0 +1,110 @@
+---
+import { Image } from "astro:assets";
+import monteverde from "/Imagenes/monteverde.jpg";
+import manuelantonio from "/Imagenes/manuelantonio.jpg";
+import jaco from "/Imagenes/jaco.jpg";
+import lafortuna from "/Imagenes/lafortuna.jpg";
+import tamarindo from "/Imagenes/jaco.jpg"; // corregir si no es tamarindo
+
+const images = [
+  {
+    id: 1,
+    src: monteverde,
+    title: "MONTEVERDE",
+    subtitle: "COSTA RICA - BOSQUE NUBOSO",
+  },
+  {
+    id: 2,
+    src: manuelantonio,
+    title: "MANUEL ANTONIO",
+    subtitle: "COSTA RICA - PLAYA",
+  },
+  {
+    id: 3,
+    src: jaco,
+    title: "JACÓ",
+    subtitle: "COSTA RICA - PLAYA",
+  },
+  {
+    id: 4,
+    src: lafortuna,
+    title: "LA FORTUNA",
+    subtitle: "COSTA RICA - BOSQUE",
+  },
+  {
+    id: 5,
+    src: tamarindo,
+    title: "TAMARINDO",
+    subtitle: "COSTA RICA - BOSQUE NUBOSO",
+  },
+];
+---
+<div class="relative w-full h-screen overflow-hidden bg-black text-white font-sans">
+  <!-- Fondo activo -->
+  <div id="hero-bg" class="absolute inset-0 transition-all duration-700 bg-center bg-cover z-0"></div>
+
+  <!-- Contenido -->
+  <div class="absolute z-10 bottom-10 right-0 w-[70%] pr-8">
+    <div class="flex gap-6 overflow-x-auto no-scrollbar" id="card-container">
+      {images.map((img, idx) => (
+        <div
+          class="relative min-w-[300px] h-[300px] flex-shrink-0 rounded-xl overflow-hidden cursor-pointer shadow-lg transition-transform transform hover:scale-105"
+          data-index={idx}
+        >
+          <Image src={img.src} alt={img.title} class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 bg-white text-black px-3 py-2 text-sm font-semibold">
+            {img.title}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Texto overlay -->
+  <div id="hero-text" class="absolute z-10 top-20 left-10 transition-opacity duration-500">
+    <h1 class="text-5xl font-bold" id="hero-title"></h1>
+    <p class="text-xl mt-2" id="hero-subtitle"></p>
+  </div>
+
+  <!-- Botón siguiente -->
+  <button
+    id="next-btn"
+    class="absolute left-[calc((100%-50px)/3.5)] top-1/2 transform -translate-y-1/2 z-20 bg-white/80 text-green-700 w-10 h-10 rounded-full flex items-center justify-center shadow-md"
+  >
+    ▶
+  </button>
+</div>
+
+<script type="module" is:inline>
+  const images = JSON.parse(`!${JSON.stringify(images)}!`);
+  let currentIndex = 0;
+
+  const bgEl = document.getElementById("hero-bg");
+  const titleEl = document.getElementById("hero-title");
+  const subtitleEl = document.getElementById("hero-subtitle");
+  const nextBtn = document.getElementById("next-btn");
+  const cards = document.querySelectorAll("[data-index]");
+
+  function setHero(index) {
+    const { src, title, subtitle } = images[index];
+    bgEl.style.backgroundImage = `url('${src.src}')`;
+    titleEl.textContent = title;
+    subtitleEl.textContent = subtitle;
+  }
+
+  // Inicializar
+  setHero(currentIndex);
+
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    setHero(currentIndex);
+  });
+
+  cards.forEach(card => {
+    card.addEventListener("click", (e) => {
+      const index = parseInt(e.currentTarget.getAttribute("data-index"));
+      currentIndex = index;
+      setHero(currentIndex);
+    });
+  });
+</script>

@@ -1,0 +1,113 @@
+---
+import toursData from '../../../Data/tours_en.json';
+
+const slugify = (name) =>
+  name
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+
+const whatsappNumber = "50684597077";
+const tours = toursData.map((tour) => {
+  const whatsappText = encodeURIComponent(
+    `Hi, I want to book the tour ${tour.nombre}.`
+  );
+
+  return {
+    ...tour,
+    slug: tour.slug ?? slugify(tour.nombre),
+    whatsappLink: `https://wa.me/${whatsappNumber}?text=${whatsappText}`
+  };
+});
+---
+
+<section class="bg-green-600 text-white py-12 mt-18">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl">
+      <span class="inline-flex items-center gap-2 bg-white/15 px-4 py-2 rounded-full text-sm uppercase tracking-widest">
+        Direct booking, no hassle
+      </span>
+      <h1 class="text-4xl md:text-5xl font-bold mt-4">Live your next tour without hesitation</h1>
+      <p class="text-lg md:text-xl mt-3 text-white/90">
+        Curated experiences, personalized attention, and fast confirmation so you can just enjoy.
+      </p>
+      <div class="mt-6 flex flex-col sm:flex-row items-center gap-4">
+        <a
+          href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hi, I want to book a tour.")}`}
+          onclick="return gtagSendEvent(this.href, this.target)"
+          class="bg-yellow-400 hover:bg-yellow-500 text-green-900 font-semibold py-3 px-6 rounded-full transition"
+        >
+          Book via WhatsApp
+        </a>
+        <a
+          href="#tours-list"
+          class="border border-white/70 hover:bg-white/10 text-white font-semibold py-3 px-6 rounded-full transition"
+        >
+          View options
+        </a>
+      </div>
+    </div>
+    <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm text-white/90">
+      <div class="bg-white/10 rounded-lg py-3 px-4">Local, direct support</div>
+      <div class="bg-white/10 rounded-lg py-3 px-4">Fast, secure booking</div>
+      <div class="bg-white/10 rounded-lg py-3 px-4">Tours for every level</div>
+    </div>
+  </div>
+</section>
+
+<section id="tours-list" class="container mx-auto px-4 mt-8">
+  <div class="flex gap-2 overflow-x-auto pb-4">
+    <button class="bg-green-600 text-white px-4 py-2 rounded-full whitespace-nowrap">All tours</button>
+    <button class="bg-gray-200 px-4 py-2 rounded-full whitespace-nowrap">Easy</button>
+    <button class="bg-gray-200 px-4 py-2 rounded-full whitespace-nowrap">Moderate</button>
+    <button class="bg-gray-200 px-4 py-2 rounded-full whitespace-nowrap">Extreme adventure</button>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {tours.map((tour) => (
+      <div class="bg-white rounded-lg shadow p-4 flex flex-col">
+        <div class="relative">
+          <img src={tour.imagen} alt={tour.nombre} class="rounded-t-lg w-full h-48 object-cover" loading="lazy" />
+          <span class="absolute top-2 right-2 bg-yellow-200 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full">
+            {tour.dificultad}
+          </span>
+        </div>
+        <h3 class="text-lg font-semibold mt-3">{tour.nombre}</h3>
+        <p class="text-sm text-gray-600 mt-1">{tour.descripcion}</p>
+        <div class="grid grid-cols-2 gap-2 text-sm text-gray-500 mt-3">
+          <span>Duration: {tour.duracion}</span>
+          <span>Location: {tour.ubicacion}</span>
+          <span>Difficulty: {tour.dificultad}</span>
+        </div>
+        <div class="flex flex-wrap gap-2 mt-3">
+          {tour.tags.map(tag => (
+            <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">{tag}</span>
+          ))}
+        </div>
+        <div class="flex items-center justify-between mt-4">
+          <p class="text-xl font-bold text-green-600">${tour.precio}</p>
+          <span class="text-xs text-gray-500">Direct booking</span>
+        </div>
+        <div class="mt-4 flex flex-wrap gap-3">
+          <a
+            href={tour.whatsappLink}
+            onclick="return gtagSendEvent(this.href, this.target)"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex-1 min-w-[160px] bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition text-center"
+          >
+            Book now
+          </a>
+          <a
+            href={`/en/tours/${tour.slug}`}
+            class="flex-1 min-w-[160px] border border-green-500 text-green-700 px-4 py-2 rounded-lg hover:bg-green-50 transition text-center"
+          >
+            View details
+          </a>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

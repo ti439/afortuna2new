@@ -1,0 +1,89 @@
+[
+  {
+    "titulo": "PASE DEL DÍA",
+    "detalle": "De 10am a 9pm",
+    "descripcion": [
+      "4 piscinas termales de hasta 40°C",
+      "1 piscina de agua fría",
+      "Vista directa al Volcán Arenal",
+      "Servicio de Bar y Restaurante",
+      "Internet con Fibra Óptica en áreas comunes",
+      "Niños menores de 3 años no pagan",
+      "Se aceptan mascotas pequeñas",
+      "Parqueo Disponible"
+    ],
+    "boton": "RESERVAR",
+    "imagen": "/src/assets/jaco.jpg"
+  },
+  {
+    "titulo": "HABITACIÓN DELUXE CAMA KING",
+    "detalle": "Para 1 o 2 personas",
+    "descripcion": [
+      "1 Cama King",
+      "Smart TV con Netflix",
+      "Refrigeradora",
+      "Aire Acondicionado",
+      "Parqueo"
+    ],
+    "tarifa": "₡70.000 para 2 personas",
+    "nota": "TARIFA EXCEPTO FECHAS FESTIVAS",
+    "extra": "Pregunte por nuestros paquetes con alimentación incluida",
+    "boton": "RESERVAR",
+    "imagen": "/src/assets/v2.jpg"
+  },
+  {
+    "titulo": "OCUPACIÓN TRIPLE Y QUINTUPLE",
+    "detalle": "Habitación con 3 camas",
+    "descripcion": [
+      "Habitaciones para 3, 4 y 5 personas disponibles"
+    ],
+    "tarifa": [
+      "₡62.000 para 2 personas",
+      "₡15.000 adicional mayor de 12 años",
+      "₡12.000 adicional de menor de 12 mayor de 3",
+      "menores de 3 no pagan"
+    ],
+    "nota": "TARIFA EXCEPTO FECHAS FESTIVAS",
+    "extra": "Pregunte por nuestros paquetes con alimentación incluida",
+    "boton": "RESERVAR",
+    "imagen": "/src/assets/monteverde.jpg"
+  },
+  {
+    "titulo": "HABITACIÓN CON 2 CAMAS",
+    "detalle": "Para 2 o 4 personas",
+    "descripcion": [
+      "2 Cama Matrimonial",
+      "TV",
+      "Refrigeradora",
+      "Aire Acondicionado",
+      "Parqueo",
+      "Baño con Agua Caliente"
+    ],
+    "tarifa": [
+      "₡62.000 para 2 personas",
+      "₡15.000 adicional mayor de 12 años",
+      "₡10.000 adicional menor de 12 mayor de 3",
+      "menores de 3 no pagan"
+    ],
+    "nota": "TARIFA EXCEPTO FECHAS FESTIVAS",
+    "boton": "RESERVAR",
+    "imagen": "/src/assets/lafortuna.jpg"
+  },
+  {
+    "titulo": "MANGO SPA",
+    "detalle": "Con reservación previa",
+    "descripcion": [
+      "Mango’s Spa, localizado en una hermosa colina de la propiedad, en la orilla de la montaña y vista directa al Volcán, lugar para descansar y relajarnos."
+    ],
+    "servicios": [
+      "Masaje Terapéutico cuerpo completo técnicas (thai, shiatsu, lomi-lomi, aromaterapia y tejido profundo)",
+      "Masaje Sensorial",
+      "Masaje Ritual del Sueño",
+      "Masaje Personalizado",
+      "Masaje en Pareja"
+    ],
+    "boton": "RESERVAR",
+    "imagen": "/src/assets/manuelAntonio.jpg"
+  }
+]
+

@@ -1,0 +1,68 @@
+---
+import { Image } from "astro:assets";
+import premium from "../../../assets/Habprem.jpg";
+import standard from "../../../assets/Habjrs.jpg";
+---
+
+<section id="hospedajes" class="bg-[#f2eee9] text-[#2f2a26] py-16 md:py-20">
+  <div class="max-w-6xl mx-auto px-6 sm:px-8 space-y-12">
+    <div class="text-center space-y-4">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold">
+        Rest in a space that embraces you
+      </h2>
+      <p class="text-lg sm:text-xl md:text-[21px] leading-relaxed max-w-4xl mx-auto">
+        At Hotel Abuela Luisita, each room combines comfort, design, and a deep nod to Costa Rica.
+        The experience is completed with artistic resin details inspired by the biodiversity of La
+        Fortuna, creating a setting that does not just look nice: it feels authentic.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-[#e8e0d6] flex flex-col">
+        <div class="relative">
+          <Image src={premium} alt="Premium room with jacuzzi" class="w-full h-72 sm:h-80 object-cover" />
+          <span class="absolute top-3 right-3 inline-flex items-center gap-1 bg-[#d96c3f] text-white text-sm font-semibold px-3 py-1 rounded-full shadow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4">
+              <path d="M12 3 8.5 8.5 3 12l5.5 3.5L12 21l3.5-5.5L21 12l-5.5-3.5Z" />
+            </svg>
+            Premium
+          </span>
+        </div>
+        <div class="p-6 flex flex-col gap-4">
+          <h3 class="text-2xl font-semibold">Premium with Jacuzzi</h3>
+          <p class="text-base leading-relaxed text-[#4b463f]">
+            Each premium room is more than a place to sleep: it is a retreat designed to celebrate
+            rest. Exclusive handmade resin art, inspired by local biodiversity, adds a unique
+            artistic touch.
+          </p>
+          <a
+            href={`https://us2.cloudbeds.com/reservation/brsfX9`}
+            class="mt-2 inline-block text-center border border-[#ded7cf] hover:border-[#c8bcad] text-[#2f2a26] font-medium py-3 px-4 rounded-lg transition"
+          >
+            View details
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-[#e8e0d6] flex flex-col">
+        <div class="relative">
+          <Image src={standard} alt="Bright standard room" class="w-full h-72 sm:h-80 object-cover" />
+        </div>
+        <div class="p-6 flex flex-col gap-4">
+          <h3 class="text-2xl font-semibold">Standard Room</h3>
+          <p class="text-base leading-relaxed text-[#4b463f]">
+            The standard room is a perfect balance between comfort and contemporary style. Natural
+            materials, fine finishes, and a calm atmosphere come together with artisanal resin
+            pieces that celebrate our identity.
+          </p>
+          <a
+            href={`/habitaciones/${"standard"}`}
+            class="mt-2 inline-block text-center border border-[#ded7cf] hover:border-[#c8bcad] text-[#2f2a26] font-medium py-3 px-4 rounded-lg transition"
+          >
+            View details
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

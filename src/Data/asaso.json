@@ -1,0 +1,36 @@
+[
+  {
+    "id": "villa-el-bosque",
+    "titulo": "Villa El Bosque",
+    "subtitulo": "Una experiencia natural exclusiva y llena de vida",
+    "parrafoPrincipal": "Enclavada junto a la reserva privada \"Bosque Eterno de los Niños\", Villa El Bosque es el refugio ideal...",
+    "secciones": [
+      {
+        "titulo": "El Espacio",
+        "contenido": "Villa El Bosque se extiende majestuosamente en dos niveles..."
+      },
+      {
+        "titulo": "Nuestras Piscinas",
+        "contenido": "Cada una de nuestras tres piscinas cuenta una historia diferente..."
+      },
+      {
+        "titulo": "El Entorno Natural",
+        "contenido": "Despertar en Villa El Bosque es asomarte a una ventana viva de biodiversidad..."
+      }
+    ],
+    "beneficios": [
+      "Acceso a Aguas Termales del Hotel Sueño Dorado",
+      "Experiencias personalizadas como yoga, cacao, tours",
+      "Retiros empresariales en entorno natural"
+    ],
+    "habitaciones": [
+      "6 habitaciones privadas con baño propio",
+      "Capacidad para hasta 20 personas",
+      "Materiales naturales y vistas al bosque"
+    ],
+    "sustentabilidad": "Operamos bajo principios de sustentabilidad: piscinas alimentadas por río, bajo impacto ambiental...",
+    "cierre": "Tu escape al bosque está a solo un mensaje de distancia. Nuestro equipo de Grupo AfortunadosCR está disponible...",
+    "imagenPrincipal": "/src/assets/v2.jpg"
+  }
+
+]

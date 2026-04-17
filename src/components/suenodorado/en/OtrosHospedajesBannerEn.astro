@@ -1,0 +1,66 @@
+---
+const hospedajes = [
+  {
+    name: "Downtown La Fortuna Boutique Hotel",
+    tag: "At the Heart of Experiences",
+    description: "We are the most centrally located hotel in La Fortuna, surrounded by culture, nature, and gastronomy.",
+    url: "/en/lafortuna-downtown",
+    image: "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/ff6601f025ae5fdb8c63cbcb67f7b91f.png"
+  },
+  {
+    name: "Eco Village",
+    tag: "Love, privacy, and nature in perfect harmony",
+    description: "Nestled in the mountains with breathtaking views of the valley and rainforest, Eco Village is an intimate cabin created especially for couples who want to celebrate romantic and special moments.",
+    url: "/en/ecovilla",
+    image: "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/7b1f6e4fa0414a15f8165e41f0998950.jpg"
+  },
+  {
+    name: "Hotel Monte Real",
+    tag: "Boutique",
+    description: "Modern suites, rooftop views, and personalized service.",
+    url: "/en/monte-real",
+    image: "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/49792c3c669ca4a28872da7daa116cad.jpg"
+  }
+];
+---
+
+<section id="other-stays" class="py-16 bg-gradient-to-b from-amber-50 to-white text-gray-800">
+  <div class="mx-auto px-4 md:px-8">
+    <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 mb-10">
+      <div>
+        <p class="text-sm uppercase tracking-widest text-amber-600 font-semibold">More options</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-amber-700 mt-2">
+          Other stays for your next getaway
+        </h2>
+        <p class="text-gray-600 mt-3 max-w-2xl">
+          Explore nearby alternatives with different styles. Share with your client and choose the ideal experience.
+        </p>
+      </div>
+      <a href="/en/hospedajes" class="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-6 rounded-full transition">
+        View all
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {hospedajes.map((hospedaje) => (
+        <a href={hospedaje.url} class="group bg-white rounded-2xl shadow-md overflow-hidden border border-amber-100 hover:shadow-xl transition">
+          <div class="relative h-52 overflow-hidden">
+            <img src={hospedaje.image} alt={hospedaje.name} class="h-full w-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" decoding="async" />
+            <span class="absolute top-4 left-4 bg-white/90 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full">
+              {hospedaje.tag}
+            </span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-amber-700">{hospedaje.name}</h3>
+            <p class="text-gray-600 mt-2">{hospedaje.description}</p>
+            <div class="mt-5 inline-flex items-center text-amber-600 font-semibold">
+              Learn more
+              <span class="ml-2" aria-hidden="true">→</span>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,114 @@
+---
+import Modal from '../../Modal.astro';
+
+export interface Props {
+  tour: {
+    nombre: string;
+    descripcion?: string;
+    descripcionCorta?: string;
+    descripcionLarga?: string;
+    imagen: string;
+    imagenDetalle?: string;
+    dificultad: string;
+    duracion: string;
+    ubicacion: string;
+    tags?: string[];
+    precio: number;
+    queEsperar?: string[];
+    incluye?: string[];
+  };
+}
+
+const { tour } = Astro.props;
+const whatsappText = encodeURIComponent(`Hi, I want to book the tour ${tour.nombre}`);
+const heroImage = tour.imagenDetalle ?? tour.imagen;
+const shortDescription = tour.descripcionCorta ?? tour.descripcion;
+const longDescription = tour.descripcionLarga ?? tour.descripcion;
+---
+ 
+ <main class="max-w-5xl mx-auto py-10 px-4 space-y-6">
+      <div class="flex items-center">
+        <a
+          href="/en/tours"
+          class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 transition"
+        >
+          Back to tours
+        </a>
+      </div>
+      <div class="flex flex-col md:flex-row gap-6">
+        <img src={heroImage} alt={tour.nombre} class="w-full md:w-1/2 rounded-xl object-cover shadow" loading="lazy" />
+        <div class="flex-1 space-y-3">
+          <h1 class="text-3xl font-bold">{tour.nombre}</h1>
+          {shortDescription ? <p class="text-gray-700">{shortDescription}</p> : null}
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-600">
+            <p><strong>Duration:</strong> {tour.duracion}</p>
+            <p><strong>Location:</strong> {tour.ubicacion}</p>
+            <p><strong>Difficulty:</strong> {tour.dificultad}</p>
+            <p><strong>Price:</strong> ${tour.precio}</p>
+          </div>
+          {tour.tags?.length ? (
+            <div class="flex flex-wrap gap-2">
+              {tour.tags.map((tag) => (
+                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs">{tag}</span>
+              ))}
+            </div>
+          ) : null}
+          <div class="flex gap-3 pt-2">
+            <a
+              href={`https://wa.me/506XXXXXXXX?text=${whatsappText}`}
+              onclick="return gtagSendEvent(this.href, this.target)"
+              target="_blank"
+              class="bg-green-100 text-green-800 px-4 py-2 rounded border border-green-300 hover:bg-green-200 transition"
+            >
+              Book via WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {longDescription ? (
+        <section class="space-y-3">
+          <h2 class="text-2xl font-semibold">Description</h2>
+          <p class="text-gray-700 leading-relaxed">{longDescription}</p>
+        </section>
+      ) : null}
+
+      {tour.queEsperar?.length ? (
+        <section class="space-y-3">
+          <h2 class="text-2xl font-semibold">What to expect</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-700">
+            {tour.queEsperar.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
+      {tour.incluye?.length ? (
+        <section class="space-y-3">
+          <h2 class="text-2xl font-semibold">Includes</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-700">
+            {tour.incluye.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
+      <Modal id="modal-info" title="Tour Description">
+        <div class="space-y-4 text-sm text-left leading-relaxed">
+          <img src={heroImage} alt={`Tour detail ${tour.nombre}`} class="rounded-lg mb-4 object-cover w-full" loading="lazy" />
+          {longDescription ? <p>{longDescription}</p> : null}
+          {tour.incluye?.length ? (
+            <div>
+              <p class="font-semibold mb-2">Includes:</p>
+              <ul class="list-disc list-inside space-y-1">
+                {tour.incluye.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+        </div>
+      </Modal>
+</main>

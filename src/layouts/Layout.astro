@@ -1,0 +1,69 @@
+---
+import Hreflang from "../components/seo/Hreflang.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/faviconA.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Afortunados - Pura Vida</title>
+    <Hreflang />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+        <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N853T6J4E0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-N853T6J4E0');
+    </script>
+    <script is:inline>
+      function gtagSendEvent(url, target) {
+        var isBlank = target === "_blank";
+        var navigate = function () {
+          if (!isBlank && typeof url === "string") {
+            window.location = url;
+          }
+        };
+        if (typeof gtag === "function") {
+          gtag("event", "conversion_event_outbound_click", {
+            event_callback: navigate,
+            event_timeout: 2000,
+          });
+          return !isBlank;
+        }
+        navigate();
+        return !isBlank;
+      }
+    </script>
+  </head>
+  <body>
+    <slot />
+    <WhatsAppButton />
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>

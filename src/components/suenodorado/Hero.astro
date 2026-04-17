@@ -1,0 +1,50 @@
+---
+// Puedes importar tu imagen si usas "astro:assets"
+import { Image } from "astro:assets";
+import volcanBg from "../../assets/bg-gd.jpg"; // Cambia esto según tu ruta real
+---
+
+<section
+  class="relative h-[70%] sm:h-screen bg-cover bg-center text-white"
+  style={`background-image: url(${volcanBg.src})`}
+>
+  <!-- Capa de oscurecimiento -->
+  <div class="absolute inset-0 bg-black/40 z-0 backdrop-blur-sm"></div>
+
+  <!-- Contenido centrado -->
+  <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 md:px-8 max-w-4xl mx-auto">
+    <span class="inline-flex items-center gap-2 bg-white/15 px-4 py-2 rounded-full text-sm uppercase tracking-widest">
+      Reserva directa con el hotel
+    </span>
+
+    <h1 class="mt-6 text-3xl sm:text-5xl font-bold drop-shadow-lg">
+      Tu escape frente al majestuoso <br class="hidden md:block" />
+      Volcán Arenal
+    </h1>
+
+    <p class="mt-6 text-xl md:text-2xl font-light drop-shadow-md max-w-2xl">
+      Termales privadas, vistas panorámicas y una atención cálida para que tu descanso sea inolvidable.
+    </p>
+
+    <div class="mt-8 flex flex-col sm:flex-row items-center gap-4">
+      <a
+        href="https://reservations.orbebooking.com/Search/Init/Ero8S/es"
+        class="text-lg sm:text-xl inline-block bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-3 px-7 rounded-full transition duration-300"
+      >
+        Reservar ahora
+      </a>
+      <a
+        href="#hospedajes"
+        class="text-lg sm:text-xl inline-block border border-white/70 hover:bg-white/10 text-white font-semibold py-3 px-7 rounded-full transition duration-300"
+      >
+        Ver habitaciones
+      </a>
+    </div>
+
+    <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm text-white/90 w-full">
+      <div class="bg-white/10 rounded-lg py-3 px-4">Termales privadas</div>
+      <div class="bg-white/10 rounded-lg py-3 px-4">Desayuno incluido</div>
+      <div class="bg-white/10 rounded-lg py-3 px-4">Vista al volcán</div>
+    </div>
+  </div>
+</section>

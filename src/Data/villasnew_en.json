@@ -1,0 +1,42 @@
+[
+  {
+    "id": "/ecovilla",
+    "nombre": "Eco Village (Wild Town)",
+    "tipo": "villa",
+    "imagen": "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/ecovilla_dcfd0dc3.jpg",
+    "descripcionCorta": "Intimate cabin with a private pool, ideal for couples, located in the mountains with valley views.",
+    "capacidad": "2 guests"
+  },
+  {
+    "id": "/suenodorado",
+    "nombre": "Hotel Sueno Dorado",
+    "tipo": "hotel",
+    "imagen": "https://i.ibb.co/9kFXhhpd/fotohotel.jpg",
+    "descripcionCorta": "Hotel and hot springs.",
+    "capacidad": "30 rooms"
+  },
+  {
+    "id": "/monte-real",
+    "nombre": "Hotel Monte Real",
+    "tipo": "hotel",
+    "imagen": "https://i.ibb.co/7xbm6znD/monterealafuera.jpg",
+    "descripcionCorta": "Immerse yourself in the tranquility of our facilities.",
+    "capacidad": "30 rooms"
+  },
+  {
+    "id": "/lafortuna-downtown",
+    "nombre": "Hotel La Fortuna Downtown",
+    "tipo": "hotel",
+    "imagen": "https://i.ibb.co/Kj8qP2nn/fondoprincipal.png",
+    "descripcionCorta": "In the heart of experiences!",
+    "capacidad": "19 rooms"
+  },
+  {
+    "id": "/catarataresort",
+    "nombre": "Hotel Catarata Resort",
+    "tipo": "hotel",
+    "imagen": "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/POOL_YARD_eace1389.jpg",
+    "descripcionCorta": "Resort close to waterfalls with full amenities and tour packages included.",
+    "capacidad": "40 rooms"
+  }
+]

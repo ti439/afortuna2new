@@ -1,0 +1,43 @@
+---
+import Layout from "../../../layouts/BaseLayoutEn.astro";
+import TourDetail from "../../../components/en/tours/[tour].astro";
+import toursData from "../../../Data/tours_en.json";
+import toursDetailData from "../../../Data/toursTotal_en.json";
+
+export async function getStaticPaths() {
+  const slugify = (name) =>
+    name
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+
+  const toursBase = toursData.map((tour) => ({
+    ...tour,
+    slug: tour.slug ?? slugify(tour.nombre)
+  }));
+
+  const toursDetail = toursDetailData.map((tour) => ({
+    ...tour,
+    slug: tour.slug ?? slugify(tour.nombre)
+  }));
+
+  const buildTour = (slug) => {
+    const base = toursBase.find((t) => t.slug === slug) ?? {};
+    const detail = toursDetail.find((t) => t.slug === slug) ?? {};
+    return { ...base, ...detail };
+  };
+
+  return toursBase.map((tour) => ({
+    params: { tour: tour.slug },
+    props: { tour: buildTour(tour.slug) }
+  }));
+}
+
+const { tour } = Astro.props;
+---
+
+<Layout title={`Tour: ${tour.nombre}`}>
+  <TourDetail tour={tour} />
+</Layout>

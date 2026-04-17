@@ -1,0 +1,60 @@
+---
+import { Image } from "astro:assets";
+import volcan from "../../assets/habitacion.jpg";
+import villa from "../../assets/villas/IMG_1703.jpg";
+import downtown from "../../assets/AreaPiscina.png";
+---
+
+<section class="bg-gradient-to-br from-green-900 to-blue-100 py-16 px-6 text-white">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <!-- Text + CTA -->
+    <div class="space-y-6">
+      <h2 class="text-4xl font-extrabold leading-tight">
+        Do not leave without securing your dates <br />
+        We help you choose what is best!
+      </h2>
+
+      <p class="text-lg leading-relaxed">
+        Our local team is ready to guide you with personalized attention and real recommendations
+        for your trip. <br />
+        <strong>Your next experience starts with a message.</strong>
+      </p>
+
+      <ul class="list-disc list-inside text-base text-white/90 space-y-1">
+        <li>Clear advice to choose lodging or tours</li>
+        <li>Options for your budget and travel style</li>
+        <li>Direct attention before and during your stay</li>
+      </ul>
+
+      <p class="text-sm text-white/80">
+        Popular dates fill fast: check availability today.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 pt-4">
+        <a
+          href="https://wa.me/50684597077"
+          onclick="return gtagSendEvent(this.href, this.target)"
+          class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full text-lg font-semibold text-center"
+        >
+          Quote on WhatsApp
+        </a>
+        <a
+          href="/en/vacacionales"
+          class="border border-white/70 text-white px-6 py-3 rounded-full text-lg font-semibold text-center hover:bg-white hover:text-green-900 transition"
+        >
+          View stays
+        </a>
+      </div>
+      <p class="text-xs text-white/70">
+        Fast response and no commitment.
+      </p>
+    </div>
+
+    <!-- Images -->
+    <div class="grid grid-cols-2 gap-4">
+      <Image src={volcan} class="rounded-lg shadow-lg" alt="Arenal Volcano" />
+      <Image src={villa} class="rounded-lg shadow-lg" alt="Nature" />
+      <Image src={downtown} class="rounded-lg shadow-lg col-span-2" alt="Afortunados tour" />
+    </div>
+  </div>
+</section>

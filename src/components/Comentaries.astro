@@ -1,0 +1,69 @@
+---
+import { Image } from "astro:assets"
+const volcan = "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/DJI_0369-Edit_0bbaa586.jpg"
+import villa from "../assets/villas/IMG_1703.jpg"
+import downtown from "../assets/AreaPiscina.png"
+
+---
+
+<section class="bg-gradient-to-br from-green-900 to-blue-100 py-16 px-6 text-white">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+
+    <!-- Texto + CTA -->
+    <div class="space-y-6">
+      <h2 class="text-4xl font-extrabold leading-tight">
+        No te vayas sin asegurar tu fecha <br />
+        ¡Te ayudamos a elegir lo ideal!
+      </h2>
+
+      <p class="text-lg leading-relaxed">
+        Nuestro equipo local está listo para guiarte con atención personalizada y
+        recomendaciones reales para tu viaje. <br />
+        <strong>Tu próxima experiencia comienza con un mensaje.</strong>
+      </p>
+
+      <ul class="list-disc list-inside text-base text-white/90 space-y-1">
+        <li>Asesoría clara para elegir hospedaje o tour</li>
+        <li>Opciones a tu presupuesto y estilo de viaje</li>
+        <li>Atención directa antes y durante tu estadía</li>
+      </ul>
+
+      <p class="text-sm text-white/80">
+        Fechas populares se llenan rápido: consultá disponibilidad hoy.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 pt-4">
+        <a
+          href="https://wa.me/50684597077"
+          onclick="return gtagSendEvent(this.href, this.target)"
+          class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full text-lg font-semibold text-center"
+        >
+          Cotizar por WhatsApp
+        </a>
+        <a
+          href="/vacacionales"
+          class="border border-white/70 text-white px-6 py-3 rounded-full text-lg font-semibold text-center hover:bg-white hover:text-green-900 transition"
+        >
+          Ver hospedajes
+        </a>
+      </div>
+      <p class="text-xs text-white/70">
+        Respuesta rápida y sin compromiso.
+      </p>
+    </div>
+
+    <!-- Imágenes atractivas -->
+    <div class="grid grid-cols-2 gap-4">
+      <a href="/suenodorado" class="block overflow-hidden rounded-lg shadow-lg hover:scale-[1.01] transition-transform">
+        <img src={volcan} class="h-full w-full object-cover" alt="Volcán Arenal" />
+      </a>
+      <a href="/ecovilla" class="block overflow-hidden rounded-lg shadow-lg hover:scale-[1.01] transition-transform">
+        <Image src={villa} class="h-full w-full object-cover" alt="Naturaleza" />
+      </a>
+      <a href="/lafortuna-downtown" class="col-span-2 block overflow-hidden rounded-lg shadow-lg hover:scale-[1.01] transition-transform">
+        <Image src={downtown} class="h-full w-full object-cover" alt="Tour Afortunados" />
+      </a>
+    </div>
+
+  </div>
+</section>

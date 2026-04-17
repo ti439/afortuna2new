@@ -1,0 +1,29 @@
+---
+import { Image } from "astro:assets";
+import room from "../../../assets/habitacion.jpg";
+---
+
+<section class="bg-[#f8f5ef] text-[#2f2a26] py-16 md:py-20">
+  <div class="max-w-6xl mx-auto px-6 sm:px-8 flex flex-col lg:flex-row items-center gap-10 lg:gap-14">
+    <div class="w-full lg:w-1/2 space-y-6">
+      <h2 class="text-3xl md:text-4xl font-extrabold leading-tight">
+        Rest with Costa Rican hospitality
+      </h2>
+      <p class="text-lg md:text-xl leading-relaxed">
+        The hotel offers a warm and quiet atmosphere, ideal for resting after a day of adventure or work.
+      </p>
+      <p class="text-lg md:text-xl leading-relaxed">
+        Here the service is close and genuine, with that Costa Rican hospitality that is not staged:
+        <span class="text-[#2f4b2c] font-semibold"> it is passed down</span>.
+      </p>
+    </div>
+
+    <div class="w-full lg:w-1/2">
+      <Image
+        src={room}
+        alt="Cozy room with living area and balcony"
+        class="w-full h-auto rounded-2xl shadow-lg object-cover"
+      />
+    </div>
+  </div>
+</section>

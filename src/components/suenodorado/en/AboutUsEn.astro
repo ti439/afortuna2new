@@ -1,0 +1,34 @@
+---
+import { Image } from "astro:assets";
+import familia from "../../../assets/volcan.JPG";
+---
+
+<section id="about-us" class="py-16 bg-white text-gray-800">
+  <div class="mx-auto px-4 md:px-8 flex flex-col-reverse md:flex-row sm:justify-center items-center gap-12">
+    <div class="w-full md:w-1/2">
+      <h2 class="text-4xl md:text-4xl font-bold mb-6 text-amber-600">
+        A story born in the heart of La Fortuna
+      </h2>
+
+      <p class="text-1xl sm:text-base leading-relaxed mb-4">
+        Founded by the Hidalgo-Sanchez family, Hotel Sueno Dorado keeps the warmth and Costa Rican hospitality that make every guest feel part of our family.
+      </p>
+
+      <p class="text-1xl sm:text-base leading-relaxed mb-4">
+        The whisper of hot springs, the majesty of Arenal Volcano, and the rainforest symphony create the perfect setting to disconnect and reconnect with what matters most.
+      </p>
+
+      <blockquote class="mt-6 text-xl text-amber-700 italic font-medium border-l-4 border-amber-500 pl-4">
+        "True luxury lives in the small details that make you feel at home."
+      </blockquote>
+    </div>
+
+    <div class="w-full md:w-1/3">
+      <Image
+        src={familia}
+        alt="Founding family of Hotel Sueno Dorado"
+        class="rounded-2xl shadow-xl object-cover w-full h-auto"
+      />
+    </div>
+  </div>
+</section>

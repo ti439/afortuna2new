@@ -1,0 +1,66 @@
+---
+import { Image } from "astro:assets";
+import piscinas from "../../../assets/termales.JPG";
+import jardines from "../../../assets/jardin.JPG";
+const restaurante = "https://i.ibb.co/BV1KZZ0S/IMG-6005-2.jpg";
+---
+
+<section id="facilities" class="py-16 bg-white text-gray-800">
+  <div class="mx-auto px-4 md:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-amber-600 mb-12">
+      Facilities that awaken your senses
+    </h2>
+
+    <div class="space-y-12">
+      <div class="flex flex-col lg:flex-row items-center gap-8">
+        <div class="lg:w-1/2">
+          <Image
+            src={piscinas}
+            alt="Thermal pools"
+            class="rounded-xl shadow-lg w-full h-auto object-cover"
+          />
+        </div>
+        <div class="lg:w-1/2">
+          <h3 class="text-2xl font-semibold text-amber-700 mb-4">Thermal Pools</h3>
+          <p class="text-gray-700 text-lg leading-relaxed">
+            Enjoy five pools, four of them fed directly by Arenal Volcano hot springs. Different temperatures create a therapeutic experience with volcano views.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-col lg:flex-row-reverse items-center gap-8">
+        <div class="lg:w-1/2">
+          <Image
+            src={jardines}
+            alt="Tropical gardens"
+            class="rounded-xl shadow-lg w-full h-auto object-cover"
+          />
+        </div>
+        <div class="lg:w-1/2">
+          <h3 class="text-2xl font-semibold text-amber-700 mb-4">Tropical Gardens</h3>
+          <p class="text-gray-700 text-lg leading-relaxed">
+            Wander through native flora, listen to exotic birds, and connect with Costa Rican biodiversity in every corner of our gardens.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-col lg:flex-row items-center gap-8">
+        <div class="lg:w-1/2">
+          <img
+            src={restaurante}
+            alt="Gourmet restaurant"
+            class="rounded-xl shadow-lg w-full h-auto object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="lg:w-1/2">
+          <h3 class="text-2xl font-semibold text-amber-700 mb-4">Gourmet Restaurant</h3>
+          <p class="text-gray-700 text-lg leading-relaxed">
+            Enjoy an unforgettable culinary experience with Angus cuts, fresh Pacific seafood, and traditional recipes prepared with local ingredients.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,71 @@
+---
+import Hero from "../components/luisita/Hero.astro";
+import AboutUs from "../components/luisita/AboutUs.astro";
+import Habitaciones from "../components/luisita/Habitaciones.astro";
+import Restaurante from "../components/luisita/Restaurante.astro";
+import Instalaciones from "../components/luisita/Instalaciones.astro";
+import Experiecias from "../components/luisita/Experiencias.astro";
+import Banner1 from "../components/luisita/Banner1.astro";
+import Contacto from "../components/luisita/Contacto.astro";
+import Header from '../components/luisita/Headerluisita.astro';
+import Footer from '../components/Footer.astro';
+import Hreflang from "../components/seo/Hreflang.astro";
+import ToursTeaser from "../components/ToursTeaser.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+
+import "../styles/global.css";
+
+---
+
+<html lang="es">
+  <head>
+    <title>Hotel Catarata Resort </title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <Hreflang />
+
+  
+    <script is:inline>
+      function gtagSendEvent(url, target) {
+        var isBlank = target === "_blank";
+        var navigate = function () {
+          if (!isBlank && typeof url === "string") {
+            window.location = url;
+          }
+        };
+        if (typeof gtag === "function") {
+          gtag("event", "conversion_event_outbound_click", {
+            event_callback: navigate,
+            event_timeout: 2000,
+          });
+          return !isBlank;
+        }
+        navigate();
+        return !isBlank;
+      }
+    </script>
+  </head>
+
+  <body class="bg-white text-gray-900">
+    <Header />
+    <Hero />
+    <AboutUs />
+    <Habitaciones />
+    <Restaurante />
+    <Instalaciones /> 
+    <Banner1 />
+    <Contacto /> 
+    <ToursTeaser />
+    <Footer/>
+    <WhatsAppButton />
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>

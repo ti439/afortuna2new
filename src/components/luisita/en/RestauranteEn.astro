@@ -1,0 +1,106 @@
+---
+import { Image } from "astro:assets";
+const restauranteFoto = "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/resta_8bafe231.jpg";
+---
+
+<section id="tours" class="relative overflow-hidden bg-amber-50/60 py-16 px-6">
+  <div class="pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-amber-200/40 blur-3xl"></div>
+  <div class="pointer-events-none absolute -right-20 -top-16 h-80 w-80 rounded-full bg-emerald-200/40 blur-3xl"></div>
+
+  <div class="relative mx-auto max-w-6xl">
+    <div class="mb-10 text-center">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-amber-800/80">Restaurant</p>
+      <h2 class="mt-3 text-3xl font-bold text-gray-900 md:text-4xl">
+        Abuela Luisita Restaurant: Costa Rican cuisine with history and heart
+      </h2>
+      <p class="mt-3 text-base text-gray-700">
+        In the heart of La Fortuna, we celebrate food that brings family together and tells stories.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+      <div class="rounded-2xl bg-white p-6 shadow-lg md:p-8">
+        <h3 class="text-xl font-semibold text-gray-900">Tradition that tastes like home</h3>
+        <p class="mt-3 text-sm text-gray-600">
+          What started as a baking tradition in Zarcero now becomes a menu that honors the flavors
+          of always with fresh local ingredients.
+        </p>
+        <p class="mt-4 text-sm text-gray-600">
+          The atmosphere is warm, welcoming, and authentic. From traditional breakfasts to start
+          the day with energy, to lunches and dinners that feel like home, every dish is made so the
+          visitor takes home more than a good photo: they take an emotional memory.
+        </p>
+
+        <div class="mt-6 rounded-xl bg-amber-50 px-5 py-4">
+          <p class="text-sm font-semibold text-amber-900">Ideal for</p>
+          <ul class="mt-3 space-y-2 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="mt-2 inline-block h-2 w-2 rounded-full bg-emerald-500"></span>
+              Families looking for home-style flavor
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-2 inline-block h-2 w-2 rounded-full bg-emerald-500"></span>
+              Couples who want a soulful dinner
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-2 inline-block h-2 w-2 rounded-full bg-emerald-500"></span>
+              Travelers who want to taste real Costa Rica
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a
+            href="https://wa.me/50684597077"
+            onclick="return gtagSendEvent(this.href, this.target)"
+            class="inline-flex items-center justify-center rounded-full bg-emerald-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-600"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Reserve on WhatsApp
+          </a>
+          <a
+            href="#contacto"
+            class="inline-flex items-center justify-center rounded-full border border-emerald-500/40 px-5 py-3 text-sm font-semibold text-emerald-700 transition hover:bg-emerald-50"
+          >
+            View contact
+          </a>
+        </div>
+      </div>
+
+      <div class="flex h-full flex-col justify-between gap-6 rounded-2xl bg-white p-6 shadow-lg md:p-8">
+        <div class="overflow-hidden rounded-xl">
+          <img
+            src={restauranteFoto}
+            alt="Abuela Luisita restaurant"
+            class="h-56 w-full object-cover md:h-64"
+            loading="lazy"
+          />
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-gray-900">Come eat like at home</h3>
+          <p class="mt-3 text-sm text-gray-600">
+            But in La Fortuna. Here every detail aims to leave you with more than a good photo:
+            an emotional memory.
+          </p>
+        </div>
+        <div class="rounded-xl border border-amber-200 bg-gradient-to-br from-amber-50 via-white to-emerald-50 p-5">
+          <p class="text-sm text-gray-700">
+            Traditional breakfasts, home-style lunches, and dinners with history. Real Costa Rican
+            cuisine, served with warmth and local pride.
+          </p>
+          <div class="mt-4 flex items-center gap-3 text-xs text-emerald-700">
+            <span class="rounded-full bg-emerald-100 px-3 py-1 font-semibold">Family atmosphere</span>
+            <span class="rounded-full bg-emerald-100 px-3 py-1 font-semibold">Local ingredients</span>
+          </div>
+        </div>
+        <div class="rounded-xl bg-emerald-600 px-5 py-4 text-white">
+          <p class="text-sm font-semibold">Call to action</p>
+          <p class="mt-2 text-sm">
+            Come eat like at home... but in La Fortuna.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,36 @@
+---
+import Layout from "../../layouts/BaseLayout.astro";
+import villas from "../../Data/villas_detalle_en.json";
+import VillaDetalle from "../../components/vacacionales/en/VillaDetalleEn.astro";
+
+const { id } = Astro.params;
+const villa = villas.find((v) => v.id === id);
+
+if (!villa) {
+  throw new Error(`Villa not found: ${id}`);
+}
+
+export async function getStaticPaths() {
+  return villas.map((v) => ({
+    params: { id: v.id },
+  }));
+}
+---
+
+<Layout title={villa.titulo}>
+  <VillaDetalle
+    id={id}
+    titulo={villa.titulo}
+    subtitulo={villa.subtitulo}
+    parrafoPrincipal={villa.parrafoPrincipal}
+    imagenPrincipal={villa.imagenPrincipal}
+    imagenes={villa.imagenes}
+    secciones={villa.secciones}
+    beneficios={villa.beneficios}
+    habitaciones={villa.habitaciones}
+    sustentabilidad={villa.sustentabilidad}
+    cierre={villa.cierre}
+    url={villa.url}
+    precio={villa.precio ?? villa.price}
+  />
+</Layout>
