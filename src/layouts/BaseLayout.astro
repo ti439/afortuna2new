@@ -1,13 +1,21 @@
 ---
 export interface Props {
   title?: string;
+  description?: string;
+  image?: string;
+  canonical?: string;
 }
-const { title = "Hotel Sueño Dorado" } = Astro.props;
+
+const {
+  title = "Afortunados",
+  description = "Hospedajes y experiencias únicas en La Fortuna, Costa Rica.",
+  image = "/og-default.jpg",
+  canonical = Astro.url.href,
+} = Astro.props;
 
 import "../styles/global.css";
 import Hreflang from "../components/seo/Hreflang.astro";
 import WhatsAppButton from "../components/WhatsAppButton.astro";
-
 ---
 
 <!DOCTYPE html>
@@ -15,17 +23,40 @@ import WhatsAppButton from "../components/WhatsAppButton.astro";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Hotel Sueño Dorado en La Fortuna, Costa Rica. Termales, confort y naturaleza." />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    {/* Open Graph */}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={canonical} />
+
+    {/* Twitter */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    {/* Fuentes: serif elegante para display + sans refinada para texto */}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Manrope:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <title>{title}</title>
     <Hreflang />
-  
+
+    <slot name="head" />
+
     <script is:inline>
       function gtagSendEvent(url, target) {
         var isBlank = target === "_blank";
         var navigate = function () {
-          if (!isBlank && typeof url === "string") {
-            window.location = url;
-          }
+          if (!isBlank && typeof url === "string") window.location = url;
         };
         if (typeof gtag === "function") {
           gtag("event", "conversion_event_outbound_click", {
@@ -39,8 +70,79 @@ import WhatsAppButton from "../components/WhatsAppButton.astro";
       }
     </script>
   </head>
-  <body class="bg-white text-gray-800 font-sans antialiased">
+  <body class="bg-cream text-ink font-body antialiased">
     <slot />
     <WhatsAppButton />
   </body>
 </html>
+
+<style is:global>
+  :root {
+    /* Paleta eco-lujo */
+    --color-cream: #f5f2e8;
+    --color-cream-warm: #ede8d6;
+    --color-ink: #1a1f1a;
+    --color-ink-soft: #4a5048;
+    --color-ink-muted: #6b7268;
+
+    --color-forest: #1f4029;
+    --color-forest-deep: #142a1c;
+    --color-forest-bright: #2d6240;
+
+    --color-gold: #b8954a;
+    --color-gold-light: #d4b574;
+    --color-gold-pale: #f0e4c2;
+
+    --shadow-soft: 0 1px 2px rgba(20, 25, 20, 0.04),
+                   0 8px 24px rgba(20, 25, 20, 0.06);
+    --shadow-elevated: 0 4px 12px rgba(20, 25, 20, 0.08),
+                       0 24px 60px rgba(20, 25, 20, 0.12);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
+  body {
+    font-family: "Manrope", system-ui, sans-serif;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  .font-display {
+    font-family: "Fraunces", "Cormorant Garamond", Georgia, serif;
+    font-feature-settings: "ss01";
+  }
+
+  /* Selección de texto on-brand */
+  ::selection {
+    background: var(--color-gold-pale);
+    color: var(--color-forest-deep);
+  }
+
+  /* Focus visible accesible y elegante */
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Utilities */
+  .bg-cream { background-color: var(--color-cream); }
+  .bg-cream-warm { background-color: var(--color-cream-warm); }
+  .text-ink { color: var(--color-ink); }
+  .text-ink-soft { color: var(--color-ink-soft); }
+  .text-ink-muted { color: var(--color-ink-muted); }
+  .text-forest { color: var(--color-forest); }
+  .text-gold { color: var(--color-gold); }
+  .bg-forest { background-color: var(--color-forest); }
+  .bg-forest-deep { background-color: var(--color-forest-deep); }
+</style>

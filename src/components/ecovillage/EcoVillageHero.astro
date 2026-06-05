@@ -1,0 +1,177 @@
+---
+import { Image } from "astro:assets";
+const heroImage = "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/IMG_8598_03233110.jpg";
+
+const bookingUrl = "https://reservations.orbebooking.com/Search/Init/AhA2g/es";
+---
+
+<section class="eco-hero relative overflow-hidden bg-[#142a1c] text-white">
+  {/* Imagen */}
+  <div class="absolute inset-0">
+    <img
+      src={heroImage}
+      alt="Terraza privada de Eco Village rodeada de bosque tropical"
+      class="eco-hero__image h-full w-full object-cover object-center"
+      loading="eager"
+      fetchpriority="high"
+      sizes="100vw"
+    />
+  </div>
+
+  {/* Scrim direccional fuerte solo a la izquierda — la foto se respira a la derecha */}
+  <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 to-transparent md:from-black/80 md:via-black/30"></div>
+  {/* Refuerzo inferior para dar peso */}
+  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+
+  <div class="eco-hero__content relative z-10 flex w-full items-center px-6 pt-28 pb-20 md:px-12 md:pt-32 lg:px-20">
+
+    {/* Panel de cristal: el secreto del contraste */}
+    <div class="eco-hero__panel max-w-xl rounded-sm border border-white/15 bg-black/35 p-8 backdrop-blur-md md:p-12">
+
+      <div class="eco-hero__eyebrow inline-flex items-center gap-3" style="animation-delay:0.1s">
+        <span class="h-px w-10 bg-[#d4b574]"></span>
+        <span class="text-xs font-medium uppercase tracking-[0.32em] text-[#e8d4a0]">
+          El escape romántico perfecto
+        </span>
+      </div>
+
+      <h1
+        class="eco-hero__title font-display mt-6 text-4xl font-light leading-[1] text-white sm:text-5xl md:text-6xl lg:text-[4.5rem]"
+        style="animation-delay:0.25s; text-shadow: 0 2px 24px rgba(0,0,0,0.4);"
+      >
+        Amor, privacidad
+        <span class="block italic font-normal text-[#e8d4a0]">
+          y naturaleza.
+        </span>
+      </h1>
+
+      <p
+        class="eco-hero__copy mt-6 text-base font-light leading-relaxed text-white md:text-lg"
+        style="animation-delay:0.4s; text-shadow: 0 1px 12px rgba(0,0,0,0.5);"
+      >
+        En las montañas de La Fortuna, una cabaña íntima diseñada
+        exclusivamente para parejas. Vistas que roban el aliento al valle
+        y al bosque tropical.
+      </p>
+
+      {/* Precio limpio en una sola línea */}
+      <div
+        class="eco-hero__price mt-8 flex items-baseline gap-3 border-l-2 border-[#d4b574] pl-4"
+        style="animation-delay:0.5s"
+      >
+        <span class="font-display text-3xl font-light text-white md:text-4xl">$125</span>
+        <span class="text-[10px] uppercase tracking-[0.22em] text-white/80 md:text-xs">
+          USD / noche
+        </span>
+      </div>
+
+      {/* CTAs */}
+      <div
+        class="eco-hero__cta mt-8 flex flex-col gap-4 sm:flex-row sm:items-center"
+        style="animation-delay:0.6s"
+      >
+        <a 
+          href={bookingUrl}
+          onclick="return gtagSendEvent(this.href, this.target)"
+          class="group inline-flex items-center justify-center gap-3 rounded-full bg-[#b8954a] px-8 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-[#142a1c] shadow-xl transition-all hover:bg-[#d4b574] hover:-translate-y-0.5"
+        >
+          Reservar ahora
+          <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+        <a 
+          href="#detalles"
+          class="group inline-flex items-center justify-center text-xs font-medium uppercase tracking-[0.2em] text-white transition hover:text-[#d4b574]"
+        >
+          <span class="border-b border-white/60 pb-1 transition group-hover:border-[#d4b574]">
+            Explorar la experiencia
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  {/* Scroll indicator */}
+  <a 
+    href="#detalles"
+    class="eco-hero__scroll absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden md:flex flex-col items-center gap-3 text-white/70 hover:text-white transition"
+    aria-label="Desplazarse hacia abajo"
+  >
+    <span class="text-[10px] uppercase tracking-[0.32em]" style="text-shadow: 0 1px 8px rgba(0,0,0,0.6);">Descubrir</span>
+    <span class="block h-12 w-px bg-white/40 overflow-hidden relative">
+      <span class="eco-hero__scroll-dot absolute top-0 left-0 right-0 h-3 bg-white"></span>
+    </span>
+  </a>
+</section>
+
+<style>
+  .eco-hero,
+  .eco-hero__content {
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+
+  /* Ken Burns sutil */
+  .eco-hero__image {
+    animation: kenBurns 24s ease-out infinite alternate;
+  }
+
+  @keyframes kenBurns {
+    from { transform: scale(1) translate(0, 0); }
+    to { transform: scale(1.06) translate(-1%, -1%); }
+  }
+
+  /* Entrada del panel — toda la pieza emerge unida */
+  .eco-hero__panel {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: rise 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+    /* Fallback si no hay backdrop-filter: el bg negro/35 ya es suficiente */
+  }
+
+  /* Animaciones internas — más sutiles porque el panel ya dio la entrada */
+  .eco-hero__eyebrow,
+  .eco-hero__title,
+  .eco-hero__copy,
+  .eco-hero__price,
+  .eco-hero__cta {
+    opacity: 0;
+    transform: translateY(12px);
+    animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes rise {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Scroll dot animado */
+  .eco-hero__scroll-dot {
+    animation: scrollHint 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollHint {
+    0%, 100% { transform: translateY(-100%); opacity: 0; }
+    50% { transform: translateY(0); opacity: 1; }
+    90% { transform: translateY(400%); opacity: 0; }
+  }
+
+  /* Fallback para navegadores sin backdrop-filter (raros hoy día) */
+  @supports not (backdrop-filter: blur(12px)) {
+    .eco-hero__panel {
+      background-color: rgba(0, 0, 0, 0.65);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .eco-hero__image { animation: none; }
+    .eco-hero__panel,
+    .eco-hero__eyebrow,
+    .eco-hero__title,
+    .eco-hero__copy,
+    .eco-hero__price,
+    .eco-hero__cta { opacity: 1; transform: none; animation: none; }
+    .eco-hero__scroll-dot { animation: none; }
+  }
+</style>

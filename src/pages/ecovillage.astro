@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/HeaderPages.astro";
+import Footer from "../components/Footer.astro";
+import EcoVillageHero from "../components/ecovillage/EcoVillageHero.astro";
+import EcoVillageExperience from "../components/ecovillage/EcoVillageExperience.astro";
+import EcoVillageAbout from "../components/ecovillage/EcoVillageAbout.astro";
+---
+
+<BaseLayout title="Eco Village | Afortunados">
+  <Header enHref="/en/ecovillage" />
+  <main class="bg-white">
+    <EcoVillageHero />
+    <EcoVillageExperience />
+    <EcoVillageAbout />
+  </main>
+  <Footer />
+</BaseLayout>

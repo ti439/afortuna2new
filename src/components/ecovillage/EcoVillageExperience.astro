@@ -1,0 +1,246 @@
+---
+const kingRoom = "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/piscina_a5e6b762.jpg";
+const valleyRoom = "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/ecovilla_dcfd0dc3.jpg";
+
+const experiences = [
+  {
+    number: "01",
+    title: "Piscina privada exclusiva",
+    description: "Un santuario de agua fresca integrado en el deck de madera, suspendido sobre el bosque tropical.",
+    image: "/assetss/ecovilla2.jpg",
+    alt: "Piscina privada en la terraza de Eco Village",
+    featured: true,
+    badge: "Experiencia premium",
+    amenities: ["Deck de madera", "Vista al valle", "Uso exclusivo"],
+  },
+  {
+    number: "02",
+    title: "Cabaña con cama King",
+    description: "Lino orgánico, madera de teca y la calma absoluta de la selva. Diseñada para el descanso profundo.",
+    image: kingRoom,
+    alt: "Habitación principal con cama king en Eco Village",
+  },
+  {
+    number: "03",
+    title: "Vistas privilegiadas",
+    description: "Despierte con el valle a sus pies y el bosque tropical como horizonte interminable.",
+    image: valleyRoom,
+    alt: "Habitación con vistas al bosque tropical en Eco Village",
+  },
+];
+
+const featured = experiences[0];
+const secondary = experiences.slice(1);
+const total = String(experiences.length).padStart(2, "0");
+---
+
+<section id="detalles" class="experience-section relative overflow-hidden bg-[#f5f2e8] px-6 py-24 md:px-12 md:py-32 lg:py-36">
+  {/* Manchas decorativas de fondo */}
+  <div class="pointer-events-none absolute top-1/4 right-0 h-[500px] w-[500px] rounded-full bg-[#f0e4c2] opacity-40 blur-3xl"></div>
+  <div class="pointer-events-none absolute bottom-0 left-0 h-[400px] w-[400px] rounded-full bg-[#e8efe5] opacity-50 blur-3xl"></div>
+
+  <div class="relative mx-auto max-w-7xl">
+
+    {/* Encabezado editorial */}
+    <header class="experience-header max-w-3xl">
+      <div class="flex items-center gap-3">
+        <span class="h-px w-12 bg-[#b8954a]"></span>
+        <span class="text-xs font-medium uppercase tracking-[0.32em] text-[#b8954a]" style="font-family: 'Manrope', sans-serif;">
+          Detalles que enamoran
+        </span>
+      </div>
+
+      <h2 class="mt-6 text-5xl font-light leading-[1.02] text-[#1a1f1a] md:text-6xl lg:text-7xl" style="font-family: 'Fraunces', Georgia, serif;">
+        Experiencias
+        <span class="italic text-[#1f4029]">inolvidables.</span>
+      </h2>
+
+      <p class="mt-6 max-w-xl text-base leading-relaxed text-[#4a5048] md:text-lg" style="font-family: 'Manrope', sans-serif; font-weight: 300;">
+        Cada rincón ha sido pensado para crear un momento.
+        Cada momento, para crear un recuerdo.
+      </p>
+    </header>
+
+    {/* Grid */}
+    <div class="experience-grid mt-16 lg:mt-20">
+
+      {/* CARD DESTACADA */}
+      <article
+        class="experience-card group relative overflow-hidden rounded-sm shadow-[0_24px_60px_rgba(20,25,20,0.12)]"
+        style="min-height: 520px;"
+      >
+        <img
+          src={featured.image}
+          alt={featured.alt}
+          class="exp-img"
+          loading="lazy"
+          decoding="async"
+        />
+
+        {/* Capas de oscurecimiento — garantizan contraste */}
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/20"></div>
+        <div class="absolute inset-x-0 bottom-0 h-[55%] bg-gradient-to-t from-black/95 via-black/75 to-transparent"></div>
+
+        {/* Badge premium */}
+        {featured.badge && (
+          <div class="absolute right-6 top-6 flex items-center gap-2.5 rounded-full bg-white/95 px-4 py-2 backdrop-blur md:right-8 md:top-8">
+            <span class="relative flex h-1.5 w-1.5">
+              <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#b8954a] opacity-60"></span>
+              <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#b8954a]"></span>
+            </span>
+            <span class="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#142a1c]" style="font-family: 'Manrope', sans-serif;">
+              {featured.badge}
+            </span>
+          </div>
+        )}
+
+        {/* Número editorial */}
+        <span
+          class="absolute left-7 top-7 text-xs font-medium tracking-[0.32em] text-white/80 md:left-9 md:top-9"
+          style="font-family: 'Manrope', sans-serif; text-shadow: 0 1px 8px rgba(0,0,0,0.6);"
+          aria-hidden="true"
+        >
+          {featured.number} / {total}
+        </span>
+
+        {/* Contenido */}
+        <div class="absolute inset-x-0 bottom-0 p-7 text-white md:p-10 lg:p-12">
+          <h3
+            class="text-4xl font-light leading-[1.05] md:text-5xl lg:text-[3.5rem]"
+            style="font-family: 'Fraunces', Georgia, serif; text-shadow: 0 2px 20px rgba(0,0,0,0.6);"
+          >
+            {featured.title}
+          </h3>
+
+          <p
+            class="mt-4 max-w-lg text-base font-light leading-relaxed text-white md:text-lg"
+            style="font-family: 'Manrope', sans-serif; text-shadow: 0 1px 12px rgba(0,0,0,0.7);"
+          >
+            {featured.description}
+          </p>
+
+          {featured.amenities && (
+            <ul class="mt-6 flex flex-wrap gap-2">
+              {featured.amenities.map((amenity) => (
+                <li
+                  class="rounded-full border border-white/40 bg-black/30 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-white backdrop-blur-md"
+                  style="font-family: 'Manrope', sans-serif;"
+                >
+                  {amenity}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </article>
+
+      {/* CARDS SECUNDARIAS */}
+      <div class="experience-secondary">
+        {secondary.map((item) => (
+          <article
+            class="experience-card group relative overflow-hidden rounded-sm shadow-[0_16px_40px_rgba(20,25,20,0.1)]"
+            style="min-height: 320px;"
+          >
+            <img
+              src={item.image}
+              alt={item.alt}
+              class="exp-img"
+              loading="lazy"
+              decoding="async"
+            />
+
+            {/* Capas de oscurecimiento */}
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20"></div>
+            <div class="absolute inset-x-0 bottom-0 h-[65%] bg-gradient-to-t from-black/95 via-black/75 to-transparent"></div>
+
+            {/* Número editorial */}
+            <span
+              class="absolute left-6 top-6 text-xs font-medium tracking-[0.32em] text-white/80"
+              style="font-family: 'Manrope', sans-serif; text-shadow: 0 1px 8px rgba(0,0,0,0.6);"
+              aria-hidden="true"
+            >
+              {item.number} / {total}
+            </span>
+
+            {/* Contenido */}
+            <div class="absolute inset-x-0 bottom-0 p-6 text-white md:p-8">
+              <h3
+                class="text-3xl font-light leading-[1.1] md:text-[2rem]"
+                style="font-family: 'Fraunces', Georgia, serif; text-shadow: 0 2px 16px rgba(0,0,0,0.6);"
+              >
+                {item.title}
+              </h3>
+              <p
+                class="mt-3 max-w-md text-sm font-light leading-relaxed text-white md:text-base"
+                style="font-family: 'Manrope', sans-serif; text-shadow: 0 1px 10px rgba(0,0,0,0.7);"
+              >
+                {item.description}
+              </p>
+
+              {/* Línea decorativa que aparece en hover */}
+              <span class="mt-4 block h-px w-0 bg-[#d4b574] transition-all duration-500 group-hover:w-16"></span>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Grid layout 100% CSS — sin depender de clases arbitrarias de Tailwind */
+  .experience-grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 1024px) {
+    .experience-grid {
+      grid-template-columns: 1.42fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .experience-card[style*="520px"] {
+      min-height: 680px !important;
+    }
+  }
+
+  .experience-secondary {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 1024px) {
+    .experience-secondary {
+      gap: 1.5rem;
+    }
+
+    .experience-secondary .experience-card {
+      min-height: 328px !important;
+    }
+  }
+
+  /* Imágenes con alturas garantizadas */
+  .exp-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .experience-card:hover .exp-img {
+    transform: scale(1.05);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .exp-img {
+      transition: none !important;
+    }
+    .experience-card:hover .exp-img {
+      transform: none;
+    }
+  }
+</style>
