@@ -32,6 +32,21 @@ const experiences = [
 const featured = experiences[0];
 const secondary = experiences.slice(1);
 const total = String(experiences.length).padStart(2, "0");
+
+const galleryPhotos = [
+  {
+    image: "/assetss/hab1.jpg",
+    alt: "Vista exterior de Eco Village rodeado de naturaleza",
+  },
+  {
+    image: "/assetss/ecovilla3.jpg",
+    alt: "Espacio privado de Eco Village en La Fortuna",
+  },
+  {
+    image: "/assetss/hab2.jpg",
+    alt: "Detalle de la villa Eco Village",
+  },
+];
 ---
 
 <section id="detalles" class="experience-section relative overflow-hidden bg-[#f5f2e8] px-6 py-24 md:px-12 md:py-32 lg:py-36">
@@ -184,6 +199,42 @@ const total = String(experiences.length).padStart(2, "0");
         ))}
       </div>
     </div>
+
+    <div class="experience-gallery mt-20 lg:mt-24">
+      <div class="gallery-heading">
+        <div>
+          <div class="flex items-center gap-3">
+            <span class="h-px w-10 bg-[#b8954a]"></span>
+            <span class="text-xs font-medium uppercase tracking-[0.28em] text-[#b8954a]" style="font-family: 'Manrope', sans-serif;">
+              Galería
+            </span>
+          </div>
+
+          <h3 class="mt-4 text-4xl font-light leading-tight text-[#1a1f1a] md:text-5xl" style="font-family: 'Fraunces', Georgia, serif;">
+            Más momentos para
+            <span class="italic text-[#1f4029]">descubrir.</span>
+          </h3>
+        </div>
+
+        <p class="max-w-md text-sm font-light leading-relaxed text-[#4a5048] md:text-base" style="font-family: 'Manrope', sans-serif;">
+          Una selección de detalles, vistas y rincones pensados para vivir la experiencia con más calma.
+        </p>
+      </div>
+
+      <div class="gallery-grid mt-10">
+        {galleryPhotos.map((photo) => (
+          <figure class="gallery-card group">
+            <img
+              src={photo.image}
+              alt={photo.alt}
+              class="gallery-img"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+        ))}
+      </div>
+    </div>
   </div>
 </section>
 
@@ -235,11 +286,77 @@ const total = String(experiences.length).padStart(2, "0");
     transform: scale(1.05);
   }
 
+  .gallery-heading {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .gallery-heading {
+      grid-template-columns: 1fr auto;
+      align-items: end;
+    }
+  }
+
+  .gallery-grid {
+    display: grid;
+    gap: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .gallery-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .gallery-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+  }
+
+  .gallery-card {
+    position: relative;
+    overflow: hidden;
+    min-height: 260px;
+    border-radius: 2px;
+    background: #e8e0cc;
+    box-shadow: 0 16px 40px rgba(20, 25, 20, 0.1);
+  }
+
+  @media (min-width: 768px) {
+    .gallery-card {
+      min-height: 340px;
+    }
+  }
+
+  .gallery-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .gallery-card:hover .gallery-img {
+    filter: saturate(1.06);
+    transform: scale(1.05);
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .exp-img {
       transition: none !important;
     }
     .experience-card:hover .exp-img {
+      transform: none;
+    }
+    .gallery-img {
+      transition: none !important;
+    }
+    .gallery-card:hover .gallery-img {
       transform: none;
     }
   }
