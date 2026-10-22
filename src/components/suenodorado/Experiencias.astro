@@ -1,4 +1,5 @@
 ---
+import OptImage from "../OptImage.astro";
 import { Image } from "astro:assets";
 const bienestar = "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/7b0ccd43c52b6e51a81af781727b4dfe.jpg";
 const aventura = "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/27f1d784567f0c562d3f711e91e89156.jpg";
@@ -17,13 +18,13 @@ const cultura = "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b3
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <!-- Bienestar -->
       <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
-        <img src={bienestar} alt="Spa bienestar" class="h-52 w-full object-cover" loading="lazy" decoding="async"  />
+        <OptImage src={bienestar} alt="Spa bienestar" class="h-52 w-full object-cover" loading="lazy" decoding="async" />
         <div class="p-6 flex-1 flex flex-col">
           <h3 class="text-xl font-semibold text-amber-700 mb-2">Bienestar</h3>
           <p class="text-gray-700 text-base mb-4 flex-1">
             Transforma tu habitación en un santuario con masajes terapéuticos y tratamientos rejuvenecedores. Relájate con aceites esenciales locales en la intimidad de tu espacio.
           </p>
-          <a href="#reservar" class="mt-auto inline-block bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 px-4 rounded-full transition">
+          <a href="#reservar" class="mt-auto inline-block bg-amber-700 hover:bg-amber-800 text-white font-medium py-2 px-4 rounded-full transition">
             Reservar experiencia
           </a>
         </div>
@@ -31,13 +32,13 @@ const cultura = "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b3
 
       <!-- Aventura -->
       <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
-        <img src={aventura} alt="Tours de aventura" class="h-52 w-full object-cover" />
+        <OptImage src={aventura} alt="Tours de aventura" class="h-52 w-full object-cover" />
         <div class="p-6 flex-1 flex flex-col">
           <h3 class="text-xl font-semibold text-amber-700 mb-2">Aventura</h3>
           <p class="text-gray-700 text-base mb-4 flex-1">
             Canopy, rafting, senderismo y cataratas escondidas. Nuestro equipo te conecta con experiencias auténticas diseñadas para que descubras la magia de La Fortuna.
           </p>
-          <a href="/tours" class="mt-auto inline-block bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 px-4 rounded-full transition">
+          <a href="/tours" class="mt-auto inline-block bg-amber-700 hover:bg-amber-800 text-white font-medium py-2 px-4 rounded-full transition">
             Explorar tours
           </a>
         </div>
@@ -45,13 +46,13 @@ const cultura = "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b3
 
       <!-- Cultura -->
       <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
-        <img src={cultura} alt="Experiencias culturales" class="h-52 w-full object-cover" loading="lazy" decoding="async" />
+        <OptImage src={cultura} alt="Experiencias culturales" class="h-52 w-full object-cover" loading="lazy" decoding="async" />
         <div class="p-6 flex-1 flex flex-col">
           <h3 class="text-xl font-semibold text-amber-700 mb-2">Cultura</h3>
           <p class="text-gray-700 text-base mb-4 flex-1">
             Desde talleres de cocina tradicional hasta visitas a comunidades locales. Sumérgete en la esencia costarricense más allá del turismo convencional.
           </p>
-          <a href="#contacto" class="mt-auto inline-block bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 px-4 rounded-full transition">
+          <a href="#contacto" class="mt-auto inline-block bg-amber-700 hover:bg-amber-800 text-white font-medium py-2 px-4 rounded-full transition">
             Conocer más
           </a>
         </div>

@@ -2,28 +2,40 @@
 import data from "../../Data/habitaciones.json";
 import HabitacionDetalle from "../../components/suenodorado/HabitacionesDetalle.astro";
 import Layout from "../../layouts/BaseLayout.astro";
-
-const { id } = Astro.params;
-const habitacion = data.find((h) => h.id === id);
-
-if (!habitacion) {
-  throw new Error(`Habitación no encontrada: ${id}`);
-}
+import { hotelRoom } from "../../lib/schema";
+import { gallery } from "../../lib/images";
 
 export async function getStaticPaths() {
   return data.map((h) => ({
-    params: { id: h.id }
+    params: { id: h.id },
+    props: { habitacion: h },
   }));
 }
+
+const { habitacion } = Astro.props;
+
+const imagenes = await gallery(habitacion.imagenes);
+
+const description = `${habitacion.subtitulo}: ${habitacion.descripcion}`.slice(0, 155).replace(/\s+\S*$/, "…");
 ---
 
-<Layout title={habitacion.titulo}>
+<Layout
+  title={`${habitacion.titulo} | Hotel Sueño Dorado, La Fortuna`}
+  description={description}
+  image={imagenes[0].src}
+  jsonLd={hotelRoom({
+    name: habitacion.titulo,
+    path: `/habitaciones/${habitacion.id}/`,
+    description: habitacion.descripcion,
+    image: imagenes[0].src,
+    hotelPath: "/suenodorado",
+  })}
+>
   <HabitacionDetalle
     titulo={habitacion.titulo}
     subtitulo={habitacion.subtitulo}
     descripcion={habitacion.descripcion}
-    precio={habitacion.precio}
-    imagenes={habitacion.imagenes}
+    imagenes={imagenes}
     beneficios={habitacion.beneficios}
     detalles={habitacion.detalles}
     experiencias={habitacion.experiencias}

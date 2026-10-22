@@ -1,4 +1,5 @@
 ---
+import OptImage from "../../OptImage.astro";
 import { Image } from "astro:assets";
 const restauranteFoto = "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/resta_8bafe231.jpg";
 ---
@@ -53,7 +54,7 @@ const restauranteFoto = "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9
           <a
             href="https://wa.me/50684597077"
             onclick="return gtagSendEvent(this.href, this.target)"
-            class="inline-flex items-center justify-center rounded-full bg-emerald-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-600"
+            class="inline-flex items-center justify-center rounded-full bg-emerald-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-800"
             target="_blank"
             rel="noreferrer"
           >
@@ -70,12 +71,11 @@ const restauranteFoto = "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9
 
       <div class="flex h-full flex-col justify-between gap-6 rounded-2xl bg-white p-6 shadow-lg md:p-8">
         <div class="overflow-hidden rounded-xl">
-          <img
+          <OptImage
             src={restauranteFoto}
             alt="Abuela Luisita restaurant"
             class="h-56 w-full object-cover md:h-64"
-            loading="lazy"
-          />
+            loading="lazy" />
         </div>
         <div>
           <h3 class="text-xl font-semibold text-gray-900">Come eat like at home</h3>
@@ -94,7 +94,7 @@ const restauranteFoto = "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9
             <span class="rounded-full bg-emerald-100 px-3 py-1 font-semibold">Local ingredients</span>
           </div>
         </div>
-        <div class="rounded-xl bg-emerald-600 px-5 py-4 text-white">
+        <div class="rounded-xl bg-emerald-700 px-5 py-4 text-white">
           <p class="text-sm font-semibold">Call to action</p>
           <p class="mt-2 text-sm">
             Come eat like at home... but in La Fortuna.

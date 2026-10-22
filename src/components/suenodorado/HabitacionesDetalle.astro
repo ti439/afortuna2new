@@ -3,8 +3,7 @@ export interface Props {
   titulo: string;
   subtitulo: string;
   descripcion: string;
-  precio: string;
-  imagenes: string[];
+  imagenes: { src: string; thumb: string; alt: string }[];
   beneficios: string[];
   detalles: string[];
   experiencias: string[];
@@ -14,7 +13,6 @@ const {
   titulo,
   subtitulo,
   descripcion,
-  precio,
   imagenes,
   beneficios,
   detalles,
@@ -22,6 +20,7 @@ const {
 } = Astro.props;
 import Header from '../../components/HeaderPages.astro';
 import Footer from '../../components/Footer.astro';
+import PhotoCarrusel from '../PhotoCarrusel';
 ---
 <Header/>
 <section class="py-16 bg-white text-gray-800">
@@ -46,24 +45,20 @@ import Footer from '../../components/Footer.astro';
           ))}
         </div>
 
-        <!-- Precio + botón -->
         <div class="flex items-center gap-4 mt-4">
-          <!-- <p class="text-2xl font-bold text-gray-900">${precio} <span class="text-sm font-normal text-gray-500">/noche</span></p> -->
-          <a href="https://reservations.orbebooking.com/Search/Init/Ero8S/es" class="bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2 px-6 rounded-full transition">
+          <a
+            href="https://reservations.orbebooking.com/Search/Init/Ero8S/es"
+            onclick="return gtagSendEvent(this.href, this.target)"
+            class="bg-amber-700 hover:bg-amber-800 text-white font-semibold py-2 px-6 rounded-full transition"
+          >
             Reservar Ahora
           </a>
         </div>
       </div>
 
-      <!-- Galería (solo imagen principal en esta base) -->
+      <!-- Galería -->
       <div class="w-full">
-        <img src={imagenes[0]} alt={titulo} class="rounded-xl shadow-lg w-full object-cover" />
-        <!-- Si quieres miniaturas: 
-        <div class="flex gap-2 mt-4">
-          <img src={imagenes[1]} class="w-20 h-20 rounded-lg object-cover border" />
-          <img src={imagenes[2]} class="w-20 h-20 rounded-lg object-cover border" />
-        </div> 
-        -->
+        <PhotoCarrusel client:visible images={imagenes} thumbnails label={`Fotos de ${titulo}`} />
       </div>
     </div>
 

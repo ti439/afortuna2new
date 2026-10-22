@@ -4,88 +4,75 @@ import logoAF from "../assets/logoafortunadosver.png";
 import facebook from "../assets/facebook.png";
 import instagram from "../assets/instagram.png";
 import whatsapp from "../assets/whatsapp.png";
+
+interface Props {
+  lang?: "es" | "en";
+}
+const { lang = "es" } = Astro.props;
+const en = lang === "en";
+const p = en ? "/en" : "";
+
+const t = en
+  ? { follow: "Follow us", stays: "Places to stay", experiences: "Experiences", contact: "Contact", tours: "Tours & Experiences", springs: "Hot springs", rights: "All rights reserved.", by: "Developed by", location: "La Fortuna, Alajuela, Costa Rica" }
+  : { follow: "Síguenos", stays: "Hospedajes", experiences: "Experiencias", contact: "Contacto", tours: "Tours y experiencias", springs: "Aguas termales", rights: "Todos los derechos reservados.", by: "Desarrollado por", location: "La Fortuna, Alajuela, Costa Rica" };
+
+const stays = [
+  ["Hotel Sueño Dorado", `${p}/suenodorado`],
+  ["Hotel Cascada de Fuego", `${p}/cascadadefuego`],
+  ["Eco Village", en ? "/en/ecovilla" : "/ecovillage"],
+  ["Hotel Monte Real", `${p}/monte-real`],
+  ["La Fortuna Downtown", `${p}/lafortuna-downtown`],
+];
+const linkClass = "text-ink-soft transition hover:text-forest-bright hover:underline underline-offset-4";
 ---
 
-<footer id="Footer" class="bg-[#4c4c4c] text-white py-12 px-6">
-  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10">
-    <!-- Logo y redes -->
-    <div class="col-span-1 space-y-4">
-      <a href="#index" class="block">
-        <Image
-          src={logoAF}
-          alt="Logo de Afortunados"
-          class="w-[150px] object-contain"
-        />
+<footer id="Footer" class="border-t border-ink/10 bg-cream-warm px-5 pb-8 pt-14 text-ink sm:px-8">
+  <div class="mx-auto grid max-w-6xl gap-10 md:grid-cols-[1.2fr_1fr_1fr_1fr]">
+    <div class="space-y-4">
+      <a href={en ? "/en" : "/"} class="inline-block">
+        <Image src={logoAF} alt="Afortunados" class="w-[150px] object-contain" />
       </a>
-      <h3 class="text-lg font-semibold text-white">Síguenos</h3>
-      <div class="flex gap-4">
-        <a href="https://www.facebook.com/Afortunadoscr/" class="p-2 rounded-full text-[#879996] hover:scale-110 transition">
-          <Image src={facebook} alt="Facebook"/>
+      <p class="text-sm font-semibold text-forest-deep">{t.follow}</p>
+      <div class="flex gap-3">
+        <a href="https://www.facebook.com/Afortunadoscr/" target="_blank" rel="noopener" aria-label="Facebook" class="rounded-full transition hover:scale-110">
+          <Image src={facebook} alt="" class="h-10 w-10" />
         </a>
-        <a href="https://www.instagram.com/afortunadoscr/" class="p-2 rounded-full text-[#879996] hover:scale-110 transition">
-          <Image src={instagram} alt="instagram"/>
+        <a href="https://www.instagram.com/afortunadoscr/" target="_blank" rel="noopener" aria-label="Instagram" class="rounded-full transition hover:scale-110">
+          <Image src={instagram} alt="" class="h-10 w-10" />
         </a>
-        <a href="https://wa.me/50684597077" onclick="return gtagSendEvent(this.href, this.target)" class="p-2 rounded-full text-[#879996] hover:scale-110 transition">
-          <Image src={whatsapp} alt="whatsapp"/>
+        <a href="https://wa.me/50684597077" target="_blank" rel="noopener" aria-label="WhatsApp" onclick="return gtagSendEvent(this.href, this.target)" class="rounded-full transition hover:scale-110">
+          <Image src={whatsapp} alt="" class="h-10 w-10" />
         </a>
       </div>
     </div>
 
-    <!-- Enlaces -->
-    <div class="col-span-4 grid grid-cols-2 sm:grid-cols-4 gap-6 text-sm">
-      <div>
-        <h4 class="font-semibold mb-3">Experiencias</h4>
-        <ul class="space-y-2">
-          <li><a href="/tours" class="hover:underline">Tours & Experiencias</a></li>
-          <li><a href="/suenodorado" class="hover:underline">Termales</a></li>
-          <!-- <li><a href="#" class="hover:underline">Transportes</a></li>
-          <li><a href="#" class="hover:underline">Cultural</a></li>
-          <li><a href="#" class="hover:underline">Aventuras</a></li>
-          <li><a href="#" class="hover:underline">Naturaleza</a></li>
-          <li><a href="#" class="hover:underline">Servicios de Spa</a></li>
-          <li><a href="#" class="hover:underline">Culinarios</a></li>
-          <li><a href="#" class="hover:underline">Yoga</a></li> -->
-        </ul>
-      </div>
+    <nav aria-label={t.stays}>
+      <h2 class="mb-3 text-sm font-semibold text-forest-deep">{t.stays}</h2>
+      <ul class="space-y-2 text-sm">
+        {stays.map(([name, href]) => <li><a href={href} class={linkClass}>{name}</a></li>)}
+      </ul>
+    </nav>
 
-      <div>
-        <h4 class="font-semibold mb-3">Hospedajes</h4>
-        <ul class="space-y-2">
-          <li><a href="/suenodorado" class="hover:underline">Hotel Sueño Dorado</a></li>
-          <li><a href="/lafortuna-downtown" class="hover:underline">Downtown La Fortuna Boutique Hotel</a></li>
-          <li><a href="/monte-real" class="hover:underline">Monte Real</a></li>
-          <li><a href="/cascadadefuego" class="hover:underline">Hotel Cascada de Fuego</a></li>
-        </ul>
-      </div>
+    <nav aria-label={t.experiences}>
+      <h2 class="mb-3 text-sm font-semibold text-forest-deep">{t.experiences}</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a href={`${p}/tours`} class={linkClass}>{t.tours}</a></li>
+        <li><a href={`${p}/suenodorado`} class={linkClass}>{t.springs}</a></li>
+      </ul>
+    </nav>
 
-      <div>
-        <h4 class="font-semibold mb-3">Villas</h4>
-        <ul class="space-y-2">
-          <!-- <li><a href="#" class="hover:underline">Aventura</a></li>
-          <li><a href="#" class="hover:underline">Romántico</a></li>
-          <li><a href="#" class="hover:underline">Wildlife</a></li>
-          <li><a href="#" class="hover:underline">Nature</a></li> -->
-        </ul>
-      </div>
-
-      <!-- <div>
-        <h4 class="font-semibold mb-3">Internacional</h4>
-        <ul class="space-y-2">
-          <li><a href="#" class="hover:underline">Todo incluido</a></li>
-          <li><a href="#" class="hover:underline">Aventura</a></li>
-          <li><a href="#" class="hover:underline">Romántico</a></li>
-          <li><a href="#" class="hover:underline">Wildlife</a></li>
-          <li><a href="#" class="hover:underline">Nature</a></li>
-        </ul>
-      </div> -->
+    <div>
+      <h2 class="mb-3 text-sm font-semibold text-forest-deep">{t.contact}</h2>
+      <ul class="space-y-2 text-sm text-ink-soft">
+        <li><a href="https://wa.me/50684597077" target="_blank" rel="noopener" onclick="return gtagSendEvent(this.href, this.target)" class={linkClass}>+506 8459 7077</a></li>
+        <li><a href="mailto:info@afortunados.cr" class={linkClass}>info@afortunados.cr</a></li>
+        <li>{t.location}</li>
+      </ul>
     </div>
   </div>
 
-  <!-- Línea inferior -->
-  <div class="mt-12 text-center text-sm text-white/80">
-    © {new Date().getFullYear()} Afortunados. Todos los derechos reservados.
-  </div>
-  <div>
-    Desarrollado por <a href="https://www.innovalinkcr.com">InnovaLinkCR</a>
+  <div class="mx-auto mt-12 flex max-w-6xl flex-col gap-2 border-t border-ink/10 pt-6 text-xs text-ink-muted sm:flex-row sm:items-center sm:justify-between">
+    <p>© {new Date().getFullYear()} Afortunados. {t.rights}</p>
+    <p>{t.by} <a href="https://www.innovalinkcr.com" target="_blank" rel="noopener" class="font-semibold text-ink-soft hover:underline">InnovaLinkCR</a></p>
   </div>
 </footer>

@@ -9,37 +9,29 @@ import Banner1 from "../components/luisita/en/Banner1En.astro";
 import Contacto from "../components/luisita/en/ContactoEn.astro";
 import Header from "../components/luisita/en/HeaderluisitaEn.astro";
 import Footer from "../components/Footer.astro";
-import Hreflang from "../components/seo/Hreflang.astro";
-import ToursTeaser from "../components/en/ToursTeaserEN.astro";import WhatsAppButton from "../components/en/WhatsAppButtonEn.astro";
+import ToursTeaser from "../components/en/ToursTeaserEN.astro";
+import WhatsAppButton from "../components/en/WhatsAppButtonEn.astro";
 import "../styles/global.css";
+import SEOHead from "../components/seo/SEOHead.astro";
+import { hotel } from "../lib/schema";
+
+const jsonLd = hotel({
+  name: "Hotel Cascada de Fuego",
+  path: "/cascadadefuego",
+  description: "Hotel Cascada de Fuego and Abuela Luisita Restaurant in La Fortuna: premium rooms with jacuzzi, Costa Rican flavor, close to Arenal Volcano.",
+});
 ---
 
+<!doctype html>
 <html lang="en">
   <head>
-    <title>Hotel Catarata Resort</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <Hreflang />
-  
-    <script is:inline>
-      function gtagSendEvent(url, target) {
-        var isBlank = target === "_blank";
-        var navigate = function () {
-          if (!isBlank && typeof url === "string") {
-            window.location = url;
-          }
-        };
-        if (typeof gtag === "function") {
-          gtag("event", "conversion_event_outbound_click", {
-            event_callback: navigate,
-            event_timeout: 2000,
-          });
-          return !isBlank;
-        }
-        navigate();
-        return !isBlank;
-      }
-    </script>
+    <SEOHead
+      lang="en"
+      title="Hotel Cascada de Fuego | Abuela Luisita, La Fortuna"
+      description="Hotel Cascada de Fuego and Abuela Luisita Restaurant in La Fortuna: premium rooms with jacuzzi, Costa Rican flavor, close to Arenal Volcano."
+      alternate="/cascadadefuego"
+      jsonLd={jsonLd}
+    />
   </head>
 
   <body class="bg-white text-gray-900">
@@ -52,7 +44,7 @@ import "../styles/global.css";
     <Banner1 />
     <Contacto />
     <ToursTeaser />
-    <Footer />
+    <Footer lang="en" />
     <WhatsAppButton />
   </body>
 </html>

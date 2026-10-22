@@ -1,4 +1,5 @@
 ---
+import OptImage from "../OptImage.astro";
 const hospedajes = [
   {
     name: "Downtown La Fortuna Boutique Hotel",
@@ -25,7 +26,7 @@ const hospedajes = [
     name: "Hotel Catarata Resort",
     tag: "Relajación y tradición costarricense",
     description: "Un espacio ideal para descansar en La Fortuna con áreas verdes, excelente ubicación y atención cercana.",
-    url: "/catarataresort",
+    url: "/cascadadefuego",
     image: "https://i.ibb.co/zWDQKjrm/fuera.jpg"
   }
 ];
@@ -43,7 +44,7 @@ const hospedajes = [
           Descubre alternativas cercanas con estilos diferentes. Comparte con tu cliente y elige la experiencia ideal.
         </p>
       </div>
-      <a href="/hospedajes" class="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-6 rounded-full transition">
+      <a href="/vacacionales" class="inline-flex items-center gap-2 bg-amber-700 hover:bg-amber-800 text-white font-semibold py-3 px-6 rounded-full transition">
         Ver todos
         <span aria-hidden="true">→</span>
       </a>
@@ -58,7 +59,7 @@ const hospedajes = [
             class="group bg-white rounded-2xl shadow-md overflow-hidden border border-amber-100 hover:shadow-xl transition shrink-0 snap-start basis-full md:basis-[calc((100%-1.5rem)/2)] lg:basis-[calc((100%-3rem)/3)]"
           >
             <div class="relative h-60 md:h-72 overflow-hidden">
-              <img src={hospedaje.image} alt={hospedaje.name} class="h-full w-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" decoding="async" />
+              <OptImage src={hospedaje.image} alt={hospedaje.name} class="h-full w-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" decoding="async" />
               <span class="absolute top-4 left-4 bg-white/90 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full">
                 {hospedaje.tag}
               </span>

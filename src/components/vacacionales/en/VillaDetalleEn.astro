@@ -14,7 +14,6 @@ export interface Props {
   titulo: string;
   subtitulo: string;
   parrafoPrincipal: string;
-  imagenPrincipal: string;
   imagenes: Imagen[];
   secciones: Seccion[];
   beneficios: string[];
@@ -30,7 +29,6 @@ const {
   titulo,
   subtitulo,
   parrafoPrincipal,
-  imagenPrincipal,
   imagenes,
   secciones,
   beneficios,
@@ -50,12 +48,12 @@ import ToursTeaser from "../../en/ToursTeaserEN.astro";
 
 <section class="py-16 px-6 pt-28 max-w-5xl mx-auto text-gray-800">
   <div class="mb-8">
-    <ImageCarousel client:load images={imagenes} />
+    <ImageCarousel client:visible images={imagenes} thumbnails />
     <div class="mt-4 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
       {precio && <span class="text-lg font-semibold text-gray-900">From {precio}</span>}
       <a
         href={url ? url : "/#reservar"}
-        class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-medium py-3 px-6 rounded-full transition"
+        class="inline-block bg-amber-700 hover:bg-amber-800 text-white font-medium py-3 px-6 rounded-full transition"
       >
         Book now
       </a>
@@ -69,7 +67,7 @@ import ToursTeaser from "../../en/ToursTeaserEN.astro";
 
   {secciones.map((sec) => (
     <div class="mb-10">
-      <h2 class="text-2xl font-semibold text-emerald-600 mb-2">{sec.titulo}</h2>
+      <h2 class="text-2xl font-semibold text-emerald-700 mb-2">{sec.titulo}</h2>
       {Array.isArray(sec.contenido) ? (
         <ul class="list-disc list-inside text-gray-700 space-y-1">
           {sec.contenido.map((item) => <li>{item}</li>)}
@@ -82,14 +80,14 @@ import ToursTeaser from "../../en/ToursTeaserEN.astro";
 
   <div class="grid md:grid-cols-2 gap-8 mb-10">
     <div>
-      <h3 class="text-xl font-bold text-emerald-600 mb-2">Exclusive benefits</h3>
+      <h3 class="text-xl font-bold text-emerald-700 mb-2">Exclusive benefits</h3>
       <ul class="list-disc list-inside text-gray-700 space-y-1">
         {beneficios.map((b) => <li>{b}</li>)}
       </ul>
     </div>
 
     <div>
-      <h3 class="text-xl font-bold text-emerald-600 mb-2">Rooms</h3>
+      <h3 class="text-xl font-bold text-emerald-700 mb-2">Rooms</h3>
       <ul class="list-disc list-inside text-gray-700 space-y-1">
         {habitaciones.map((h) => <li>{h}</li>)}
       </ul>
@@ -97,7 +95,7 @@ import ToursTeaser from "../../en/ToursTeaserEN.astro";
   </div>
 
   <div class="mb-8">
-    <h3 class="text-xl font-bold text-emerald-600 mb-2">Sustainability</h3>
+    <h3 class="text-xl font-bold text-emerald-700 mb-2">Sustainability</h3>
     <p>{sustentabilidad}</p>
   </div>
 
@@ -105,7 +103,7 @@ import ToursTeaser from "../../en/ToursTeaserEN.astro";
     <p class="text-lg italic">{cierre}</p>
     <a
       href={url ? url : "/#reservar"}
-      class="mt-6 inline-block bg-amber-500 hover:bg-amber-600 text-white font-medium py-3 px-6 rounded-full transition"
+      class="mt-6 inline-block bg-amber-700 hover:bg-amber-800 text-white font-medium py-3 px-6 rounded-full transition"
     >
       Book now
     </a>

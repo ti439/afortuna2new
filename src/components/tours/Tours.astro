@@ -1,4 +1,5 @@
 ---
+import OptImage from "../OptImage.astro";
 import toursData from '../../Data/tours.json';
 
 const slugify = (name) =>
@@ -24,7 +25,7 @@ const tours = toursData.map((tour) => {
 ---
 
 
-    <section class="bg-green-600 text-white py-12 mt-18">
+    <section class="bg-green-700 text-white py-12 mt-18">
       <div class="container mx-auto px-4">
         <div class="max-w-3xl">
           <span class="inline-flex items-center gap-2 bg-white/15 px-4 py-2 rounded-full text-sm uppercase tracking-widest">
@@ -59,7 +60,7 @@ const tours = toursData.map((tour) => {
 
     <section id="listado-tours" class="container mx-auto px-4 mt-8">
       <div class="flex gap-2 overflow-x-auto pb-4">
-        <button class="bg-green-600 text-white px-4 py-2 rounded-full whitespace-nowrap">Todos los tours</button>
+        <button class="bg-green-700 text-white px-4 py-2 rounded-full whitespace-nowrap">Todos los tours</button>
         <button class="bg-gray-200 px-4 py-2 rounded-full whitespace-nowrap">Fácil</button>
         <button class="bg-gray-200 px-4 py-2 rounded-full whitespace-nowrap">Moderado</button>
         <button class="bg-gray-200 px-4 py-2 rounded-full whitespace-nowrap">Aventura extrema</button>
@@ -69,7 +70,7 @@ const tours = toursData.map((tour) => {
         {tours.map((tour) => (
           <div class="bg-white rounded-lg shadow p-4 flex flex-col">
             <div class="relative">
-              <img src={tour.imagen} alt={tour.nombre} class="rounded-t-lg w-full h-48 object-cover" loading="lazy" />
+              <OptImage src={tour.imagen} alt={tour.nombre} class="rounded-t-lg w-full h-48 object-cover" loading="lazy" />
               <span class="absolute top-2 right-2 bg-yellow-200 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full">
                 {tour.dificultad}
               </span>
@@ -93,7 +94,7 @@ const tours = toursData.map((tour) => {
             <div class="mt-4 flex flex-wrap gap-3">
               <button
                 onclick={(`openBookingModal(${JSON.stringify(tour.nombre)})`)}
-                class="flex-1 min-w-[160px] bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition text-center"
+                class="flex-1 min-w-[160px] bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 transition text-center"
               >
                 Reservar ahora
               </button>
@@ -148,7 +149,7 @@ const tours = toursData.map((tour) => {
             <textarea id="note" rows="3" class="w-full rounded-lg border border-gray-300 px-3 py-2" placeholder="Comentarios adicionales"></textarea>
           </label>
 
-          <button type="submit" class="w-full rounded-full bg-green-600 px-4 py-3 text-sm font-bold uppercase tracking-wider text-white hover:bg-green-700">Enviar solicitud</button>
+          <button type="submit" class="w-full rounded-full bg-green-700 px-4 py-3 text-sm font-bold uppercase tracking-wider text-white hover:bg-green-800">Enviar solicitud</button>
         </form>
 
         <p id="booking-message" class="mt-3 text-sm text-emerald-700 hidden"></p>

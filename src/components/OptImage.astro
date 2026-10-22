@@ -1,0 +1,19 @@
+---
+// <img> optimizado: acepta una URL remota (CDN) o un import de src/assets,
+// lo redimensiona a `maxWidth` manteniendo la proporción y lo sirve en webp.
+import type { ImageMetadata } from "astro";
+import type { HTMLAttributes } from "astro/types";
+import { Image } from "astro:assets";
+import { fitSize } from "../lib/images";
+
+type Props = Omit<HTMLAttributes<"img">, "src" | "width" | "height"> & {
+  src: string | ImageMetadata;
+  alt: string;
+  maxWidth?: number;
+};
+
+const { src, alt, maxWidth = 1280, ...attrs } = Astro.props;
+const size = await fitSize(src, maxWidth);
+---
+
+<Image src={src} alt={alt} {...size} format="webp" loading="lazy" decoding="async" {...attrs} />

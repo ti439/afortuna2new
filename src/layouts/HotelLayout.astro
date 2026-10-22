@@ -9,41 +9,30 @@ import Beneficios from "../components/suenodorado/Beneficios.astro";
 import Header from '../components/suenodorado/HeaderSueno.astro';
 import OtrosHospedajesBanner from "../components/suenodorado/OtrosHospedajesBanner.astro";
 import Footer from '../components/Footer.astro';
-import Hreflang from "../components/seo/Hreflang.astro";
 import ToursTeaser from "../components/ToursTeaser.astro";
 import WhatsAppButton from "../components/WhatsAppButton.astro";
 
 import "../styles/global.css";
+import SEOHead from "../components/seo/SEOHead.astro";
+import { hotel } from "../lib/schema";
 
+const jsonLd = hotel({
+  name: "Hotel Sueño Dorado",
+  path: "/suenodorado",
+  description: "Hotel Sueño Dorado en La Fortuna: habitaciones con vista al Volcán Arenal, piscinas termales y desayuno incluido. Reserva directa al mejor precio.",
+});
 ---
 
+<!doctype html>
 <html lang="es">
   <head>
-    <title>Hotel Sueño Dorado</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <Hreflang />
-
-  
-    <script is:inline>
-      function gtagSendEvent(url, target) {
-        var isBlank = target === "_blank";
-        var navigate = function () {
-          if (!isBlank && typeof url === "string") {
-            window.location = url;
-          }
-        };
-        if (typeof gtag === "function") {
-          gtag("event", "conversion_event_outbound_click", {
-            event_callback: navigate,
-            event_timeout: 2000,
-          });
-          return !isBlank;
-        }
-        navigate();
-        return !isBlank;
-      }
-    </script>
+    <SEOHead
+      lang="es"
+      title="Hotel Sueño Dorado | Vista al Volcán Arenal, La Fortuna"
+      description="Hotel Sueño Dorado en La Fortuna: habitaciones con vista al Volcán Arenal, piscinas termales y desayuno incluido. Reserva directa al mejor precio."
+      alternate="/en/suenodorado"
+      jsonLd={jsonLd}
+    />
   </head>
 
   <body class="bg-white text-gray-900">
@@ -57,7 +46,8 @@ import "../styles/global.css";
     <ToursTeaser />
     <Beneficios />
     <Contacto />
-    <Footer/>
+    <Footer />
+    <WhatsAppButton />
   </body>
 </html>
 

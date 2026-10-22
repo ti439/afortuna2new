@@ -1,0 +1,33 @@
+---
+import Image from "astro/components/Image.astro";
+import tripadvisor from "../../assets/tripadvisor.png";
+import google from "../../assets/google.png";
+import booking from "../../assets/booking.png";
+import expedia from "../../assets/expedia.png";
+---
+
+<section id="reviews" class="bg-white text-center py-10">
+  <h2 class="text-4xl font-bold text-gray-500 mb-8 uppercase">Ratings on platforms</h2>
+  <div class="flex flex-wrap justify-center gap-8 text-gray-700 font-medium" data-anim="stagger">
+    <div>
+      <p class="text-2xl font-bold">8.3/10</p>
+      <p><span data-count="500">500</span> reviews</p>
+      <Image src={tripadvisor} alt="Tripadvisor" class="w-32 mx-auto mt-2" />
+    </div>
+    <div>
+      <p class="text-2xl font-bold">8.3/10</p>
+      <p><span data-count="2123">2,123</span> reviews</p>
+      <Image src={google} alt="Google" class="w-28 mx-auto mt-2" />
+    </div>
+    <div>
+      <p class="text-2xl font-bold">8.3/10</p>
+      <p><span data-count="1500">1,500</span> reviews</p>
+      <Image src={booking} alt="Booking" class="w-32 mx-auto mt-2" />
+    </div>
+    <div>
+      <p class="text-2xl font-bold">8.3/10</p>
+      <p><span data-count="1234">1,234</span> reviews</p>
+      <Image src={expedia} alt="Expedia" class="w-32 mx-auto mt-2" />
+    </div>
+  </div>
+</section>

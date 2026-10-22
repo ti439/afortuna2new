@@ -1,4 +1,5 @@
 ---
+import OptImage from "../../OptImage.astro";
 import { Image } from "astro:assets";
 import king from "../../../assets/intimidad.jpg";
 const quintuple = "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/cuadruple_3c349e4f.jpg";
@@ -26,7 +27,7 @@ import cuadruples from "../../../assets/cuadruple.jpg";
           <div class="mt-2 flex flex-wrap gap-3">
             <a
               href={`/habitaciones/${"king"}`}
-              class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 px-4 rounded-full transition duration-300"
+              class="inline-block bg-amber-700 hover:bg-amber-800 text-white font-medium py-2 px-4 rounded-full transition duration-300"
             >
               View details
             </a>
@@ -41,7 +42,7 @@ import cuadruples from "../../../assets/cuadruple.jpg";
       </div>
 
       <div class="bg-white rounded-xl shadow-md overflow-hidden">
-        <img src={quintuple} alt="Family room" class="w-full h-56 object-cover" />
+        <OptImage src={quintuple} alt="Family room" class="w-full h-56 object-cover" />
         <div class="p-6">
           <h3 class="text-xl font-semibold text-amber-700 mb-2">Family Retreat</h3>
           <p class="text-gray-700 text-base mb-4">
@@ -50,7 +51,7 @@ import cuadruples from "../../../assets/cuadruple.jpg";
           <div class="mt-2 flex flex-wrap gap-3">
             <a
               href={`/habitaciones/${"familiar"}`}
-              class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 px-4 rounded-full transition duration-300"
+              class="inline-block bg-amber-700 hover:bg-amber-800 text-white font-medium py-2 px-4 rounded-full transition duration-300"
             >
               View details
             </a>
@@ -74,7 +75,7 @@ import cuadruples from "../../../assets/cuadruple.jpg";
           <div class="mt-2 flex flex-wrap gap-3">
             <a
               href={`/habitaciones/${"cuadruple"}`}
-              class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 px-4 rounded-full transition duration-300"
+              class="inline-block bg-amber-700 hover:bg-amber-800 text-white font-medium py-2 px-4 rounded-full transition duration-300"
             >
               View details
             </a>

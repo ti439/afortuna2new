@@ -5,10 +5,17 @@ import Footer from "../components/Footer.astro";
 import EcoVillageHero from "../components/ecovillage/EcoVillageHero.astro";
 import EcoVillageExperience from "../components/ecovillage/EcoVillageExperience.astro";
 import EcoVillageAbout from "../components/ecovillage/EcoVillageAbout.astro";
+import { hotel } from "../lib/schema";
+
+const description = "Eco Village en La Fortuna: villas privadas para parejas con piscinas alimentadas por el río, naturaleza y vista al Volcán Arenal.";
 ---
 
-<BaseLayout title="Eco Village | Afortunados">
-  <Header enHref="/en/ecovillage" />
+<BaseLayout
+  title="Eco Village | Villas románticas en La Fortuna"
+  description={description}
+  jsonLd={hotel({ name: "Eco Village", path: "/ecovillage", description })}
+>
+  <Header enHref="/en/ecovilla" />
   <main class="bg-white">
     <EcoVillageHero />
     <EcoVillageExperience />

@@ -2,41 +2,22 @@
 import Villas from "../components/vacacionales/en/VillasEn.astro";
 import Header from "../components/en/HeaderPagesEn.astro";
 import Footer from "../components/en/FooterEn.astro";
-import Hreflang from "../components/seo/Hreflang.astro";
 import ToursTeaser from "../components/en/ToursTeaserEN.astro";
 import WhatsAppButton from "../components/en/WhatsAppButtonEn.astro";
 
 import "../styles/global.css";
+import SEOHead from "../components/seo/SEOHead.astro";
 ---
 
+<!doctype html>
 <html lang="en">
   <head>
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/faviconA.png" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Afortunados - Pura Vida</title>
-    <meta charset="UTF-8" />
-    <Hreflang />
-  
-    <script is:inline>
-      function gtagSendEvent(url, target) {
-        var isBlank = target === "_blank";
-        var navigate = function () {
-          if (!isBlank && typeof url === "string") {
-            window.location = url;
-          }
-        };
-        if (typeof gtag === "function") {
-          gtag("event", "conversion_event_outbound_click", {
-            event_callback: navigate,
-            event_timeout: 2000,
-          });
-          return !isBlank;
-        }
-        navigate();
-        return !isBlank;
-      }
-    </script>
+    <SEOHead
+      lang="en"
+      title="Villas & Stays in La Fortuna | Afortunados"
+      description="Villas, hotels and vacation rentals in La Fortuna, Costa Rica: Eco Villa, Sueño Dorado, Monte Real and more, near the Arenal Volcano."
+      alternate="/vacacionales"
+    />
   </head>
 
   <body class="flex flex-col min-h-screen bg-white text-gray-900">

@@ -21,7 +21,7 @@ import standard from "../../../assets/Habjrs.jpg";
       <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-[#e8e0d6] flex flex-col">
         <div class="relative">
           <Image src={premium} alt="Premium room with jacuzzi" class="w-full h-72 sm:h-80 object-cover" />
-          <span class="absolute top-3 right-3 inline-flex items-center gap-1 bg-[#d96c3f] text-white text-sm font-semibold px-3 py-1 rounded-full shadow">
+          <span class="absolute top-3 right-3 inline-flex items-center gap-1 bg-[#b5532a] text-white text-sm font-semibold px-3 py-1 rounded-full shadow">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4">
               <path d="M12 3 8.5 8.5 3 12l5.5 3.5L12 21l3.5-5.5L21 12l-5.5-3.5Z" />
             </svg>
@@ -39,7 +39,7 @@ import standard from "../../../assets/Habjrs.jpg";
             href={`https://us2.cloudbeds.com/reservation/brsfX9`}
             class="mt-2 inline-block text-center border border-[#ded7cf] hover:border-[#c8bcad] text-[#2f2a26] font-medium py-3 px-4 rounded-lg transition"
           >
-            View details
+            Request more details
           </a>
         </div>
       </div>
@@ -56,10 +56,11 @@ import standard from "../../../assets/Habjrs.jpg";
             pieces that celebrate our identity.
           </p>
           <a
-            href={`/habitaciones/${"standard"}`}
+            href="https://us2.cloudbeds.com/reservation/brsfX9"
+            onclick="return gtagSendEvent(this.href, this.target)"
             class="mt-2 inline-block text-center border border-[#ded7cf] hover:border-[#c8bcad] text-[#2f2a26] font-medium py-3 px-4 rounded-lg transition"
           >
-            View details
+            Request more details
           </a>
         </div>
       </div>

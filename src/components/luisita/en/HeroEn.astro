@@ -1,20 +1,22 @@
 ---
+import OptImage from "../../OptImage.astro";
 const heroBgUrl = "https://i.ibb.co/zWDQKjrm/fuera.jpg";
 const useBackgroundImage = true;
 ---
 
-<section
-  class={`relative flex items-center h-screen text-[#e8e2d9] ${
-    useBackgroundImage ? "bg-cover bg-center" : "bg-[#2f4b2c]"
-  }`}
-  style={useBackgroundImage ? `background-image: url(${heroBgUrl});` : undefined}
->
-  {useBackgroundImage && <div class="absolute inset-0 bg-black/45"></div>}
-  <div class="relative z-10 w-full flex flex-col items-center text-center px-6 sm:px-8 max-w-5xl mx-auto space-y-8">
+<section class="relative flex h-screen items-center overflow-hidden bg-[#2f4b2c] text-[#f3eee7]">
+  {useBackgroundImage && (
+    <>
+      <OptImage src={heroBgUrl} alt="" maxWidth={1920} loading="eager" fetchpriority="high" class="absolute inset-0 h-full w-full object-cover" />
+      <div class="absolute inset-0 bg-black/50"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.55)_0%,transparent_70%)]"></div>
+    </>
+  )}
+  <div class="relative z-10 w-full flex flex-col items-center text-center [text-shadow:0_2px_18px_rgba(0,0,0,0.6)] px-6 sm:px-8 max-w-5xl mx-auto space-y-8">
     <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
       Costa Rican flavor, living tradition, and soulful rest
     </h1>
-    <p class="text-lg sm:text-xl md:text-2xl font-medium text-[#d2c9be]">
+    <p class="text-lg sm:text-xl md:text-2xl font-medium text-[#ebe4da]">
       Some places are not just visited... they feel like home
     </p>
     <a

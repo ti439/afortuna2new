@@ -1,4 +1,5 @@
 ---
+import OptImage from "../OptImage.astro";
 import villas from "../../Data/villasnew.json"; // Contendrá todas las villas
 
 const topTours = [
@@ -28,9 +29,9 @@ const topTours = [
 
 <section class="py-16 bg-white text-gray-800 pt-32">
   <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold mb-4 leading-tight">
+    <h1 class="text-3xl md:text-4xl font-bold mb-4 leading-tight">
       OPCIONES PARA HOSPEDARSE EN LA FORTUNA
-    </h2>
+    </h1>
     <p class="max-w-2xl mx-auto mb-8 text-gray-600 text-base md:text-lg">
       Al hospedarte con nosotros se incluirá el pase del día en las aguas termales del Hotel Sueño Dorado...
     </p>
@@ -56,13 +57,13 @@ const topTours = [
               {villa.destacado}
             </span>
           )}
-          <img src={villa.imagen} alt={villa.nombre} class="rounded-lg w-full h-52 object-cover mb-4" />
+          <OptImage src={villa.imagen} alt={villa.nombre} class="rounded-lg w-full h-52 object-cover mb-4" />
           <h3 class="font-semibold text-lg mb-1">{villa.nombre}</h3>
           <p class="text-sm text-gray-600 mb-2 line-clamp-3">{villa.descripcionCorta}</p>
           <p class="text-sm text-gray-700 font-medium mb-3">Capacidad: {villa.capacidad}</p>
           <a
             href={`${villa.id}`}
-            class="inline-block border border-emerald-600 text-emerald-600 hover:bg-emerald-600 hover:text-white transition px-4 py-2 rounded-full text-sm font-semibold w-full text-center"
+            class="inline-block border border-emerald-700 text-emerald-700 hover:bg-emerald-800 hover:text-white transition px-4 py-2 rounded-full text-sm font-semibold w-full text-center"
           >
             + INFO
           </a>
@@ -82,12 +83,12 @@ const topTours = [
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         {topTours.map((tour) => (
           <div class="rounded-2xl overflow-hidden bg-white border border-emerald-100 shadow-sm">
-            <img src={tour.image} alt={tour.title} class="w-full h-40 object-cover" loading="lazy" />
+            <OptImage src={tour.image} alt={tour.title} class="w-full h-40 object-cover" loading="lazy" />
             <div class="p-4">
               <h4 class="font-semibold text-lg mb-1">{tour.title}</h4>
               <p class="text-sm text-gray-600 mb-1">{tour.description}</p>
               <p class="text-xs text-gray-500 mb-3">{tour.info}</p>
-              <a href={tour.link} class="inline-block w-full text-center bg-emerald-600 text-white px-3 py-2 rounded-full text-sm font-semibold hover:bg-emerald-700 transition">Conocer tour</a>
+              <a href={tour.link} class="inline-block w-full text-center bg-emerald-700 text-white px-3 py-2 rounded-full text-sm font-semibold hover:bg-emerald-800 transition">Conocer tour</a>
             </div>
           </div>
         ))}

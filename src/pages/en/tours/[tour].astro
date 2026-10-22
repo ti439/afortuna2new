@@ -3,15 +3,11 @@ import Layout from "../../../layouts/BaseLayoutEn.astro";
 import TourDetail from "../../../components/en/tours/[tour].astro";
 import toursData from "../../../Data/tours_en.json";
 import toursDetailData from "../../../Data/toursTotal_en.json";
+import otherLangTours from "../../../Data/tours.json";
+import { slugify } from "../../../lib/tours";
+import { touristTrip } from "../../../lib/schema";
 
 export async function getStaticPaths() {
-  const slugify = (name) =>
-    name
-      .toLowerCase()
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '')
-      .replace(/[^a-z0-9]+/g, '-')
-      .replace(/^-+|-+$/g, '');
 
   const toursBase = toursData.map((tour) => ({
     ...tour,
@@ -29,15 +25,32 @@ export async function getStaticPaths() {
     return { ...base, ...detail };
   };
 
-  return toursBase.map((tour) => ({
-    params: { tour: tour.slug },
-    props: { tour: buildTour(tour.slug) }
-  }));
+  // tours.json y tours_en.json comparten el mismo orden: se emparejan por índice para el hreflang
+  return toursBase.map((tour, i) => {
+    const other = otherLangTours[i];
+    const otherSlug = other ? other.slug ?? slugify(other.nombre) : undefined;
+    return {
+      params: { tour: tour.slug },
+      props: {
+        tour: buildTour(tour.slug),
+        alternate: otherSlug ? `/tours/${otherSlug}` : undefined,
+      },
+    };
+  });
 }
 
-const { tour } = Astro.props;
+const { tour, alternate } = Astro.props;
+const description = tour.descripcionCorta ?? tour.descripcion;
+const image = tour.imagenDetalle ?? tour.imagen;
 ---
 
-<Layout title={`Tour: ${tour.nombre}`}>
+<Layout
+  lang="en"
+  title={`${tour.nombre} | La Fortuna Tours`}
+  description={description}
+  image={image}
+  alternate={alternate}
+  jsonLd={touristTrip({ name: tour.nombre, path: Astro.url.pathname, description, image, price: tour.precio })}
+>
   <TourDetail tour={tour} />
 </Layout>

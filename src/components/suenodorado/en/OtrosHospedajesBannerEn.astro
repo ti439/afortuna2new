@@ -1,4 +1,5 @@
 ---
+import OptImage from "../../OptImage.astro";
 const hospedajes = [
   {
     name: "Downtown La Fortuna Boutique Hotel",
@@ -36,7 +37,7 @@ const hospedajes = [
           Explore nearby alternatives with different styles. Share with your client and choose the ideal experience.
         </p>
       </div>
-      <a href="/en/hospedajes" class="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-6 rounded-full transition">
+      <a href="/en/vacacionales" class="inline-flex items-center gap-2 bg-amber-700 hover:bg-amber-800 text-white font-semibold py-3 px-6 rounded-full transition">
         View all
         <span aria-hidden="true">→</span>
       </a>
@@ -46,7 +47,7 @@ const hospedajes = [
       {hospedajes.map((hospedaje) => (
         <a href={hospedaje.url} class="group bg-white rounded-2xl shadow-md overflow-hidden border border-amber-100 hover:shadow-xl transition">
           <div class="relative h-52 overflow-hidden">
-            <img src={hospedaje.image} alt={hospedaje.name} class="h-full w-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" decoding="async" />
+            <OptImage src={hospedaje.image} alt={hospedaje.name} class="h-full w-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" decoding="async" />
             <span class="absolute top-4 left-4 bg-white/90 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full">
               {hospedaje.tag}
             </span>

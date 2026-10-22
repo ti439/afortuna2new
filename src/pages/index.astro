@@ -1,33 +1,33 @@
 ---
-import AboutUs from "../components/AboutUs.astro";
+import Layout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import Welcome from "../components/Welcome.astro";
-import Destinations from "../components/Destinations.astro";
-import Layout from "../layouts/Layout.astro";
-import VacationalsHouses from "../components/VacationalsHouses.astro";
-import Comentaries from "../components/Comentaries.astro";
-import Information from "../components/Information.astro";
-
-import Destiny from "../components/Destiny.astro";
-import InfoCasas from "../components/InfoCasas.astro";
+import Hero from "../components/home/Hero.astro";
+import Hospedajes from "../components/home/Hospedajes.astro";
 import ToursTeaser from "../components/ToursTeaser.astro";
+import GoogleReviews from "../components/home/GoogleReviews.astro";
+import Nosotros from "../components/home/Nosotros.astro";
+import FAQ from "../components/home/FAQ.astro";
+import CTAFinal from "../components/home/CTAFinal.astro";
+import { organization } from "../lib/schema";
 ---
 
-<Layout>
- 
-<div>
-    <Header />  
-  </div>
-
-  <div>
-    <Welcome />
-  </div>
-  <AboutUs />
-  <!-- <Destiny /> -->
-  <InfoCasas />
-  <ToursTeaser />
-  <Comentaries />
-  <!-- <Information /> -->
-  <Footer /> 
+<Layout
+  lang="es"
+  title="Afortunados | Hospedaje y tours en La Fortuna, Costa Rica"
+  description="Hoteles con aguas termales, villas y tours frente al Volcán Arenal en La Fortuna, Costa Rica. 4.9 en Google. Reserva directo por WhatsApp."
+  alternate="/en"
+  jsonLd={organization}
+>
+  <Header />
+  <main>
+    <Hero lang="es" />
+    <Hospedajes lang="es" />
+    <ToursTeaser lang="es" />
+    <GoogleReviews lang="es" />
+    <Nosotros lang="es" />
+    <FAQ lang="es" />
+    <CTAFinal lang="es" />
+  </main>
+  <Footer />
 </Layout>

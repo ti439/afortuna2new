@@ -1,4 +1,10 @@
 ---
+import OptImage from "../OptImage.astro";
+import ecovilla2 from "../../assets/ecovillage/ecovilla2.jpg";
+import ecovilla3 from "../../assets/ecovillage/ecovilla3.jpg";
+import hab1 from "../../assets/ecovillage/hab1.jpg";
+import hab2 from "../../assets/ecovillage/hab2.jpg";
+
 const kingRoom = "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/piscina_a5e6b762.jpg";
 const valleyRoom = "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/ecovilla_dcfd0dc3.jpg";
 
@@ -7,7 +13,7 @@ const experiences = [
     number: "01",
     title: "Piscina privada exclusiva",
     description: "Un santuario de agua fresca integrado en el deck de madera, suspendido sobre el bosque tropical.",
-    image: "/assetss/ecovilla2.jpg",
+    image: ecovilla2,
     alt: "Piscina privada en la terraza de Eco Village",
     featured: true,
     badge: "Experiencia premium",
@@ -35,15 +41,15 @@ const total = String(experiences.length).padStart(2, "0");
 
 const galleryPhotos = [
   {
-    image: "/assetss/hab1.jpg",
+    image: hab1,
     alt: "Vista exterior de Eco Village rodeado de naturaleza",
   },
   {
-    image: "/assetss/ecovilla3.jpg",
+    image: ecovilla3,
     alt: "Espacio privado de Eco Village en La Fortuna",
   },
   {
-    image: "/assetss/hab2.jpg",
+    image: hab2,
     alt: "Detalle de la villa Eco Village",
   },
 ];
@@ -60,7 +66,7 @@ const galleryPhotos = [
     <header class="experience-header max-w-3xl">
       <div class="flex items-center gap-3">
         <span class="h-px w-12 bg-[#b8954a]"></span>
-        <span class="text-xs font-medium uppercase tracking-[0.32em] text-[#b8954a]" style="font-family: 'Manrope', sans-serif;">
+        <span class="text-xs font-medium uppercase tracking-[0.32em] text-[#7a5c24]" style="font-family: 'Manrope', sans-serif;">
           Detalles que enamoran
         </span>
       </div>
@@ -84,13 +90,12 @@ const galleryPhotos = [
         class="experience-card group relative overflow-hidden rounded-sm shadow-[0_24px_60px_rgba(20,25,20,0.12)]"
         style="min-height: 520px;"
       >
-        <img
+        <OptImage
           src={featured.image}
           alt={featured.alt}
           class="exp-img"
           loading="lazy"
-          decoding="async"
-        />
+          decoding="async" />
 
         {/* Capas de oscurecimiento — garantizan contraste */}
         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/20"></div>
@@ -156,13 +161,12 @@ const galleryPhotos = [
             class="experience-card group relative overflow-hidden rounded-sm shadow-[0_16px_40px_rgba(20,25,20,0.1)]"
             style="min-height: 320px;"
           >
-            <img
+            <OptImage
               src={item.image}
               alt={item.alt}
               class="exp-img"
               loading="lazy"
-              decoding="async"
-            />
+              decoding="async" />
 
             {/* Capas de oscurecimiento */}
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20"></div>
@@ -205,7 +209,7 @@ const galleryPhotos = [
         <div>
           <div class="flex items-center gap-3">
             <span class="h-px w-10 bg-[#b8954a]"></span>
-            <span class="text-xs font-medium uppercase tracking-[0.28em] text-[#b8954a]" style="font-family: 'Manrope', sans-serif;">
+            <span class="text-xs font-medium uppercase tracking-[0.28em] text-[#7a5c24]" style="font-family: 'Manrope', sans-serif;">
               Galería
             </span>
           </div>
@@ -224,13 +228,12 @@ const galleryPhotos = [
       <div class="gallery-grid mt-10">
         {galleryPhotos.map((photo) => (
           <figure class="gallery-card group">
-            <img
+            <OptImage
               src={photo.image}
               alt={photo.alt}
               class="gallery-img"
               loading="lazy"
-              decoding="async"
-            />
+              decoding="async" />
           </figure>
         ))}
       </div>

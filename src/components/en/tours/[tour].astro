@@ -1,4 +1,5 @@
 ---
+import OptImage from "../../OptImage.astro";
 import Modal from '../../Modal.astro';
 
 export interface Props {
@@ -36,7 +37,7 @@ const longDescription = tour.descripcionLarga ?? tour.descripcion;
         </a>
       </div>
       <div class="flex flex-col md:flex-row gap-6">
-        <img src={heroImage} alt={tour.nombre} class="w-full md:w-1/2 rounded-xl object-cover shadow" loading="lazy" />
+        <OptImage src={heroImage} alt={tour.nombre} class="w-full md:w-1/2 rounded-xl object-cover shadow" loading="eager" fetchpriority="high" />
         <div class="flex-1 space-y-3">
           <h1 class="text-3xl font-bold">{tour.nombre}</h1>
           {shortDescription ? <p class="text-gray-700">{shortDescription}</p> : null}
@@ -97,7 +98,7 @@ const longDescription = tour.descripcionLarga ?? tour.descripcion;
 
       <Modal id="modal-info" title="Tour Description">
         <div class="space-y-4 text-sm text-left leading-relaxed">
-          <img src={heroImage} alt={`Tour detail ${tour.nombre}`} class="rounded-lg mb-4 object-cover w-full" loading="lazy" />
+          <OptImage src={heroImage} alt={`Tour detail ${tour.nombre}`} class="rounded-lg mb-4 object-cover w-full" loading="lazy" />
           {longDescription ? <p>{longDescription}</p> : null}
           {tour.incluye?.length ? (
             <div>

@@ -1,4 +1,5 @@
 ---
+import OptImage from "../../OptImage.astro";
 import toursData from '../../../Data/tours_en.json';
 
 const slugify = (name) =>
@@ -23,7 +24,7 @@ const tours = toursData.map((tour) => {
 });
 ---
 
-<section class="bg-green-600 text-white py-12 mt-18">
+<section class="bg-green-700 text-white py-12 mt-18">
   <div class="container mx-auto px-4">
     <div class="max-w-3xl">
       <span class="inline-flex items-center gap-2 bg-white/15 px-4 py-2 rounded-full text-sm uppercase tracking-widest">
@@ -59,7 +60,7 @@ const tours = toursData.map((tour) => {
 
 <section id="tours-list" class="container mx-auto px-4 mt-8">
   <div class="flex gap-2 overflow-x-auto pb-4">
-    <button class="bg-green-600 text-white px-4 py-2 rounded-full whitespace-nowrap">All tours</button>
+    <button class="bg-green-700 text-white px-4 py-2 rounded-full whitespace-nowrap">All tours</button>
     <button class="bg-gray-200 px-4 py-2 rounded-full whitespace-nowrap">Easy</button>
     <button class="bg-gray-200 px-4 py-2 rounded-full whitespace-nowrap">Moderate</button>
     <button class="bg-gray-200 px-4 py-2 rounded-full whitespace-nowrap">Extreme adventure</button>
@@ -69,7 +70,7 @@ const tours = toursData.map((tour) => {
     {tours.map((tour) => (
       <div class="bg-white rounded-lg shadow p-4 flex flex-col">
         <div class="relative">
-          <img src={tour.imagen} alt={tour.nombre} class="rounded-t-lg w-full h-48 object-cover" loading="lazy" />
+          <OptImage src={tour.imagen} alt={tour.nombre} class="rounded-t-lg w-full h-48 object-cover" loading="lazy" />
           <span class="absolute top-2 right-2 bg-yellow-200 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full">
             {tour.dificultad}
           </span>
@@ -96,7 +97,7 @@ const tours = toursData.map((tour) => {
             onclick="return gtagSendEvent(this.href, this.target)"
             target="_blank"
             rel="noopener noreferrer"
-            class="flex-1 min-w-[160px] bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition text-center"
+            class="flex-1 min-w-[160px] bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 transition text-center"
           >
             Book now
           </a>

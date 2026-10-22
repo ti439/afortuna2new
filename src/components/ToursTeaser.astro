@@ -1,83 +1,95 @@
 ---
+import OptImage from "./OptImage.astro";
+import { getTours } from "../lib/tours";
 
-const aventura = "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/rafting_1ccfa83f.png"
-const naturaleza = "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/cabalgata__1__f01d99a8.jpg"
-const tours = "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/puente_09973237.png"
-const cards = [
-  {
-    title: "Aventura y adrenalina",
-    description: "Rappel, canyoning y experiencias intensas con guias expertos.",
-    image: aventura,
-    tag: "Favorito del viajero",
-  },
-  {
-    title: "Naturaleza y vida silvestre",
-    description: "Caminatas y observacion de fauna en paisajes unicos.",
-    image: naturaleza,
-    tag: "Ideal en familia",
-  },
-  {
-    title: "Vistas y paisajes iconicos",
-    description: "Volcan, cataratas y senderos para conectar con el Arenal.",
-    image: tours,
-    tag: "Mas reservado",
-  },
-];
+interface Props {
+  lang?: "es" | "en";
+}
+const { lang = "es" } = Astro.props;
+const en = lang === "en";
+
+// Destacados por posición (tours.json y tours_en.json comparten orden): rafting, cabalgata al volcán, canopy
+const FEATURED = [1, 3, 5];
+const tours = getTours(lang);
+const featured = FEATURED.map((i) => tours[i]).filter(Boolean);
+
+const t = en
+  ? {
+      eyebrow: "Recommended experiences",
+      title: "Tours around Arenal Volcano",
+      lead: "Tours selected for quality, safety and local guides. Book direct and secure your spot.",
+      all: "See all tours",
+      from: "From",
+      details: "View tour",
+      book: "Book",
+      message: (name: string) => `Hi Afortunados, I'd like to book the tour: ${name}`,
+    }
+  : {
+      eyebrow: "Experiencias recomendadas",
+      title: "Tours alrededor del Volcán Arenal",
+      lead: "Tours seleccionados por calidad, seguridad y guía local. Reserva directo y asegura tu cupo.",
+      all: "Ver todos los tours",
+      from: "Desde",
+      details: "Ver tour",
+      book: "Reservar",
+      message: (name: string) => `Hola Afortunados, quiero reservar el tour: ${name}`,
+    };
 ---
 
-<section class="py-16 bg-white text-gray-800">
-  <div class="max-w-6xl mx-auto px-4 md:px-8">
-    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
-      <div>
-        <span class="text-xs uppercase tracking-[0.3em] text-emerald-600">Experiencias recomendadas</span>
-        <h2 class="text-3xl md:text-4xl font-bold mt-3">
-          Antes de elegir hotel, mira estos tours
-        </h2>
-        <p class="mt-3 text-gray-600 max-w-2xl">
-          Reserva directo y asegura tu cupo. Tours seleccionados por calidad, seguridad y guia local.
-        </p>
+<section class="bg-cream-warm px-5 py-20 text-ink sm:px-8 md:py-28">
+  <div class="mx-auto max-w-6xl">
+    <div data-anim="fade-up" class="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+      <div class="max-w-2xl">
+        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold-deep">{t.eyebrow}</p>
+        <h2 class="font-display text-4xl font-light leading-tight text-forest-deep sm:text-5xl">{t.title}</h2>
+        <p class="mt-4 text-lg leading-relaxed text-ink-soft">{t.lead}</p>
       </div>
       <a
-        href="/tours"
-        class="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-5 py-2 text-white font-semibold hover:bg-emerald-700 transition"
+        href={en ? "/en/tours" : "/tours"}
+        class="inline-flex shrink-0 items-center justify-center gap-2 rounded-full border border-forest px-6 py-3 font-semibold text-forest transition hover:bg-forest hover:text-cream"
       >
-        Ver todos los tours
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-        </svg>
+        {t.all} →
       </a>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {cards.map((card) => (
-        <div class="rounded-2xl overflow-hidden shadow-lg bg-white flex flex-col">
-          <div class="relative h-44">
-            <img src={card.image} alt={card.title} class="w-full h-full object-cover" loading="lazy" />
-            <span class="absolute top-3 left-3 bg-white/90 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">
-              {card.tag}
+    <div data-anim="stagger" class="grid gap-6 md:grid-cols-3">
+      {featured.map((tour) => (
+        <article class="flex flex-col overflow-hidden rounded-2xl bg-cream shadow-soft">
+          <a href={tour.url} class="group relative block h-56 overflow-hidden">
+            <OptImage
+              src={tour.imagen}
+              alt={tour.nombre}
+              maxWidth={800}
+              class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <span class="absolute left-4 top-4 rounded-full bg-cream/90 px-3 py-1 text-xs font-semibold text-forest">
+              {tour.duracion}
             </span>
-          </div>
-          <div class="p-5 flex-1 flex flex-col">
-            <h3 class="text-lg font-semibold">{card.title}</h3>
-            <p class="mt-2 text-sm text-gray-600 flex-1">{card.description}</p>
-            <div class="mt-4 flex flex-wrap gap-3">
-              <a
-                href="/tours"
-                class="flex-1 min-w-[140px] text-center rounded-full border border-emerald-600 text-emerald-700 px-4 py-2 text-sm font-semibold hover:bg-emerald-50 transition"
-              >
-                Explorar tours
+          </a>
+          <div class="flex flex-1 flex-col p-6">
+            <h3 class="font-display text-2xl text-forest-deep">
+              <a href={tour.url} class="hover:underline">{tour.nombre}</a>
+            </h3>
+            <p class="mt-2 line-clamp-3 flex-1 text-sm leading-relaxed text-ink-soft">{tour.descripcion}</p>
+            <p class="mt-4 text-sm text-ink-muted">
+              {t.from} <span class="font-display text-2xl text-forest-deep">${tour.precio}</span> USD
+            </p>
+            <div class="mt-4 flex gap-3">
+              <a href={tour.url} class="flex-1 rounded-full border border-forest px-4 py-2 text-center text-sm font-semibold text-forest transition hover:bg-forest hover:text-cream">
+                {t.details}
               </a>
               <a
-                href="https://api.whatsapp.com/send/?phone=50684597077"
+                href={`https://wa.me/50684597077?text=${encodeURIComponent(t.message(tour.nombre))}`}
                 target="_blank"
-                rel="noopener noreferrer"
-                class="flex-1 min-w-[140px] text-center rounded-full bg-emerald-600 text-white px-4 py-2 text-sm font-semibold hover:bg-emerald-700 transition"
+                rel="noopener"
+                onclick="return gtagSendEvent(this.href, this.target)"
+                class="flex-1 rounded-full bg-forest px-4 py-2 text-center text-sm font-semibold text-cream transition hover:bg-forest-bright"
               >
-                Reservar ahora
+                {t.book}
               </a>
             </div>
           </div>
-        </div>
+        </article>
       ))}
     </div>
   </div>

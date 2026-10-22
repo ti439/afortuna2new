@@ -1,0 +1,93 @@
+---
+import { Image } from "astro:assets";
+import volcan from "../../assets/volcan.JPG";
+
+interface Props {
+  lang?: "es" | "en";
+}
+const { lang = "es" } = Astro.props;
+const en = lang === "en";
+
+const t = en
+  ? {
+      eyebrow: "We are Afortunados",
+      title: "15+ years showing La Fortuna the way locals live it",
+      lead: "We started as a small Facebook page offering local stays and tours. Today we are a Costa Rican team with our own hotels and villas, and agreements with the best parks and tour operators.",
+      pillars: [
+        ["Our own stays", "Hotels and villas designed for comfort and a real connection with nature."],
+        ["Trusted partners", "Exclusive agreements with parks and operators: better prices and safe tours."],
+        ["Local support", "Fast help before and during your trip, directly on WhatsApp."],
+      ],
+      story: "Read our story",
+      paragraphs: [
+        "We have our own vacation homes, carefully designed to provide comfort, warmth and a genuine connection with nature. Our agreements with parks and the best tour operators in the country let us offer the best prices and close support so you can fully enjoy each destination.",
+        "What truly sets us apart is our multidisciplinary team, with extensive experience in hospitality, gastronomy, sales, tour operations and personalized attention. We believe responsibility and care in every detail make the difference.",
+        "We don't just sell tourism services: we share experiences filled with family warmth, peace of mind and trust. Our mission is to be the leading platform to discover Costa Rica in an authentic, safe and personal way, full of Costa Rican hospitality.",
+      ],
+      cta: "Talk to an advisor",
+      alt: "Arenal Volcano rising above the rainforest in La Fortuna",
+      message: "Hi Afortunados, I'd like help planning my trip",
+    }
+  : {
+      eyebrow: "Somos Afortunados",
+      title: "Más de 15 años mostrando La Fortuna como la vivimos los locales",
+      lead: "Empezamos como una sencilla página de Facebook ofreciendo hospedajes y tours locales. Hoy somos un equipo costarricense con hoteles y villas propias, y acuerdos con los mejores parques y operadores turísticos.",
+      pillars: [
+        ["Hospedajes propios", "Hoteles y villas pensados para tu comodidad y una conexión real con la naturaleza."],
+        ["Aliados de confianza", "Acuerdos exclusivos con parques y operadores: mejores precios y tours seguros."],
+        ["Soporte local", "Ayuda rápida antes y durante tu viaje, directo por WhatsApp."],
+      ],
+      story: "Leer nuestra historia",
+      paragraphs: [
+        "Contamos con nuestras propias casas vacacionales, cuidadosamente diseñadas para brindar comodidad, calidez y una conexión genuina con la naturaleza. Nuestros acuerdos con parques y los mejores operadores turísticos del país nos permiten ofrecer los mejores precios y un acompañamiento cercano para disfrutar plenamente de cada destino.",
+        "Lo que verdaderamente nos distingue es nuestro equipo multidisciplinario, con amplia experiencia en hotelería, gastronomía, ventas, operaciones turísticas y atención personalizada. Creemos que la responsabilidad y el cuidado en cada detalle marcan la diferencia.",
+        "No vendemos solo servicios turísticos: compartimos experiencias cargadas de calidez familiar, tranquilidad y confianza. Nuestra misión es ser la plataforma referente para descubrir Costa Rica de una manera auténtica, segura y personalizada, llena de hospitalidad costarricense.",
+      ],
+      cta: "Hablar con un asesor",
+      alt: "Volcán Arenal sobre el bosque tropical de La Fortuna",
+      message: "Hola Afortunados, quiero ayuda para planear mi viaje",
+    };
+---
+
+<section id="nosotros" class="scroll-mt-20 bg-cream px-5 py-20 sm:px-8 md:py-28">
+  <div class="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[5fr_6fr] lg:gap-16">
+    <div data-anim="reveal" class="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-elevated">
+      <Image src={volcan} alt={t.alt} widths={[480, 800, 1100]} sizes="(min-width: 1024px) 42vw, 100vw" format="webp" class="h-full w-full object-cover" />
+    </div>
+
+    <div data-anim="fade-up">
+      <p class="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold-deep">{t.eyebrow}</p>
+      <h2 class="font-display text-4xl font-light leading-tight text-forest-deep sm:text-5xl">{t.title}</h2>
+      <p class="mt-5 text-lg leading-relaxed text-ink-soft">{t.lead}</p>
+
+      <dl class="mt-8 grid gap-6 sm:grid-cols-3">
+        {t.pillars.map(([title, text]) => (
+          <div class="border-t-2 border-gold pt-4">
+            <dt class="font-semibold text-forest-deep">{title}</dt>
+            <dd class="mt-1 text-sm leading-relaxed text-ink-soft">{text}</dd>
+          </div>
+        ))}
+      </dl>
+
+      <details class="group mt-8 rounded-xl border border-ink/10 bg-cream-warm/60 p-5">
+        <summary class="flex cursor-pointer list-none items-center justify-between font-semibold text-forest [&::-webkit-details-marker]:hidden">
+          {t.story}
+          <svg aria-hidden="true" class="h-5 w-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+        </summary>
+        <div class="mt-4 space-y-4 leading-relaxed text-ink-soft">
+          {t.paragraphs.map((p) => <p>{p}</p>)}
+        </div>
+      </details>
+
+      <a
+        href={`https://wa.me/50684597077?text=${encodeURIComponent(t.message)}`}
+        target="_blank"
+        rel="noopener"
+        onclick="return gtagSendEvent(this.href, this.target)"
+        class="mt-8 inline-flex items-center justify-center rounded-full bg-forest px-7 py-3 font-semibold text-cream transition hover:bg-forest-bright"
+      >
+        {t.cta}
+      </a>
+    </div>
+  </div>
+</section>

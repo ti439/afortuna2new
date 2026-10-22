@@ -1,0 +1,81 @@
+---
+import OptImage from "../OptImage.astro";
+import ecovilla from "../../assets/villas/IMG_1703.jpg";
+import downtown from "../../assets/AreaPiscina.png";
+
+interface Props {
+  lang?: "es" | "en";
+}
+const { lang = "es" } = Astro.props;
+const en = lang === "en";
+const prefix = en ? "/en" : "";
+
+const t = en
+  ? {
+      title: "Let's plan your trip to La Fortuna",
+      lead: "Tell us your dates and who's traveling: we'll recommend the stay and tours that fit your budget. No commitment.",
+      whatsapp: "Get a quote on WhatsApp",
+      stays: "See places to stay",
+      note: "Popular dates fill up fast.",
+      message: "Hi Afortunados, I'd like a quote for my trip to La Fortuna",
+    }
+  : {
+      title: "Planeemos tu viaje a La Fortuna",
+      lead: "Cuéntanos tus fechas y quiénes viajan: te recomendamos el hospedaje y los tours ideales para tu presupuesto. Sin compromiso.",
+      whatsapp: "Cotizar por WhatsApp",
+      stays: "Ver hospedajes",
+      note: "Las fechas populares se llenan rápido.",
+      message: "Hola Afortunados, quiero cotizar mi viaje a La Fortuna",
+    };
+
+const photos = [
+  {
+    src: "https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/DJI_0369-Edit_0bbaa586.jpg",
+    alt: en ? "Hot spring pool among tropical gardens at Hotel Sueño Dorado" : "Piscina termal entre jardines tropicales del Hotel Sueño Dorado",
+    href: `${prefix}/suenodorado`,
+  },
+  {
+    src: ecovilla,
+    alt: en ? "Eco Village terrace with mountain views" : "Terraza de Eco Village con vista a las montañas",
+    href: en ? "/en/ecovilla" : "/ecovillage",
+  },
+  {
+    src: downtown,
+    alt: en ? "Pool at La Fortuna Downtown Boutique Hotel at dusk" : "Piscina de La Fortuna Downtown Boutique Hotel al atardecer",
+    href: `${prefix}/lafortuna-downtown`,
+    wide: true,
+  },
+];
+---
+
+<section class="bg-forest px-5 py-20 text-cream sm:px-8 md:py-28">
+  <div class="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
+    <div data-anim="fade-up">
+      <h2 class="font-display text-4xl font-light leading-tight sm:text-5xl">{t.title}</h2>
+      <p class="mt-5 text-lg leading-relaxed text-cream/85">{t.lead}</p>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <a
+          href={`https://wa.me/50684597077?text=${encodeURIComponent(t.message)}`}
+          target="_blank"
+          rel="noopener"
+          onclick="return gtagSendEvent(this.href, this.target)"
+          class="inline-flex items-center justify-center rounded-full bg-gold px-7 py-4 font-semibold text-forest-deep transition hover:bg-gold-light"
+        >
+          {t.whatsapp}
+        </a>
+        <a href="#hospedajes" class="inline-flex items-center justify-center rounded-full border border-cream/50 px-7 py-4 font-semibold transition hover:bg-cream hover:text-forest-deep">
+          {t.stays}
+        </a>
+      </div>
+      <p class="mt-4 text-sm text-cream/70">{t.note}</p>
+    </div>
+
+    <div data-anim="stagger" class="grid grid-cols-2 gap-4">
+      {photos.map((p) => (
+        <a href={p.href} class:list={["group block overflow-hidden rounded-2xl shadow-elevated", p.wide ? "col-span-2 aspect-[2/1]" : "aspect-square"]}>
+          <OptImage src={p.src} alt={p.alt} maxWidth={p.wide ? 1200 : 700} class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

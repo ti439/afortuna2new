@@ -1,0 +1,109 @@
+---
+// <head> compartido por todos los layouts: meta SEO, Open Graph, hreflang,
+// JSON-LD y Google Analytics (gtag + gtagSendEvent para conversiones).
+export interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  lang?: "es" | "en";
+  /** Ruta de la versión en el otro idioma (ej. "/en/tours"). Sin ella no se emite hreflang. */
+  alternate?: string;
+  /** URL canónica si difiere de la página actual (contenido duplicado). */
+  canonical?: string;
+  noindex?: boolean;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const DEFAULTS = {
+  es: {
+    title: "Afortunados | Hoteles y tours en La Fortuna, Costa Rica",
+    description:
+      "Hoteles, villas y tours frente al Volcán Arenal en La Fortuna, Costa Rica. Aguas termales, naturaleza y reservas directas.",
+  },
+  en: {
+    title: "Afortunados | Hotels & tours in La Fortuna, Costa Rica",
+    description:
+      "Hotels, villas and tours facing the Arenal Volcano in La Fortuna, Costa Rica. Hot springs, nature and direct bookings.",
+  },
+};
+
+const { lang = "es", alternate, noindex = false, jsonLd } = Astro.props;
+const title = Astro.props.title ?? DEFAULTS[lang].title;
+const description = Astro.props.description ?? DEFAULTS[lang].description;
+
+const site = Astro.site ?? new URL("https://afortunadoscr.com");
+const abs = (path: string) => new URL(path, site).href;
+// Las páginas se generan como /ruta/index.html: URLs siempre con barra final
+const page = (path: string) => abs(/\.\w+$|\/$/.test(path) ? path : `${path}/`);
+
+const canonical = page(Astro.props.canonical ?? Astro.url.pathname);
+const image = abs(Astro.props.image ?? "/og-default.jpg");
+
+// Una página canonicalizada a otra URL no declara alternates propios
+let hreflang: { es: string; en: string } | null = null;
+if (alternate && !Astro.props.canonical) {
+  const current = Astro.url.pathname;
+  hreflang = lang === "es"
+    ? { es: page(current), en: page(alternate) }
+    : { es: page(alternate), en: page(current) };
+}
+
+const GA_ID = "G-N853T6J4E0";
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+{noindex && <meta name="robots" content="noindex, follow" />}
+<link rel="icon" type="image/png" href="/faviconA.png" />
+<meta name="theme-color" content="#1f4029" />
+
+{hreflang && (
+  <>
+    <link rel="alternate" hreflang="es" href={hreflang.es} />
+    <link rel="alternate" hreflang="en" href={hreflang.en} />
+    <link rel="alternate" hreflang="x-default" href={hreflang.es} />
+  </>
+)}
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Afortunados" />
+<meta property="og:locale" content={lang === "es" ? "es_CR" : "en_US"} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={image} />
+<meta property="og:url" content={canonical} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image} />
+
+{jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+
+<script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
+<script is:inline define:vars={{ GA_ID }}>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  window.gtag = gtag;
+  gtag("js", new Date());
+  gtag("config", GA_ID);
+</script>
+<script is:inline>
+  function gtagSendEvent(url, target) {
+    var isBlank = target === "_blank";
+    var navigate = function () {
+      if (!isBlank && typeof url === "string") window.location = url;
+    };
+    if (typeof gtag === "function") {
+      gtag("event", "conversion_event_outbound_click", {
+        event_callback: navigate,
+        event_timeout: 2000,
+      });
+      return !isBlank;
+    }
+    navigate();
+    return !isBlank;
+  }
+</script>

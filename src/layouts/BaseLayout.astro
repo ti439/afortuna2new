@@ -1,43 +1,18 @@
 ---
-export interface Props {
-  title?: string;
-  description?: string;
-  image?: string;
-  canonical?: string;
-}
-
-const {
-  title = "Afortunados",
-  description = "Hospedajes y experiencias únicas en La Fortuna, Costa Rica.",
-  image = "/og-default.jpg",
-  canonical = Astro.url.href,
-} = Astro.props;
-
 import "../styles/global.css";
-import Hreflang from "../components/seo/Hreflang.astro";
+import SEOHead from "../components/seo/SEOHead.astro";
+import type { Props as SEOProps } from "../components/seo/SEOHead.astro";
 import WhatsAppButton from "../components/WhatsAppButton.astro";
+import WhatsAppButtonEn from "../components/en/WhatsAppButtonEn.astro";
+
+export type Props = SEOProps;
+const { lang = "es" } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang={lang}>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
-
-    {/* Open Graph */}
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
-    <meta property="og:url" content={canonical} />
-
-    {/* Twitter */}
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={image} />
+    <SEOHead {...Astro.props} />
 
     {/* Fuentes: serif elegante para display + sans refinada para texto */}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -47,32 +22,21 @@ import WhatsAppButton from "../components/WhatsAppButton.astro";
       rel="stylesheet"
     />
 
-    <title>{title}</title>
-    <Hreflang />
-
     <slot name="head" />
-
     <script is:inline>
-      function gtagSendEvent(url, target) {
-        var isBlank = target === "_blank";
-        var navigate = function () {
-          if (!isBlank && typeof url === "string") window.location = url;
-        };
-        if (typeof gtag === "function") {
-          gtag("event", "conversion_event_outbound_click", {
-            event_callback: navigate,
-            event_timeout: 2000,
-          });
-          return !isBlank;
-        }
-        navigate();
-        return !isBlank;
+      // Oculta el texto del hero hasta que GSAP lo anime; nunca más de 2.5 s si el JS falla
+      if (matchMedia("(prefers-reduced-motion: no-preference)").matches) {
+        document.documentElement.classList.add("anim-hero");
+        setTimeout(function () { document.documentElement.classList.remove("anim-hero"); }, 2500);
       }
     </script>
   </head>
   <body class="bg-cream text-ink font-body antialiased">
     <slot />
-    <WhatsAppButton />
+    {lang === "en" ? <WhatsAppButtonEn /> : <WhatsAppButton />}
+    <script>
+      import "../scripts/animations";
+    </script>
   </body>
 </html>
 
@@ -83,7 +47,7 @@ import WhatsAppButton from "../components/WhatsAppButton.astro";
     --color-cream-warm: #ede8d6;
     --color-ink: #1a1f1a;
     --color-ink-soft: #4a5048;
-    --color-ink-muted: #6b7268;
+    --color-ink-muted: #5a6157;
 
     --color-forest: #1f4029;
     --color-forest-deep: #142a1c;
@@ -135,14 +99,7 @@ import WhatsAppButton from "../components/WhatsAppButton.astro";
     }
   }
 
-  /* Utilities */
-  .bg-cream { background-color: var(--color-cream); }
-  .bg-cream-warm { background-color: var(--color-cream-warm); }
-  .text-ink { color: var(--color-ink); }
-  .text-ink-soft { color: var(--color-ink-soft); }
-  .text-ink-muted { color: var(--color-ink-muted); }
-  .text-forest { color: var(--color-forest); }
-  .text-gold { color: var(--color-gold); }
-  .bg-forest { background-color: var(--color-forest); }
-  .bg-forest-deep { background-color: var(--color-forest-deep); }
+  .anim-hero [data-hero-item] {
+    visibility: hidden;
+  }
 </style>

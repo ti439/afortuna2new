@@ -5,7 +5,24 @@
     "subtitulo": "Santuario de Intimidad",
     "descripcion": "Sumérgete en un espacio donde el romance y la privacidad son protagonistas. Nuestra habitación con cama King ofrece vistas inigualables al volcán Arenal.",
     "precio": "120",
-    "imagenes": ["/src/assets/v2.jpg", "/src/assets/v2.jpg"],
+    "imagenes": [
+      {
+        "src": "intimidad.jpg",
+        "alt": "Habitación King con cama king size, Smart TV y minibar"
+      },
+      {
+        "src": "termales.JPG",
+        "alt": "Vista aérea de las piscinas termales del Hotel Sueño Dorado"
+      },
+      {
+        "src": "bg-gd.jpg",
+        "alt": "Volcán Arenal visto desde la entrada del Hotel Sueño Dorado"
+      },
+      {
+        "src": "fotohotel.jpg",
+        "alt": "Vista aérea del Hotel Sueño Dorado y sus jardines en La Fortuna"
+      }
+    ],
     "beneficios": [
       "Vista al volcán",
       "Ideal para parejas",
@@ -35,7 +52,24 @@
     "subtitulo": "El Refugio Familiar",
     "descripcion": "Diseñadas pensando en el confort de toda la familia, nuestras habitaciones para 5 personas combinan espacio y privacidad. Tres camas cuidadosamente distribuidas, aire acondicionado y amenidades completas para que grandes y pequeños disfruten de la magia de La Fortuna sin renunciar al confort de un hogar.",
     "precio": "135",
-    "imagenes": ["/src/assets/v2.jpg", "/src/assets/v2.jpg"],
+    "imagenes": [
+      {
+        "src": "quintuple.jpg",
+        "alt": "Habitación Familiar con tres camas y aire acondicionado"
+      },
+      {
+        "src": "termales.JPG",
+        "alt": "Vista aérea de las piscinas termales del Hotel Sueño Dorado"
+      },
+      {
+        "src": "bg-gd.jpg",
+        "alt": "Volcán Arenal visto desde la entrada del Hotel Sueño Dorado"
+      },
+      {
+        "src": "fotohotel.jpg",
+        "alt": "Vista aérea del Hotel Sueño Dorado y sus jardines en La Fortuna"
+      }
+    ],
     "beneficios": [
       "Ideal para familias",
       "Tres camas cómodas",
@@ -65,7 +99,24 @@
     "subtitulo": "Experiencia Compartida",
     "descripcion": "Perfectas para grupos de amigos o familias, nuestras ocho habitaciones para 4 personas ofrecen el equilibrio perfecto entre privacidad y convivencia. Cada detalle está pensado para que puedas disfrutar de la compañía de tus seres queridos mientras te sumerges en la experiencia Sueño Dorado.",
     "precio": "110",
-    "imagenes": ["/src/assets/v2.jpg", "/src/assets/v2.jpg"],
+    "imagenes": [
+      {
+        "src": "cuadruple.jpg",
+        "alt": "Habitación Cuádruple con dos camas y salida al jardín"
+      },
+      {
+        "src": "termales.JPG",
+        "alt": "Vista aérea de las piscinas termales del Hotel Sueño Dorado"
+      },
+      {
+        "src": "bg-gd.jpg",
+        "alt": "Volcán Arenal visto desde la entrada del Hotel Sueño Dorado"
+      },
+      {
+        "src": "fotohotel.jpg",
+        "alt": "Vista aérea del Hotel Sueño Dorado y sus jardines en La Fortuna"
+      }
+    ],
     "beneficios": [
       "Capacidad para 4 personas",
       "WiFi gratuito",

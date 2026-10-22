@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/BaseLayout.astro";
 import villas from "../../Data/villas_detalle_en.json";
+import { gallery } from "../../lib/images";
 import VillaDetalle from "../../components/vacacionales/en/VillaDetalleEn.astro";
 
 const { id } = Astro.params;
@@ -15,16 +16,23 @@ export async function getStaticPaths() {
     params: { id: v.id },
   }));
 }
+const imagenes = await gallery(villa.imagenes);
 ---
 
-<Layout title={villa.titulo}>
+<Layout
+  lang="en"
+  title={`${villa.titulo} | Afortunados`}
+  description={villa.subtitulo}
+  image={imagenes[0]?.src}
+  alternate={`/${id}`}
+  canonical={id === "sueno-dorado" ? "/en/suenodorado" : undefined}
+>
   <VillaDetalle
     id={id}
     titulo={villa.titulo}
     subtitulo={villa.subtitulo}
     parrafoPrincipal={villa.parrafoPrincipal}
-    imagenPrincipal={villa.imagenPrincipal}
-    imagenes={villa.imagenes}
+        imagenes={imagenes}
     secciones={villa.secciones}
     beneficios={villa.beneficios}
     habitaciones={villa.habitaciones}

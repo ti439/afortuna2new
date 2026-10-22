@@ -1,10 +1,11 @@
 ---
+import OptImage from "../components/OptImage.astro";
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 ---
 
-<Layout>
+<Layout title="Afortunados" noindex>
   <Header />
 
   <!-- Hero: Carrusel full-bleed y video vertical responsive -->
@@ -14,9 +15,9 @@ import Footer from "../components/Footer.astro";
       <!-- Carrusel: ocupa 8/12 columnas en md+, full height, sin padding para cubrir todo el hero -->
       <div class="md:col-span-8 relative h-[60vh] md:h-full w-full overflow-hidden bg-gray-800">
         <div id="hero-carousel" class="absolute inset-0">
-          <img src="https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/foto1_6b9e60f3.jpeg" alt="slide-1" class="hero-slide absolute inset-0 h-full w-full object-cover" />
-          <img src="https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/foto2_19b1729d.jpeg" alt="slide-2" class="hero-slide absolute inset-0 h-full w-full object-cover" />
-          <img src="https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/foto3_2fd5c8f6.jpeg" alt="slide-3" class="hero-slide absolute inset-0 h-full w-full object-cover" />
+          <OptImage src="https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/foto1_6b9e60f3.jpeg" alt="Experiencias Afortunados en La Fortuna, foto 1" maxWidth={1920} class="hero-slide absolute inset-0 h-full w-full object-cover" />
+          <OptImage src="https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/foto2_19b1729d.jpeg" alt="Experiencias Afortunados en La Fortuna, foto 2" maxWidth={1920} class="hero-slide absolute inset-0 h-full w-full object-cover" />
+          <OptImage src="https://cdn.arenalcloud.com/arenal-a65b6eb9-29d7-4dec-9784-b1b37ff7dfce-afortunados/foto3_2fd5c8f6.jpeg" alt="Experiencias Afortunados en La Fortuna, foto 3" maxWidth={1920} class="hero-slide absolute inset-0 h-full w-full object-cover" />
         </div>
 
         <!-- overlay oscuro para legibilidad -->
@@ -25,11 +26,11 @@ import Footer from "../components/Footer.astro";
         <!-- Contenido del hero encima del carrusel (con margen interno para no pegar al borde) -->
         <div class="relative z-10 flex h-full items-center">
           <div class="p-8 md:p-12 text-white max-w-3xl">
-            <span class="inline-block rounded-full bg-amber-500 px-4 py-1 text-xs uppercase tracking-wider">Precio de lanzamiento</span>
+            <span class="inline-block rounded-full bg-amber-700 px-4 py-1 text-xs uppercase tracking-wider">Precio de lanzamiento</span>
             <h1 class="mt-6 text-3xl font-black leading-tight sm:text-4xl md:text-5xl">Tu escape perfecto a La Fortuna</h1>
             <p class="mt-4 text-lg font-semibold text-emerald-200">Sin manejar, sin estrés, todo incluido. Transporte, tour, comida y experiencia premium en un solo paquete.</p>
             <div class="mt-8 flex flex-wrap items-center gap-4">
-              <a id="open-booking-hero" href="#booking" class="rounded-full bg-emerald-600 px-6 py-3 text-sm font-bold uppercase tracking-wider transition hover:bg-emerald-700">Reservar mi campo ahora</a>
+              <a id="open-booking-hero" href="#booking" class="rounded-full bg-emerald-700 px-6 py-3 text-sm font-bold uppercase tracking-wider transition hover:bg-emerald-800">Reservar mi campo ahora</a>
               <span class="text-sm text-gray-200">Inversión total ₡45.000</span>
             </div>
           </div>

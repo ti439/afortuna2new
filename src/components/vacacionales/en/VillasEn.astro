@@ -1,4 +1,5 @@
 ---
+import OptImage from "../../OptImage.astro";
 import villasEn from "../../../Data/villasnew_en.json";
 
 const villasWithEnUrls = villasEn.map((villa) => ({
@@ -33,9 +34,9 @@ const topToursEn = [
 
 <section class="py-16 bg-white text-gray-800 pt-32">
   <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold mb-4 leading-tight">
+    <h1 class="text-3xl md:text-4xl font-bold mb-4 leading-tight">
       ACCOMMODATION OPTIONS IN LA FORTUNA
-    </h2>
+    </h1>
     <p class="max-w-2xl mx-auto mb-8 text-gray-600 text-base md:text-lg">
       By staying with us, your visit includes a day pass to the thermal waters of Hotel Sueno Dorado.
     </p>
@@ -60,13 +61,13 @@ const topToursEn = [
               {villa.destacado}
             </span>
           )}
-          <img src={villa.imagen} alt={villa.nombre} class="rounded-lg w-full h-52 object-cover mb-4" />
+          <OptImage src={villa.imagen} alt={villa.nombre} class="rounded-lg w-full h-52 object-cover mb-4" />
           <h3 class="font-semibold text-lg mb-1">{villa.nombre}</h3>
           <p class="text-sm text-gray-600 mb-2 line-clamp-3">{villa.descripcionCorta}</p>
           <p class="text-sm text-gray-700 font-medium mb-3">Capacity: {villa.capacidad}</p>
           <a
-            href={villa.enUrl}
-            class="inline-block border border-emerald-600 text-emerald-600 hover:bg-emerald-600 hover:text-white transition px-4 py-2 rounded-full text-sm font-semibold w-full text-center"
+            href={`/en${villa.id}`}
+            class="inline-block border border-emerald-700 text-emerald-700 hover:bg-emerald-800 hover:text-white transition px-4 py-2 rounded-full text-sm font-semibold w-full text-center"
           >
             MORE INFO
           </a>

@@ -1,4 +1,5 @@
 ---
+import OptImage from "../OptImage.astro";
 import { Image } from "astro:assets";
 import piscinas from "../../assets/termales.JPG";
 import jardines from "../../assets/jardin.JPG";
@@ -42,7 +43,7 @@ const restaurante = "https://i.ibb.co/BV1KZZ0S/IMG-6005-2.jpg";
       <!-- Restaurante -->
       <div class="flex flex-col lg:flex-row items-center gap-8">
         <div class="lg:w-1/2">
-          <img src={restaurante} alt="Restaurante gourmet" class="rounded-xl shadow-lg w-full h-auto object-cover" loading="lazy" decoding="async" />
+          <OptImage src={restaurante} alt="Restaurante gourmet" class="rounded-xl shadow-lg w-full h-auto object-cover" loading="lazy" decoding="async" />
         </div>
         <div class="lg:w-1/2">
           <h3 class="text-2xl font-semibold text-amber-700 mb-4">Restaurante Gourmet</h3>
