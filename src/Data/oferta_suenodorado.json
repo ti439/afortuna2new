@@ -45,7 +45,7 @@
     "Aire acondicionado",
     "Wi-Fi de fibra óptica",
     "TV",
-    "Parqueo privado gratuito"
+    "Parqueo privado"
   ],
   "resenas": [
     {
@@ -64,7 +64,7 @@
     }
   ],
   "ubicacion": {
-    "texto": "Estamos en La Fortuna de San Carlos, con el Volcán Arenal de fondo. Se llega fácil en carro y tenés parqueo privado sin costo dentro del hotel.",
+    "texto": "Estamos en La Fortuna de San Carlos, con el Volcán Arenal de fondo. Se llega fácil en carro y tenés parqueo privado dentro del hotel.",
     "mapaEmbed": "https://www.google.com/maps?q=Hotel+Sue%C3%B1o+Dorado+La+Fortuna+Costa+Rica&output=embed",
     "mapaLink": "https://www.google.com/maps/search/?api=1&query=Hotel+Sue%C3%B1o+Dorado+La+Fortuna+Costa+Rica"
   },
@@ -107,7 +107,7 @@
     },
     {
       "pregunta": "¿Tienen parqueo?",
-      "respuesta": "Sí, parqueo privado dentro del hotel y sin costo adicional."
+      "respuesta": "Sí, el hotel tiene parqueo privado dentro de la propiedad."
     }
   ],
   "momentos": [
