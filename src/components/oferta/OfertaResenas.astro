@@ -1,0 +1,51 @@
+---
+import OptImage from "../OptImage.astro";
+import volcan from "../../assets/volcan.JPG";
+import CTA from "./CTA.astro";
+import Luna from "./Luna.astro";
+import { oferta } from "../../lib/oferta";
+
+const [principal, ...otras] = oferta.resenas;
+const estrellas = (n: number) => "★".repeat(n) + "☆".repeat(5 - n);
+---
+
+{principal && (
+  <section class="grano relative isolate overflow-hidden bg-[#0d2620] text-white">
+    <Luna class="pointer-events-none absolute -right-16 -top-10 -z-10 h-80 w-80 text-white/[0.04]" />
+    <div class="mx-auto grid max-w-5xl items-center gap-10 px-4 py-16 sm:px-8 md:grid-cols-[2fr_3fr] md:gap-14 md:py-24">
+      <OptImage
+        src={volcan}
+        alt="Volcán Arenal visto desde los jardines del Hotel Sueño Dorado"
+        maxWidth={700}
+        widths={[400, 700]}
+        sizes="380px"
+        quality={65}
+        class="hidden aspect-[3/4] w-full rounded-2xl object-cover md:block"
+      />
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-[#a8dcc2]">Lo dicen los huéspedes</p>
+
+        <figure class="mt-6">
+          <span aria-hidden="true" class="block font-display text-7xl leading-[0.5] text-[#d9a74a]">“</span>
+          <blockquote lang="en" class="mt-4 font-display text-[1.75rem] italic leading-snug sm:text-4xl">{principal.texto}</blockquote>
+          <figcaption class="mt-4 flex items-center gap-3 text-white/80">
+            <span class="text-[#f1d590]" role="img" aria-label={`${principal.estrellas} de 5 estrellas`}>{estrellas(principal.estrellas)}</span>
+            <span>{principal.nombre} · <a href={principal.url} target="_blank" rel="noopener noreferrer" class="inline-block py-1.5 underline underline-offset-2">{principal.fuente}</a></span>
+          </figcaption>
+        </figure>
+
+        {otras.map((r) => (
+          <figure class="mt-8 border-t border-white/15 pt-6">
+            <blockquote lang="en" class="text-lg italic text-white/95">“{r.texto}”</blockquote>
+            <figcaption class="mt-2 flex items-center gap-3 text-sm text-white/75">
+              <span class="text-[#f1d590]" role="img" aria-label={`${r.estrellas} de 5 estrellas`}>{estrellas(r.estrellas)}</span>
+              <span>{r.nombre} · <a href={r.url} target="_blank" rel="noopener noreferrer" class="inline-block py-1.5 underline underline-offset-2">{r.fuente}</a></span>
+            </figcaption>
+          </figure>
+        ))}
+
+        <CTA label="Consultar disponibilidad" origen="resenas" class="mt-10 w-full sm:w-auto" />
+      </div>
+    </div>
+  </section>
+)}

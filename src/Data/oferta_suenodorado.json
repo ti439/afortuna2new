@@ -1,0 +1,183 @@
+{
+  "whatsapp": {
+    "telefono": "50663156210",
+    "mensaje": "Hola, vi la oferta La Fortuna para 2 desde ₡49.900. Quiero revisar disponibilidad.\nFecha de llegada: \nNoches: \nPersonas: "
+  },
+  "oferta": {
+    "h1": "La Fortuna para 2 desde ₡49.900",
+    "soporte": "Desayuno + aguas termales + IVA incluido",
+    "marca": "Hotel Sueño Dorado · La Fortuna",
+    "escasez": "Tarifa promocional con cupos limitados por fecha.",
+    "respuesta": "Decinos qué fecha querés venir y te confirmamos la mejor tarifa disponible.",
+    "porPersona": "₡24.950 por persona",
+    "eyebrow": "Escapada termal en La Fortuna",
+    "sabado": "No aplica sábados (sábados desde ₡55.000 para 2).",
+    "vigencia": "Válida hasta el 15 de diciembre.",
+    "validoHasta": "2026-12-15"
+  },
+  "beneficios": [
+    "Desayuno incluido",
+    "Aguas termales",
+    "Parqueo privado",
+    "Wi-Fi",
+    "Vista al volcán"
+  ],
+  "incluye": [
+    {
+      "titulo": "1 noche para 2",
+      "texto": "Habitación con baño privado y aire acondicionado."
+    },
+    {
+      "titulo": "Desayuno para 2",
+      "texto": "Desayuno buffet incluido cada mañana."
+    },
+    {
+      "titulo": "Aguas termales",
+      "texto": "Acceso a las piscinas termales del hotel durante tu estadía."
+    },
+    {
+      "titulo": "IVA incluido",
+      "texto": "El precio que ves ya incluye impuestos."
+    }
+  ],
+  "habitacion": [
+    "Baño privado",
+    "Aire acondicionado",
+    "Wi-Fi de fibra óptica",
+    "TV",
+    "Parqueo privado gratuito"
+  ],
+  "resenas": [
+    {
+      "nombre": "Elona",
+      "estrellas": 5,
+      "texto": "The property was in a great location and we loved the hot springs.",
+      "fuente": "Trip.com",
+      "url": "https://www.trip.com/hotels/la-fortuna-hotel-detail-22084517/hotel-hot-springs-sueo-dorado"
+    },
+    {
+      "nombre": "Armando",
+      "estrellas": 5,
+      "texto": "Great place to stay, very quiet and safe.",
+      "fuente": "Trip.com",
+      "url": "https://www.trip.com/hotels/la-fortuna-hotel-detail-22084517/hotel-hot-springs-sueo-dorado"
+    }
+  ],
+  "ubicacion": {
+    "texto": "Estamos en La Fortuna de San Carlos, con el Volcán Arenal de fondo. Se llega fácil en carro y tenés parqueo privado sin costo dentro del hotel.",
+    "mapaEmbed": "https://www.google.com/maps?q=Hotel+Sue%C3%B1o+Dorado+La+Fortuna+Costa+Rica&output=embed",
+    "mapaLink": "https://www.google.com/maps/search/?api=1&query=Hotel+Sue%C3%B1o+Dorado+La+Fortuna+Costa+Rica"
+  },
+  "faq": [
+    {
+      "pregunta": "¿Qué significa “desde ₡49.900”?",
+      "respuesta": "Es la tarifa más baja por noche para 2 personas, con desayuno, aguas termales e IVA incluidos. El precio final depende de la fecha y la disponibilidad; por WhatsApp te confirmamos el monto exacto antes de reservar."
+    },
+    {
+      "pregunta": "¿Qué fechas aplican para ₡49.900?",
+      "respuesta": "Aplica todos los días excepto sábados, hasta el 15 de diciembre, según disponibilidad. Los cupos a esta tarifa son limitados por fecha."
+    },
+    {
+      "pregunta": "¿El precio aplica fin de semana?",
+      "respuesta": "Los ₡49.900 no aplican sábados. Los sábados también tenemos tarifa promocional, desde ₡55.000 para 2."
+    },
+    {
+      "pregunta": "¿Desde qué hora puedo usar las termales?",
+      "respuesta": "Podés llegar desde las 10:00 a. m. y disfrutar de las termales desde ese momento, aunque la habitación se entrega a las 3:00 p. m."
+    },
+    {
+      "pregunta": "¿A qué hora es el check-in y el check-out?",
+      "respuesta": "Check-in de la habitación: 3:00 p. m. Check-out: 12:00 mediodía. Las termales las podés disfrutar desde las 10:00 a. m. del día de llegada."
+    },
+    {
+      "pregunta": "¿Qué precio tiene la persona adicional o los niños?",
+      "respuesta": "Cada persona adicional paga ₡15.000. Niños de 3 a 9 años: ₡10.000. Menores de 3 años no pagan."
+    },
+    {
+      "pregunta": "¿Cuál es la política de cancelación?",
+      "respuesta": "Podés cancelar hasta 7 días antes de tu fecha de llegada."
+    },
+    {
+      "pregunta": "¿Hay un paquete con alimentación incluida?",
+      "respuesta": "Sí. Por ₡17.000 adicionales por persona por día te incluimos desayuno, almuerzo y cena."
+    },
+    {
+      "pregunta": "¿Tienen tours con descuento?",
+      "respuesta": "Sí, con tarifa nacional: canopy (7 cables + rappel) o tubing en el río Arenal desde ₡26.000, y cabalgata al volcán o al río ₡36.500, todos con Go Pools. También hay combos desde ₡40.625 y opciones con rafting, ATV, caminata al volcán, puentes colgantes y catarata La Fortuna."
+    },
+    {
+      "pregunta": "¿Tienen parqueo?",
+      "respuesta": "Sí, parqueo privado dentro del hotel y sin costo adicional."
+    }
+  ],
+  "momentos": [
+    {
+      "titulo": "Llegás desde las 10 a. m.",
+      "texto": "Parqueás dentro del hotel y te vas directo a las termales. La habitación te espera a las 3 p. m.",
+      "img": "bg-gd.jpg",
+      "alt": "Entrada del Hotel Sueño Dorado con el Volcán Arenal de fondo"
+    },
+    {
+      "titulo": "Al agua caliente",
+      "texto": "Piscinas termales entre jardines, con el volcán de fondo. Sin traslados ni filas.",
+      "img": "termales.JPG",
+      "alt": "Piscinas termales del Hotel Sueño Dorado vistas desde arriba"
+    },
+    {
+      "titulo": "Una noche tranquila",
+      "texto": "Sin ruido de pueblo: jardín, sonidos del bosque y una cama que te espera.",
+      "img": "intimidad.jpg",
+      "alt": "Habitación con cama king del Hotel Sueño Dorado"
+    },
+    {
+      "titulo": "Desayuno sin apuro",
+      "texto": "Desayuno buffet incluido para los dos, frente a los jardines.",
+      "img": "https://i.ibb.co/BV1KZZ0S/IMG-6005-2.jpg",
+      "alt": "Restaurante del Hotel Sueño Dorado"
+    }
+  ],
+  "pasos": [
+    {
+      "titulo": "Escribinos tu fecha",
+      "texto": "Tocá cualquier botón: el mensaje ya va escrito, solo completá fecha y personas."
+    },
+    {
+      "titulo": "Te confirmamos la tarifa",
+      "texto": "El hotel te responde con disponibilidad y el precio exacto para tu fecha."
+    },
+    {
+      "titulo": "Reservás directo",
+      "texto": "Sin intermediarios: tratás con el hotel desde el primer mensaje."
+    }
+  ],
+  "tours": {
+    "nota": "Tarifas nacionales · Go Adventure Park",
+    "items": [
+      {
+        "nombre": "Canopy",
+        "detalle": "7 cables + 1 rappel · Incluye Go Pools",
+        "precio": "₡26.000",
+        "salidas": "8:00 · 10:00 a. m. · 1:00 · 3:00 p. m."
+      },
+      {
+        "nombre": "Tubing río Arenal",
+        "detalle": "Incluye Go Pools",
+        "precio": "₡26.000",
+        "salidas": "8:00 · 10:00 a. m. · 1:00 · 3:00 p. m."
+      },
+      {
+        "nombre": "Cabalgata al volcán",
+        "detalle": "Incluye Go Pools",
+        "precio": "₡36.500",
+        "salidas": "8:30 a. m. · 1:30 p. m."
+      },
+      {
+        "nombre": "Cabalgata al río Arenal",
+        "detalle": "Incluye Go Pools",
+        "precio": "₡36.500",
+        "salidas": "8:30 a. m. · 1:30 p. m."
+      }
+    ],
+    "combo": "Combos desde ₡40.625 (canopy + tubing). También rafting, ATV, caminata al volcán, puentes colgantes y catarata La Fortuna."
+  }
+}

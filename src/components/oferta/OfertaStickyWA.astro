@@ -1,0 +1,32 @@
+---
+// Barra fija de WhatsApp: aparece cuando el hero sale de pantalla y se oculta al llegar al cierre.
+import CTA from "./CTA.astro";
+---
+
+<div
+  id="sticky-wa"
+  class="pointer-events-none fixed inset-x-0 bottom-0 z-50 translate-y-full bg-[#0d2620]/95 px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 text-white opacity-0 shadow-[0_-10px_30px_rgba(0,0,0,.25)] backdrop-blur transition-all duration-300 sm:hidden"
+>
+  <div class="flex items-center gap-3">
+    <p class="text-xs font-semibold leading-tight text-white/75">Para 2 desde<br /><span class="precio-oro font-display text-xl">₡49.900</span></p>
+    <CTA label="Ver disponibilidad" origen="sticky" class="flex-1 !min-h-[52px] !pr-5 !text-base" />
+  </div>
+</div>
+
+<script>
+  const bar = document.getElementById("sticky-wa");
+  const hero = document.getElementById("hero");
+  const cierre = document.getElementById("reservar");
+  if (bar && hero && "IntersectionObserver" in window) {
+    let heroVisible = true;
+    let cierreVisible = false;
+    const update = () => {
+      const show = !heroVisible && !cierreVisible;
+      bar.classList.toggle("translate-y-full", !show);
+      bar.classList.toggle("opacity-0", !show);
+      bar.classList.toggle("pointer-events-none", !show);
+    };
+    new IntersectionObserver(([e]) => { heroVisible = e.isIntersecting; update(); }).observe(hero);
+    if (cierre) new IntersectionObserver(([e]) => { cierreVisible = e.isIntersecting; update(); }).observe(cierre);
+  }
+</script>

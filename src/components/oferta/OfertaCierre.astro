@@ -1,0 +1,48 @@
+---
+// Cierre "hora dorada": la oferta repetida tal cual, con una vista previa del mensaje que se envía.
+import CTA from "./CTA.astro";
+import Luna from "./Luna.astro";
+import { oferta } from "../../lib/oferta";
+
+const { soporte, escasez, respuesta, vigencia } = oferta.oferta;
+---
+
+<section id="reservar" class="grano relative isolate overflow-hidden bg-[#0d2620] text-white">
+  <div class="absolute inset-x-0 bottom-0 -z-10 h-2/3 bg-[radial-gradient(ellipse_at_bottom,rgba(217,167,74,.45),transparent_70%)]"></div>
+
+  <div class="mx-auto grid max-w-5xl items-center gap-12 px-4 py-20 sm:px-8 md:grid-cols-[1.2fr_1fr] md:py-28">
+    <div class="text-center md:text-left">
+      <Luna class="mx-auto h-10 w-10 text-[#f1d590] md:mx-0" />
+      <h2 class="mt-5 font-display font-semibold leading-[0.95]">
+        <span class="block text-[2.15rem] sm:text-5xl">La Fortuna para 2</span>{" "}
+        <span class="mt-1 inline-flex items-baseline gap-3">
+          <em class="text-[1.6rem] font-normal text-white/80 sm:text-3xl">desde</em>{" "}
+          <span class="precio-oro text-[3.4rem] sm:text-7xl">₡49.900</span>
+        </span>
+      </h2>
+      <p class="mt-4 text-lg font-semibold sm:text-xl">{soporte}</p>
+      <p class="mt-3 font-semibold text-[#f1d590]">{escasez} {vigencia}</p>
+
+      <CTA label="Ver disponibilidad ahora" origen="cierre" class="mt-8 w-full min-h-[64px] text-lg sm:w-auto sm:pr-10" />
+      <p class="mt-4 text-white/75">{respuesta}</p>
+    </div>
+
+    <!-- Vista previa del mensaje: muestra que escribir es fácil y qué datos se piden -->
+    <div class="mx-auto w-full max-w-sm rounded-[28px] bg-[#e9e2d3] p-4 text-[#18231f] shadow-[0_30px_80px_-20px_rgba(0,0,0,.6)]" aria-label="Ejemplo del mensaje de WhatsApp">
+      <div class="flex items-center gap-3 rounded-2xl bg-[#0d2620] px-4 py-3 text-white">
+        <span class="grid h-9 w-9 place-items-center rounded-full bg-[#67b08d]/20 text-[#a8dcc2]"><Luna class="h-5 w-5" /></span>
+        <div>
+          <p class="text-sm font-bold">Hotel Sueño Dorado</p>
+          <p class="text-xs text-white/70">WhatsApp · reserva directa</p>
+        </div>
+      </div>
+      <div class="ml-auto mt-4 max-w-[85%] rounded-2xl rounded-tr-sm bg-[#d8f5c6] px-4 py-3 text-sm leading-relaxed shadow-sm">
+        Hola, vi la oferta La Fortuna para 2 desde ₡49.900. Quiero revisar disponibilidad.<br />
+        <strong>Fecha de llegada:</strong> …<br />
+        <strong>Noches:</strong> …<br />
+        <strong>Personas:</strong> …
+      </div>
+      <p class="mt-3 text-center text-xs text-[#5b6a63]">El mensaje ya va escrito. Solo completás tus datos.</p>
+    </div>
+  </div>
+</section>

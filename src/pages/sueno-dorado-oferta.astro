@@ -1,0 +1,184 @@
+---
+// Landing de Google Ads: "La Fortuna para 2 desde ₡49.900" (Hotel Sueño Dorado).
+// Un solo objetivo: llevar al visitante a WhatsApp. Textos editables en src/Data/oferta_suenodorado.json.
+import "../styles/global.css";
+import SEOHead from "../components/seo/SEOHead.astro";
+import { hotel } from "../lib/schema";
+import { oferta, faqPublicadas } from "../lib/oferta";
+import OfertaHero from "../components/oferta/OfertaHero.astro";
+import OfertaBeneficios from "../components/oferta/OfertaBeneficios.astro";
+import OfertaExperiencia from "../components/oferta/OfertaExperiencia.astro";
+import OfertaIncluye from "../components/oferta/OfertaIncluye.astro";
+import OfertaHabitacion from "../components/oferta/OfertaHabitacion.astro";
+import OfertaResenas from "../components/oferta/OfertaResenas.astro";
+import OfertaUbicacion from "../components/oferta/OfertaUbicacion.astro";
+import OfertaTours from "../components/oferta/OfertaTours.astro";
+import OfertaFAQ from "../components/oferta/OfertaFAQ.astro";
+import OfertaCierre from "../components/oferta/OfertaCierre.astro";
+import OfertaStickyWA from "../components/oferta/OfertaStickyWA.astro";
+
+const title = "La Fortuna para 2 desde ₡49.900 | Hotel Sueño Dorado";
+const description =
+  "Hotel Sueño Dorado en La Fortuna: noche para 2 desde ₡49.900 con desayuno, aguas termales e IVA incluido. Consultá disponibilidad por WhatsApp.";
+
+// Imagen para la vista previa al compartir (WhatsApp, Facebook): 1200×630
+const ogImage = "/og-sueno-dorado-oferta.jpg";
+
+const jsonLd = [
+  {
+    ...hotel({ name: "Hotel Sueño Dorado", path: "/sueno-dorado-oferta", description, image: ogImage }),
+    priceRange: "₡₡",
+    amenityFeature: ["Aguas termales", "Desayuno incluido", "Parqueo", "Wi-Fi"].map((name) => ({
+      "@type": "LocationFeatureSpecification",
+      name,
+      value: true,
+    })),
+    makesOffer: {
+      "@type": "Offer",
+      name: "La Fortuna para 2: noche con desayuno y aguas termales",
+      price: 49900,
+      priceCurrency: "CRC",
+      validThrough: oferta.oferta.validoHasta,
+      availability: "https://schema.org/LimitedAvailability",
+      url: "https://afortunadoscr.com/sueno-dorado-oferta/",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqPublicadas.map((f) => ({
+      "@type": "Question",
+      name: f.pregunta,
+      acceptedAnswer: { "@type": "Answer", text: f.respuesta },
+    })),
+  },
+];
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <SEOHead lang="es" title={title} description={description} image={ogImage} jsonLd={jsonLd} deferAnalytics />
+    <!-- Fuentes propias (subconjunto latino + ₡): sin esperar a Google Fonts para pintar -->
+    <link rel="preload" href="/fonts/oferta/fraunces.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/oferta/manrope.woff2" as="font" type="font/woff2" crossorigin />
+  </head>
+
+  <body class="oferta bg-[#f8f3e7] font-body text-[#18231f] antialiased">
+    <main>
+      <OfertaHero />
+      <OfertaBeneficios />
+      <OfertaExperiencia />
+      <OfertaIncluye />
+      <OfertaHabitacion />
+      <OfertaResenas />
+      <OfertaUbicacion />
+      <OfertaTours />
+      <OfertaFAQ />
+      <OfertaCierre />
+    </main>
+
+    <footer class="border-t border-white/10 bg-[#0a1e19] px-4 py-8 pb-28 text-center text-sm text-white/60 sm:pb-8">
+      Hotel Sueño Dorado · La Fortuna, Costa Rica ·
+      <a href="/suenodorado" class="underline underline-offset-2 hover:text-white">Ver el hotel completo</a>
+    </footer>
+
+    <OfertaStickyWA />
+
+    <script>
+      // Medición: cada CTA envía cta_click (GA4) con su sección; los de WhatsApp además
+      // disparan la conversión de Google Ads mediante gtagSendEvent (SEOHead).
+      declare function gtag(...args: unknown[]): void;
+      declare function gtagSendEvent(url: string, target: string): boolean;
+
+      document.addEventListener("click", (ev) => {
+        const link = (ev.target as Element).closest<HTMLAnchorElement>("a[data-cta]");
+        if (!link) return;
+        const origen = link.dataset.cta;
+        if (typeof gtag === "function") {
+          gtag("event", "cta_click", { cta_origen: origen, link_url: link.href });
+        }
+        if (!link.hasAttribute("data-track-only") && typeof gtagSendEvent === "function") {
+          gtagSendEvent(link.href, link.target);
+        }
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  @font-face {
+    font-family: "Fraunces";
+    font-style: normal;
+    font-weight: 500 600;
+    font-display: swap;
+    src: url("/fonts/oferta/fraunces.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "Fraunces";
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/oferta/fraunces-italic.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: url("/fonts/oferta/manrope.woff2") format("woff2");
+  }
+
+  /* Foco visible y consistente para teclado en toda la landing */
+  .oferta a:focus-visible,
+  .oferta button:focus-visible,
+  .oferta summary:focus-visible {
+    /* doble anillo: claro sobre secciones oscuras, oscuro sobre secciones claras */
+    outline: 3px solid #f1d590;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 7px #0d2620;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .oferta *,
+    .oferta *::before,
+    .oferta *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* ADN de la landing: noche termal (#0d2620), verde del logo (#67b08d) y oro (#d9a74a) */
+  .precio-oro {
+    background: linear-gradient(180deg, #fbe7a8 0%, #e9bd62 45%, #c58a2a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .cta-oro {
+    background: linear-gradient(180deg, #f3cf78 0%, #d9a74a 100%);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 10px 24px -8px rgba(217, 167, 74, 0.55);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .cta-oro:hover { transform: translateY(-1px); box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 14px 30px -8px rgba(217, 167, 74, 0.7); }
+  /* Grano sutil en las secciones de noche, para que no se vean planas */
+  .grano::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.07;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  /* Recibo: borde dentado inferior */
+  .recibo::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -10px;
+    height: 10px;
+    background: radial-gradient(circle at 10px -2px, transparent 10px, #fff 10.5px) 0 0 / 20px 10px repeat-x;
+  }
+</style>

@@ -1,0 +1,44 @@
+---
+import OptImage from "../OptImage.astro";
+import king from "../../assets/intimidad.jpg";
+import cuadruple from "../../assets/cuadruple.jpg";
+import CTA from "./CTA.astro";
+import Vapor from "./Vapor.astro";
+import { oferta } from "../../lib/oferta";
+---
+
+<section class="bg-[#f8f3e7]">
+  <div class="mx-auto max-w-5xl px-4 py-16 sm:px-8 md:py-24">
+    <p class="text-sm font-semibold uppercase tracking-[0.2em] text-[#256b4c]">Las habitaciones</p>
+    <h2 class="mt-3 max-w-2xl font-display text-[2.1rem] font-semibold leading-[1.05] text-[#0d2620] sm:text-5xl">
+      Sin filtros: <em class="font-normal text-[#9a6b1c]">así son.</em>
+    </h2>
+    <Vapor class="mt-5 text-[#d9a74a]" />
+    <p class="mt-5 max-w-2xl text-lg leading-relaxed text-[#3d4a44]">
+      Fotos reales. Cuartos sencillos y cómodos; lo especial está afuera, en el agua caliente y los jardines.
+    </p>
+
+    <div class="mt-10 grid gap-4 sm:grid-cols-[1.3fr_1fr]">
+      <figure class="relative">
+        <OptImage src={king} alt="Habitación con cama king, TV y minirefri en el Hotel Sueño Dorado" maxWidth={900} widths={[420, 760, 900]} sizes="(min-width: 640px) 540px, calc(100vw - 32px)" quality={65} class="aspect-[4/3] w-full rounded-2xl object-cover" />
+        <figcaption class="absolute bottom-3 left-3 rounded-full bg-[#0d2620]/85 px-3 py-1 text-sm font-semibold text-white backdrop-blur">Cama king</figcaption>
+      </figure>
+      <figure class="relative">
+        <OptImage src={cuadruple} alt="Habitación con dos camas en el Hotel Sueño Dorado" maxWidth={700} widths={[420, 700]} sizes="(min-width: 640px) 410px, calc(100vw - 32px)" quality={65} class="aspect-[4/3] h-full w-full rounded-2xl object-cover" />
+        <figcaption class="absolute bottom-3 left-3 rounded-full bg-[#0d2620]/85 px-3 py-1 text-sm font-semibold text-white backdrop-blur">Dos camas</figcaption>
+      </figure>
+    </div>
+
+    <ul class="mt-6 flex flex-wrap gap-2">
+      {oferta.habitacion.map((d) => (
+        <li class="flex items-center gap-1.5 rounded-full border border-[#0d2620]/15 bg-white px-4 py-2 text-sm font-semibold text-[#0d2620]">
+          <span aria-hidden="true" class="text-[#256b4c]">✓</span>{d}
+        </li>
+      ))}
+    </ul>
+
+    <p class="mt-4 text-sm text-[#5b6a63]">La habitación exacta depende de la fecha; te la confirmamos por WhatsApp.</p>
+
+    <CTA label="Ver disponibilidad" origen="habitacion" class="mt-10 w-full sm:w-auto" />
+  </div>
+</section>

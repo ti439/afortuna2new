@@ -1,0 +1,62 @@
+---
+// Lo incluido presentado como un recibo: cada cosa con su "incluido" y el total al final.
+import CTA from "./CTA.astro";
+import Luna from "./Luna.astro";
+import { oferta } from "../../lib/oferta";
+---
+
+<section id="incluye" class="bg-[#efe6d2]">
+  <div class="mx-auto grid max-w-5xl items-center gap-10 px-4 py-16 sm:px-8 md:grid-cols-[1fr_1.1fr] md:py-24">
+    <div>
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-[#256b4c]">Qué incluye</p>
+      <h2 class="mt-3 font-display text-[2.1rem] font-semibold leading-[1.05] text-[#0d2620] sm:text-5xl">
+        Tu noche, <em class="font-normal text-[#9a6b1c]">sin letra chica.</em>
+      </h2>
+      <p class="mt-5 text-lg leading-relaxed text-[#3d4a44]">
+        Lo que ves es lo que pagás. Sin cargo por las termales, sin impuestos sorpresa al hacer check-out.
+      </p>
+      <p class="mt-4 flex items-start gap-2 font-semibold text-[#7a4f10]">
+        <Luna class="mt-0.5 h-5 w-5 shrink-0" /> {oferta.oferta.escasez}
+      </p>
+      <CTA label="Consultar mi fecha" origen="incluye" class="mt-8 hidden md:inline-flex" />
+    </div>
+
+    <div class="recibo relative rounded-t-2xl bg-white px-6 pb-10 pt-7 shadow-[0_24px_60px_-20px_rgba(13,38,32,.35)] sm:px-8">
+      <div class="flex items-center justify-between border-b border-dashed border-[#0d2620]/20 pb-4">
+        <p class="font-display text-lg font-semibold text-[#0d2620]">Sueño Dorado</p>
+        <p class="text-xs font-semibold uppercase tracking-[0.16em] text-[#5b6a63]">1 noche · 2 personas</p>
+      </div>
+
+      <ul class="divide-y divide-dashed divide-[#0d2620]/15">
+        {oferta.incluye.map((item) => (
+          <li class="flex items-start justify-between gap-4 py-4">
+            <div>
+              <p class="font-bold text-[#18231f]">{item.titulo}</p>
+              <p class="mt-0.5 text-sm text-[#5b6a63]">{item.texto}</p>
+            </div>
+            <span class="mt-0.5 shrink-0 rounded-full bg-[#67b08d]/15 px-2.5 py-0.5 text-xs font-bold uppercase tracking-wide text-[#256b4c]">Incluido</span>
+          </li>
+        ))}
+      </ul>
+
+      <div class="mt-2 border-t-2 border-[#0d2620] pt-4">
+        <div class="flex items-baseline justify-between">
+          <p class="font-bold text-[#18231f]">Total para 2</p>
+          <p class="font-display text-4xl font-semibold text-[#0d2620]"><span class="mr-1 text-base font-normal italic text-[#5b6a63]">desde</span>₡49.900</p>
+        </div>
+        <p class="mt-1 text-right text-sm text-[#5b6a63]">{oferta.oferta.porPersona} · IVA incluido</p>
+        <p class="mt-3 flex flex-wrap justify-end gap-x-4 gap-y-1 text-sm text-[#3d4a44]">
+          <span>Persona adicional: <strong>₡15.000</strong></span>
+          <span>Niños 3–9 años: <strong>₡10.000</strong></span>
+          <span>Menores de 3: <strong>gratis</strong></span>
+        </p>
+      </div>
+
+      <p class="mt-5 rounded-xl bg-[#f8f3e7] px-4 py-3 text-sm leading-relaxed text-[#3d4a44]">
+        <strong>“Desde”</strong> es el precio más bajo por noche para 2. {oferta.oferta.sabado} {oferta.oferta.vigencia} Según la fecha puede variar; te confirmamos el monto exacto por WhatsApp antes de reservar.
+      </p>
+    </div>
+
+    <CTA label="Consultar mi fecha" origen="incluye" class="w-full md:hidden" />
+  </div>
+</section>

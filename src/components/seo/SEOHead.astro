@@ -12,6 +12,8 @@ export interface Props {
   canonical?: string;
   noindex?: boolean;
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  /** Carga gtag.js después del evento load (los eventos se encolan en dataLayer igual). */
+  deferAnalytics?: boolean;
 }
 
 const DEFAULTS = {
@@ -27,7 +29,7 @@ const DEFAULTS = {
   },
 };
 
-const { lang = "es", alternate, noindex = false, jsonLd } = Astro.props;
+const { lang = "es", alternate, noindex = false, jsonLd, deferAnalytics = false } = Astro.props;
 const title = Astro.props.title ?? DEFAULTS[lang].title;
 const description = Astro.props.description ?? DEFAULTS[lang].description;
 
@@ -82,7 +84,21 @@ const GA_ID = "G-N853T6J4E0";
 
 {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
 
-<script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
+{deferAnalytics ? (
+  <script is:inline define:vars={{ GA_ID }}>
+    // gtag.js pesa ~200 KB y bloquea el hilo principal: se pide cuando la página ya se pintó.
+    window.addEventListener("load", function () {
+      setTimeout(function () {
+        var s = document.createElement("script");
+        s.async = true;
+        s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+        document.head.appendChild(s);
+      }, 1500);
+    });
+  </script>
+) : (
+  <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
+)}
 <script is:inline define:vars={{ GA_ID }}>
   window.dataLayer = window.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }

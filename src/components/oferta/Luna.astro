@@ -1,0 +1,10 @@
+---
+// Marca de la landing: la luna creciente con estrella del logo de Sueño Dorado.
+interface Props { class?: string }
+const { class: cls = "h-5 w-5" } = Astro.props;
+---
+
+<svg aria-hidden="true" viewBox="0 0 24 24" class={cls} fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M14.5 3.2A9 9 0 1 0 20.8 16a7.4 7.4 0 0 1-6.3-12.8Z" />
+  <path d="M18.5 3.5l.55 1.45L20.5 5.5l-1.45.55L18.5 7.5l-.55-1.45L16.5 5.5l1.45-.55Z" fill="currentColor" stroke="none" />
+</svg>
